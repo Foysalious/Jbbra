@@ -31,8 +31,7 @@
                     <a href="">
                         <div class="stat-card">
                             <i class="fas fa-history"></i>
-                            <h3>Pending Order</h3>
-                            {{-- <p>{{ count(App\Models\Order::orderBy('id','desc')->where('status',1)->get()) }}</p> --}}
+                          
                         </div>
                     </a>                
                 </div>

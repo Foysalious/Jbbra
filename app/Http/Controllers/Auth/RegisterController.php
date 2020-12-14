@@ -29,7 +29,16 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/home';
+    protected function redirectTo()
+    {
+        if (auth()->user()->is_admin == 2) {
+            return '/employeer/home';
+        }
+        else{
+        return '/home';
+    }
+    }
 
     /**
      * Create a new controller instance.
@@ -67,6 +76,9 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'is_admin' => $data['is_admin'],
+            
+            'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
         ]);
     }

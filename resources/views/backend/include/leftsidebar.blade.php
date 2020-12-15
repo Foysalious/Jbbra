@@ -51,10 +51,88 @@
                             </a>
                         </li>
                         <!-- nav single view end -->
-
-                          
-                        <!-- nav drop down view end -->
+                        @if(Auth::user()->is_admin == 0)
                         
+                        <li >
+                            <a href="{{route('personal')}}">
+                            <div class="left">
+                                    Personal Information
+                            </div>
+                            <div class="right">
+                            <i class="fas fa-user-shield"></i>
+                            </div>
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="{{route('address')}}">
+                            <div class="left">
+                                    Address Information
+                            </div>
+                            <div class="right">
+                                    <i class="fas fa-address-card"></i>
+                            </div>
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="{{route('education')}}">
+                            <div class="left">
+                                Education Information
+                            </div>
+                            <div class="right">
+                                    <i class="fas fa-school"></i>
+                            </div>
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="{{route('experience')}}">
+                            <div class="left">
+                                    Experience Information
+                            </div>
+                            <div class="right">
+                                    <i class="fas fa-user-md"></i>
+                            </div>
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="{{route('language')}}">
+                            <div class="left">
+                                    Language Information
+                            </div>
+                            <div class="right">
+                                    <i class="fas fa-language"></i>
+                            </div>
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="{{route('mailing')}}">
+                            <div class="left">
+                                    Mailing Information
+                            </div>
+                            <div class="right">
+                                    <i class="fas fa-mail-bulk"></i>
+                            </div>
+                            </a>
+                        </li>
+
+                        <li >
+                            <a href="{{route('nominee')}}">
+                            <div class="left">
+                            Nominee Information
+                            </div>
+                            <div class="right">
+                                    <i class="fas fa-business-time"></i>
+                            </div>
+                            </a>
+                        </li>
+
+                      
+
+                        @endif
                         
                     </ul>
                 </div>

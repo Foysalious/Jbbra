@@ -6,7 +6,7 @@
             <div class="col-md-3 col-3">
                 <div class="logo">
                    
-                    <img src="{{ asset('backend/images/logo.png') }}" class="img-fluid" alt=""> 
+                    <img src="{{ asset('backend/images/logo.png') }}" class="img-fluid" style="height: 60px; width: 70px" alt=""> 
                                 
                 </div>            
             </div>

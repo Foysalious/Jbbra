@@ -26,7 +26,7 @@ Route::get('employeer/home', 'HomeController@employeeHome')->name('employeeHome'
 
 Route::group(['prefix'=>'Candidate', 'middleware'=>['auth']], function(){
 Route::get('personal', 'Backend\CanPersonalController@index')->name('personal');
-Route::get('address', 'Backend\CanAddressController@index')->name('address');
+Route::get('address', 'Backend\CanAdressController@index')->name('address');
 Route::get('education', 'Backend\CanEducationalController@index')->name('education');
 Route::get('experience', 'Backend\CanExperienceController@index')->name('experience');
 Route::get('language', 'Backend\CanLanguageController@index')->name('language');

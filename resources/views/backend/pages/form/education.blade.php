@@ -29,6 +29,9 @@
                 </div>
 			</div> 
 
+			<br>
+			<br>
+			<br>
             <div class="educational-information">
 					<h5 class="text-center">Educational Information</h5>
 					<form action="">

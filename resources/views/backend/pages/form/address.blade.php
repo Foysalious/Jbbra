@@ -28,7 +28,11 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
-<div class="address-fild">
+
+			<br>
+			<br>
+			<br>
+				<div class="address-fild">
 					<h5 class="text-center">Address</h5>
 					<form action="">
 						<div class="form-group row">

@@ -28,6 +28,11 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div> 
+
+			
+			<br>
+			<br>
+			<br>
             <div class="experience-information">
 					<h5 class="text-center">Experience Skill</h5>
 					<form action="">

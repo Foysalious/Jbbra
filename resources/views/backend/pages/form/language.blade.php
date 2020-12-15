@@ -28,6 +28,10 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div> 
+			
+			<br>
+			<br>
+			<br>
             
 				<div class="language-information">
 					<h5 class="text-center">Language Skill</h5>

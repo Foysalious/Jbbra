@@ -28,6 +28,11 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div> 
+
+			
+			<br>
+			<br>
+			<br>
             <h5 class="text-center">Mailing Information</h5>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Street Address/ Para</label>

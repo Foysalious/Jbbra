@@ -13,7 +13,7 @@
                             <i class="fas fa-home"></i>
                         </li>
                         <li>
-                            Personal Information
+                            dashboard
                         </li>
                     </ul>
                 </div>
@@ -22,7 +22,7 @@
         <!-- page indicator end -->
 
         <!-- dashbaord statistics seciton start -->
-        <section class="registration-logo container">
+<section class="registration-logo container">
             <div class="text-center">
                 <div class="logo-image py-4">
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
@@ -86,15 +86,7 @@
 								</select>
 							</div>
 						</div>
-						<div class="form-group row">
-							<label for="name" class="col-sm-2 col-form-label ">Birth District</label>
-							<div class="col-sm-10 ">
-								<select id="inputState" class="form-control" name="birth-district">
-									<option selected>Select</option>
-											<option value="">...</option>                                     
-								</select>
-							</div>
-						</div>
+					
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label">Birth Date</label>
 							<div class="col-sm-10 ">
@@ -116,18 +108,18 @@
 
 						<fieldset class="form-group">
 						  <div class="row">
-							<legend class="col-form-label col-sm-2 pt-0">Sex</legend>
+							<legend class="col-form-label col-sm-2 pt-0">gender</legend>
 							<div class="col-sm-10">
 							  <div class="form-check">
 								<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" name="">
 								<label class="form-check-label" for="gridRadios1">
-								  Maile
+								  Male
 								</label>
 							  </div>
 							  <div class="form-check">
 								<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" name="">
 								<label class="form-check-label" for="gridRadios2">
-								  Femaile
+								  Female
 								</label>
 							  </div>
 							</div>
@@ -228,10 +220,6 @@
 					  </form>
 				</div>
 				
-				
-				
-				
-			</div> 
         </section>
         <!-- dashbaord statistics seciton end -->
 

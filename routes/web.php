@@ -33,4 +33,9 @@ Route::get('language', 'Backend\CanLanguageController@index')->name('language');
 Route::get('mailing', 'Backend\CanMailingController@index')->name('mailing');
 Route::get('nominee', 'Backend\CanNomineeController@index')->name('nominee');
 
+Route::post('personalAdd', 'Backend\CanPersonalController@store')->name('personalAdd');
+Route::post('personalEdit/{personal:id}', 'Backend\CanPersonalController@update')->name('personalupdate');
+Route::post('personalDelete/{personal:id}', 'Backend\CanPersonalController@delete')->name('personalDelete');
+
+
 });

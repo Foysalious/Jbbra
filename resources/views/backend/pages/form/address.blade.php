@@ -42,9 +42,9 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="" class="col-sm-2 col-form-label ">Divition</label>
+							<label for="" class="col-sm-2 col-form-label ">Division</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="">
+								<select type="text" class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="">
 									<option selected>Select</option>
 									<option value="">...</option>
 								  </select>

@@ -147,14 +147,14 @@ class CanPersonalController extends Controller
         // Toastr::success('Personal Updated');
         return redirect()->route('personal');
     }
-
-    /**
+ 
+    /** 
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Personal $personal)
     {
         if( File::exists('images/personal/'. $personal ->image) ){
             File::delete('images/personal/'. $personal->image);

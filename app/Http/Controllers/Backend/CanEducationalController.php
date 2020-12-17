@@ -5,6 +5,14 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Education;
+// use Brian2694\Toastr\Facades\Toastr;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\File;
+use Auth;
+use Illuminate\Support\Str;
+
+
 class CanEducationalController extends Controller
 {
     /**
@@ -24,7 +32,8 @@ class CanEducationalController extends Controller
      */
     public function create()
     {
-        //
+        
+        
     }
 
     /**
@@ -35,7 +44,17 @@ class CanEducationalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $education = new Education();
+
+        $education->name = $request->name;
+        $education->p_year = $request->p_year;
+        $education->board = $request->board;
+        $education->subject = $request->subject;
+        $education->grade = $request->grade;
+        $education->user_id = Auth::user()->id;
+        $education->save();
+        // Toastr::success('Personal Info');
+        return redirect()->route('education');
     }
 
     /**
@@ -46,7 +65,7 @@ class CanEducationalController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -57,7 +76,7 @@ class CanEducationalController extends Controller
      */
     public function edit($id)
     {
-        //
+       
     }
 
     /**
@@ -67,9 +86,17 @@ class CanEducationalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Education $education)
     {
-        //
+        $education->name = $request->name;
+        $education->p_year = $request->p_year;
+        $education->board = $request->board;
+        $education->subject = $request->subject;
+        $education->grade = $request->grade;
+        $education->user_id = Auth::user()->id;
+        $education->save();
+        // Toastr::success('Personal Info');
+        return redirect()->route('education');
     }
 
     /**
@@ -78,8 +105,10 @@ class CanEducationalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Education $education)
     {
-        //
+        $personal->delete();
+         Toastr::error('personal Information Deleted');
+        return redirect()->route('personal');
     }
 }

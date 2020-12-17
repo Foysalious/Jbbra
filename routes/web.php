@@ -37,5 +37,9 @@ Route::post('personalAdd', 'Backend\CanPersonalController@store')->name('persona
 Route::post('personalEdit/{personal:id}', 'Backend\CanPersonalController@update')->name('personalupdate');
 Route::post('personalDelete/{personal:id}', 'Backend\CanPersonalController@delete')->name('personalDelete');
 
+Route::post('educationAdd', 'Backend\CanEducationalController@store')->name('educationAdd');
+Route::post('personalEdit/{education:id}', 'Backend\CanEducationalController@update')->name('aducationUpdate');
+Route::post('personalDelete/{education:id}', 'Backend\CanEducationalController@delete')->name('personalDelete');
+
 
 });

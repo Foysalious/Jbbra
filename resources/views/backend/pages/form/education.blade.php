@@ -28,46 +28,50 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div> 
-
+ 
 			<br>
 			<br>
 			<br>
             <div class="educational-information">
 					<h5 class="text-center">Educational Information</h5>
-					<form action="">
+					<form method="post" action="{{ route('educationAdd') }}" enctype="multipart/form-data">
+					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Degree Name</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="">
+								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="name">
 									<option selected>Select</option>
-									<option value="">...</option>
+									<option value="SSC">SSC</option>
+									<option value="HSC">HSC</option>
 								  </select>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Passing Year</label>
 							<div class="col-sm-4 ">
-							  <input type="number" class="form-control" id="" name="" placeholder="Enter your Passing Year" required>
+							  <input type="number" class="form-control" id="" name="p_year" placeholder="Enter your Passing Year" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Board</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="">
+								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="board">
 									<option selected>Select</option>
-									<option value="">...</option>
+									<option value="Dhaka">Dhaka</option>
+									<option value="Chittagong">Chittagong</option>
 								  </select>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Subject</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="">
+								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="subject">
 									<option selected>Select</option>
-									<option value="">...</option>
+									<option value="Science">Science</option>
+									<option value="Commerce">Commerce</option>
 								  </select>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Grade/Division </label>
 							<div class="col-sm-10">
-								<input type="number" class="form-control" id="" name="" placeholder="Enter your Street Address/ Para" required>
+								<input type="number" class="form-control" id="" name="grade" placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
 						

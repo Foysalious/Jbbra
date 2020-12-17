@@ -38,8 +38,12 @@ Route::post('personalEdit/{personal:id}', 'Backend\CanPersonalController@update'
 Route::post('personalDelete/{personal:id}', 'Backend\CanPersonalController@delete')->name('personalDelete');
 
 Route::post('educationAdd', 'Backend\CanEducationalController@store')->name('educationAdd');
-Route::post('personalEdit/{education:id}', 'Backend\CanEducationalController@update')->name('aducationUpdate');
-Route::post('personalDelete/{education:id}', 'Backend\CanEducationalController@delete')->name('personalDelete');
+Route::post('educationEdit/{education:id}', 'Backend\CanEducationalController@update')->name('educationUpdate');
+Route::post('educationDelete/{education:id}', 'Backend\CanEducationalController@delete')->name('educationDelete');
+
+Route::post('experienceAdd', 'Backend\CanExperienceController@store')->name('experienceAdd');
+Route::post('experienceEdit/{experience:id}', 'Backend\CanExperienceController@update')->name('experienceUpdate');
+Route::post('experienceDelete/{experience:id}', 'Backend\CanExperienceController@delete')->name('experienceDelete');
 
 
 });

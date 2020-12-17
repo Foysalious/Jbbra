@@ -17,7 +17,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> 
         </section>
         <!-- page indicator end -->
 
@@ -35,61 +35,62 @@
 			<br>
             <div class="experience-information">
 					<h5 class="text-center">Experience Skill</h5>
-					<form action="">
+					<form method="post" action="{{ route('experienceAdd') }}" enctype="multipart/form-data">
+					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Company Name</label>
 							<div class="col-sm-4 ">
-								<input type="text" class="form-control" id="" name="" placeholder="Enter the company name" required>
+								<input type="text" class="form-control" id="" name="name" placeholder="Enter the company name" required>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Post Held</label>
 							<div class="col-sm-4 ">
-								<input type="text" class="form-control" id="" name="" placeholder="Enter the Post Held" required>
+								<input type="text" class="form-control" id="" name="post" placeholder="Enter the Post Held" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Serve From</label>
 							<div class="col-sm-4 ">
-								<input type="date" class="form-control" id="" name="" required>
+								<input type="date" class="form-control" id="" name="from" required>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Serve Till</label>
 							<div class="col-sm-4 ">
-								<input type="date/text" class="form-control" id="" name=""  placeholder="Enter the Serve Till Date" required>
+								<input type="date/text" class="form-control" id="" name="till"  placeholder="Enter the Serve Till Date" required>
 							</div>
 						</div>
 
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Address</label>
 							<div class="col-sm-10 ">
-								<input type="date/text" class="form-control" id="" name=""  placeholder="Enter the company Address" required>
+								<input type="date/text" class="form-control" id="" name="address"  placeholder="Enter the company Address" required>
 							</div>
 						</div>
 						
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Phone/Mobile*</label>
 							<div class="col-sm-4 ">
-								<input type="number" class="form-control" id="" name="" required>
+								<input type="text" class="form-control" id="" name="phone" required>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Contact Person</label>
 							<div class="col-sm-4 ">
-								<input type="text" class="form-control" id="" name=""  placeholder="Enter the content person Information" required>
+								<input type="text" class="form-control" id="" name="cPerson"  placeholder="Enter the content person Information" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Email</label>
 							<div class="col-sm-10 ">
-								<input type="email" class="form-control" id="" name=""  placeholder="Enter the email address" required>
+								<input type="email" class="form-control" id="" name="email"  placeholder="Enter the email address" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Responsibility</label>
 							<div class="col-sm-10 ">
-								<input type="email" class="form-control" id="" name=""  placeholder="Enter your Responsibility" required>
+								<input type="text" class="form-control" id="" name="responsibilty"  placeholder="Enter your Responsibility" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Achievement</label>
 							<div class="col-sm-10 ">
-								<input type="email" class="form-control" id="" name=""  placeholder="Enter your Achievements" required>
+								<input type="text" class="form-control" id="" name="achivements"  placeholder="Enter your Achievements" required>
 							</div>
 						</div>
 						

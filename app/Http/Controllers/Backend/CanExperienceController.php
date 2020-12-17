@@ -5,6 +5,13 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Experience;
+// use Brian2694\Toastr\Facades\Toastr;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\File;
+use Auth;
+use Illuminate\Support\Str;
+
 class CanExperienceController extends Controller
 {
     /**
@@ -24,7 +31,7 @@ class CanExperienceController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -35,7 +42,22 @@ class CanExperienceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $experience = new Experience();
+
+        $experience->name = $request->name;
+        $experience->post = $request->post;
+        $experience->from = $request->from;
+        $experience->till = $request->till;
+        $experience->address = $request->address;
+        $experience->phone = $request->phone;
+        $experience->cPerson = $request->cPerson;
+        $experience->email = $request->email;
+        $experience->responsibilty = $request->responsibilty;
+        $experience->achivements = $request->achivements;
+        $experience->user_id = Auth::user()->id;
+        $experience->save();
+        // Toastr::success('Personal Info');
+        return redirect()->route('experience');
     }
 
     /**
@@ -46,7 +68,7 @@ class CanExperienceController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -67,9 +89,22 @@ class CanExperienceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Experience $experience)
     {
-        //
+        $experience->name = $request->name;
+        $experience->post = $request->post;
+        $experience->from = $request->from;
+        $experience->till = $request->till;
+        $experience->address = $request->address;
+        $experience->phone = $request->phone;
+        $experience->cPerson = $request->cPerson;
+        $experience->email = $request->email;
+        $experience->responsibilty = $request->responsibilty;
+        $experience->achivements = $request->achivements;
+        $experience->user_id = Auth::user()->id;
+        $experience->save();
+        // Toastr::success('Personal Info');
+        return redirect()->route('experience');
     }
 
     /**
@@ -78,8 +113,10 @@ class CanExperienceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Experience $experience)
     {
-        //
+        $experience->delete();
+        Toastr::error('Experience Deleted');
+       return redirect()->route('experience');
     }
 }

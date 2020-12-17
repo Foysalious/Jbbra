@@ -107,8 +107,8 @@ class CanEducationalController extends Controller
      */
     public function destroy(Education $education)
     {
-        $personal->delete();
+        $education->delete();
          Toastr::error('personal Information Deleted');
-        return redirect()->route('personal');
+        return redirect()->route('education');
     }
 }

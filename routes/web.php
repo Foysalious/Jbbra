@@ -45,5 +45,9 @@ Route::post('experienceAdd', 'Backend\CanExperienceController@store')->name('exp
 Route::post('experienceEdit/{experience:id}', 'Backend\CanExperienceController@update')->name('experienceUpdate');
 Route::post('experienceDelete/{experience:id}', 'Backend\CanExperienceController@delete')->name('experienceDelete');
 
+Route::post('languageAdd', 'Backend\CanLanguageController@store')->name('languageAdd');
+Route::post('languageEdit/{language:id}', 'Backend\CanLanguageController@update')->name('languageUpdate');
+Route::post('languageDelete/{language:id}', 'Backend\CanLanguageController@delete')->name('languageDelete');
+
 
 });

@@ -35,29 +35,30 @@
             
 				<div class="language-information">
 					<h5 class="text-center">Language Skill</h5>
-					<form action="">
+					<form method="post" action="{{ route('languageAdd') }}" enctype="multipart/form-data">
+					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Language</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="">
+								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="language">
 									<option selected>Select</option>
-									<option value="">...</option>
+									<option value="test">Test</option>
 								  </select>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Oral Skill</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="">
+								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="oral">
 									<option selected>Select</option>
-									<option value="">...</option>
+									<option value="Test">Test</option>
 								  </select>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Writing Skill</label>
 							<div class="col-sm-10 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="">
+								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="writing">
 									<option selected>Select</option>
-									<option value="">...</option>
+									<option value="writing">writing</option>
 								  </select>
 							</div>
 						</div>

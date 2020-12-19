@@ -30,32 +30,33 @@
 			</div> 
 
 			
-			<br>
+			<br> 
 			<br>
 			<br>
             <div class="nominee-information">
 					<h5 class="text-center">Nominee Information</h5>
-					<form action="">
+					<form method="post" action="{{ route('nomineeAdd') }}" enctype="multipart/form-data">
+					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Nominee Name</label>
 							<div class="col-sm-4 ">
-							  <input type="text" class="form-control" id="" name="" placeholder="Enter your Nominee Name" required>
+							  <input type="text" class="form-control" id="" name="name" placeholder="Enter your Nominee Name" required>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Relation</label>
 							<div class="col-sm-4 ">
-							  <input type="text" class="form-control" id="" name="" placeholder="Enter your Nominee Relation" required>
+							  <input type="text" class="form-control" id="" name="relation" placeholder="Enter your Nominee Relation" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Phone/ Mobile no</label>
 							<div class="col-sm-10 ">
-							  <input type="number" class="form-control" id="" name="" placeholder="Enter your Nominee Phone/ Mobile no" required>
+							  <input type="text" class="form-control" id="" name="phone" placeholder="Enter your Nominee Phone/ Mobile no" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Address</label>
 							<div class="col-sm-10 ">
-								<input type="text" class="form-control" id="" name="" placeholder="Enter your Nominee Address" required>
+								<input type="text" class="form-control" id="" name="address" placeholder="Enter your Nominee Address" required>
 							</div>
 						</div>
 

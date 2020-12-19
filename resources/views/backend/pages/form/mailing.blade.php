@@ -34,65 +34,67 @@
 			<br>
 			<br>
             <h5 class="text-center">Mailing Information</h5>
+			<form method="post" action="{{ route('mailingAdd') }}" enctype="multipart/form-data">
+					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Street Address/ Para</label>
 							<div class="col-sm-10 ">
-							  <input type="text" class="form-control" id="" name="" placeholder="Enter your Street Address/ Para" required>
+							  <input type="text" class="form-control" id="" name="street" placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Division</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="">
+								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="division">
 									<option selected>Select</option>
-									<option value="">...</option>
+									<option value="test">test</option>
 								  </select>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">District</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="">
+								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="district">
 									<option selected>Select</option>
-									<option value="">...</option>
+									<option value="test">test</option>
 								  </select>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Thana/ Upazilla	</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="">
+								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="thana">
 									<option selected>Select</option>
-									<option value="">...</option>
+									<option value="test">test</option>
 								  </select>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Ward/ Union</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="">
+								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="ward">
 									<option selected>Select</option>
-									<option value="">...</option>
+									<option value="test">test</option>
 								  </select>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Area/ Village</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="">
+								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="area">
 									<option selected>Select</option>
-									<option value="">...</option>
+									<option value="test">test</option>
 								  </select>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Post Office</label>
 							<div class="col-sm-4">
-								<input type="number" class="form-control" id="" name="" placeholder="Enter your Postal code" required>
+								<input type="number" class="form-control" id="" name="post" placeholder="Enter your Postal code" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Email</label>
 							<div class="col-sm-4 ">
-								<input type="email" class="form-control" id="" name="" placeholder="Enter your Email Address" required>
+								<input type="email" class="form-control" id="" name="email" placeholder="Enter your Email Address" required>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Phone/ Mobile</label>
 							<div class="col-sm-4 ">
-								<input type="number" class="form-control" id="" name="" placeholder="Enter your Phone/ Mobile no" required>
+								<input type="text" class="form-control" id="" name="phone" placeholder="Enter your Phone/ Mobile no" required>
 							</div>
 						</div>
 						<div class="form-group row">

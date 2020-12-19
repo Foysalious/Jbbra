@@ -26,7 +26,7 @@ class CreateExperiencesTable extends Migration
             $table->string('responsibilty')->nullable();
             $table->string('achivements')->nullable();
             $table->string('user_id')->nullable();
-            $table->string('is_valid')->nullable();
+            $table->string('is_valid')->default('0');
             $table->timestamps();
         });
     }

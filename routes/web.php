@@ -49,5 +49,16 @@ Route::post('languageAdd', 'Backend\CanLanguageController@store')->name('languag
 Route::post('languageEdit/{language:id}', 'Backend\CanLanguageController@update')->name('languageUpdate');
 Route::post('languageDelete/{language:id}', 'Backend\CanLanguageController@delete')->name('languageDelete');
 
+Route::post('nomineeAdd', 'Backend\CanNomineeController@store')->name('nomineeAdd');
+Route::post('nomineeEdit/{nominee:id}', 'Backend\CanNomineeController@update')->name('nomineeUpdate');
+Route::post('nomineeDelete/{nominee:id}', 'Backend\CanNomineeController@delete')->name('nomineeDelete');
+
+Route::post('mailingAdd', 'Backend\CanMailingController@store')->name('mailingAdd');
+Route::post('mailingEdit/{mailing:id}', 'Backend\CanMailingController@update')->name('mailingUpdate');
+Route::post('mailingDelete/{mailing:id}', 'Backend\CanMailingController@delete')->name('mailingDelete');
+
+Route::post('addressAdd', 'Backend\CanAdressController@store')->name('addressAdd');
+Route::post('addressEdit/{address:id}', 'Backend\CanAdressController@update')->name('addressUpdate');
+Route::post('addressDelete/{address:id}', 'Backend\CanAdressController@delete')->name('addressDelete');
 
 });

@@ -4,6 +4,12 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Nominee;
+// use Brian2694\Toastr\Facades\Toastr;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\File;
+use Auth;
+use Illuminate\Support\Str;
 
 class CanNomineeController extends Controller
 {
@@ -24,7 +30,7 @@ class CanNomineeController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -35,7 +41,17 @@ class CanNomineeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nominee = new Nominee();
+
+        $nominee->name = $request->name;
+        $nominee->relation = $request->relation;
+        $nominee->phone = $request->phone;
+        $nominee->address = $request->address;
+        
+        $nominee->user_id = Auth::user()->id;
+        $nominee->save();
+        // Toastr::success('Personal Info');
+        return redirect()->route('nominee');
     }
 
     /**
@@ -67,9 +83,19 @@ class CanNomineeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Nominee $nominee)
     {
-        //
+       
+
+        $nominee->name = $request->name;
+        $nominee->relation = $request->relation;
+        $nominee->phone = $request->phone;
+        $nominee->address = $request->address;
+        
+        $nominee->user_id = Auth::user()->id;
+        $nominee->save();
+        // Toastr::success('Personal Info');
+        return redirect()->route('nominee');
     }
 
     /**
@@ -78,8 +104,10 @@ class CanNomineeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Nominee $nominee)
     {
-        //
+        $nominee->delete();
+        Toastr::error('nominee Deleted');
+       return redirect()->route('nominee');
     }
 }

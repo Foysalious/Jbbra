@@ -19,7 +19,7 @@ class CreateLanguagesTable extends Migration
             $table->string('oral');
             $table->string('writing');
             $table->string('user_id')->nullable();
-            $table->string('is_valid')->nullable();
+            $table->string('is_valid')->default('0');
             $table->timestamps();
         });
     }

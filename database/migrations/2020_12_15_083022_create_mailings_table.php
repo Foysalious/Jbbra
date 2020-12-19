@@ -9,7 +9,7 @@ class CreateMailingsTable extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
+     * @return void 
      */
     public function up()
     {
@@ -25,7 +25,7 @@ class CreateMailingsTable extends Migration
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('user_id')->nullable();
-            $table->string('is_valid')->nullable();
+            $table->string('is_valid')->default('0');
             $table->timestamps();
         });
     }

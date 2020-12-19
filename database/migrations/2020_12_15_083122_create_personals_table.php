@@ -40,7 +40,7 @@ class CreatePersonalsTable extends Migration
             $table->string('d_job3')->nullable();
             $table->string('image')->nullable();
             $table->string('user_id')->nullable();
-            $table->string('is_valid')->nullable();
+            $table->string('is_valid')->default('0');
             $table->timestamps();
         });
     }

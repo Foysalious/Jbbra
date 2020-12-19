@@ -21,7 +21,7 @@ class CreateEducationTable extends Migration
             $table->string('subject')->nullable();
             $table->string('grade')->nullable();
             $table->string('user_id')->nullable();
-            $table->string('is_valid')->nullable();
+            $table->string('is_valid')->default('0');
             $table->timestamps();
         });
     }

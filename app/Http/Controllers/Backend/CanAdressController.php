@@ -5,6 +5,13 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Address;
+// use Brian2694\Toastr\Facades\Toastr;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\File;
+use Auth;
+use Illuminate\Support\Str;
+
 class CanAdressController extends Controller
 {
     /**
@@ -24,7 +31,7 @@ class CanAdressController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -35,7 +42,22 @@ class CanAdressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $address = new Address();
+
+        $address->street = $request->street;
+        $address->disctrict = $request->disctrict;
+        $address->division = $request->division;
+        $address->thana = $request->thana;
+        $address->ward = $request->ward;
+        $address->area = $request->area;
+        $address->post = $request->post;
+        $address->email = $request->email;
+        $address->phone = $request->phone;
+        
+        $address->user_id = Auth::user()->id;
+        $address->save();
+        // Toastr::success('Personal Info');
+        return redirect()->route('address');
     }
 
     /**
@@ -67,9 +89,22 @@ class CanAdressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Address $address)
     {
-        //
+        $address->street = $request->street;
+        $address->disctrict = $request->disctrict;
+        $address->division = $request->division;
+        $address->thana = $request->thana;
+        $address->ward = $request->ward;
+        $address->area = $request->area;
+        $address->post = $request->post;
+        $address->email = $request->email;
+        $address->phone = $request->phone;
+        
+        $address->user_id = Auth::user()->id;
+        $address->save();
+        // Toastr::success('Personal Info');
+        return redirect()->route('address');
     }
 
     /**
@@ -78,8 +113,10 @@ class CanAdressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Address $address)
     {
-        //
+        $address->delete();
+        Toastr::error('address Deleted');
+       return redirect()->route('address');
     }
 }

@@ -73,7 +73,7 @@
                         <li >
                             <a href="{{route('Notverified')}}">
                             <div class="left">
-                                   Non Veriefied Candidate List
+                                   Non verified Candidate List
                             </div>
                             <div class="right">
                             <i class="fas fa-plane-slash"></i>

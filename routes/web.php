@@ -71,6 +71,8 @@ Route::post('verifiedAdd', 'Backend\verifiedController@store')->name('verifiedAd
 Route::post('verifiedEdit/{user:id}', 'Backend\verifiedController@update')->name('verifiedUpdate');
 Route::post('verifiedDelete/{user:id}', 'Backend\verifiedController@destroy')->name('verifiedDelete'); 
 
+Route::get('approved/{user:id}', 'Backend\verifiedController@approved')->name('Insverified');
+Route::get('disapproved/{user:id}', 'Backend\verifiedController@disApproved')->name('disverified');
 
 
 

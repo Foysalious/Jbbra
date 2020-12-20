@@ -14,7 +14,7 @@
                             <i class="fas fa-bars"></i>
                         </li>
                         <li>
-                            Verified Candidate
+                           Not Verified Candidate
                         </li>
                     </ul>
                 </div>
@@ -93,6 +93,7 @@
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Email</td>
+                                <td>Instant Approve</td>
                                
                                 <td>action</td>
                             </tr>
@@ -109,7 +110,10 @@
                                 </td>
 
                                 <td>
-                                {{$verifies->email}}
+                                    {{$verifies->email}}
+                                </td>
+                                <td>
+                                        <a href="{{ route('Insverified', $verifies->id) }}" class=" btn-primary">Instant Approve</a>
                                 </td>
                                 <td>
                                 

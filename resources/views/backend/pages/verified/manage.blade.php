@@ -93,7 +93,8 @@
                                 <td>Id</td>
                                 <td>Name</td>
                                 <td>Email</td>
-                               
+                                <td>Instant disapprove</td>
+                                <td>Section Wise Approve</td>
                                 <td>action</td>
                             </tr>
                         </thead>
@@ -110,6 +111,9 @@
 
                                 <td>
                                 {{$verifies->email}}
+                                </td>
+                                <td>
+                                        <a href="{{ route('disverified', $verifies->id) }}" class=" btn-primary">Instant Disapprove</a>
                                 </td>
                                 <td>
                                 

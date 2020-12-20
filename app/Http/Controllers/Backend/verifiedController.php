@@ -28,10 +28,27 @@ class verifiedController extends Controller
     public function notVerified()
     {
         $verified = User::orderBy('id','desc')->where('is_valid',0)->get();
-        return view('backend.pages.verified.manage',compact('verified'));
+        return view('backend.pages.notVerified.manage',compact('verified'));
 
     }
 
+    public function approved(User $user, Request $request)
+    {
+        $user->is_valid= 1;
+        $user->save();
+        $request->session()->flash('Approved');
+
+        return redirect()->route('Notverified');
+    }
+
+    public function disApproved(User $user, Request $request)
+    {
+        $user->is_valid= 0;
+        $user->save();
+        $request->session()->flash('Approved');
+
+        return redirect()->route('verified');
+    }
 
     /**
      * Show the form for creating a new resource.

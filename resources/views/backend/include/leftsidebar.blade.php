@@ -20,7 +20,11 @@
                     @else
                     <p>Candidate</p>
                     @endif
-
+                    @if(Auth::user()->is_valid == 0 )
+                    <p>Not Verified</p>
+                    @elseif(Auth::user()->is_admin == 1)
+                    <p>Verified</p>
+                    @endif
                     
                 </div>
                 <!-- middle part end -->
@@ -51,6 +55,32 @@
                             </a>
                         </li>
                         <!-- nav single view end -->
+
+                        @if(Auth::user()->is_admin == 1)
+                        
+                        <li >
+                            <a href="{{route('verified')}}">
+                            <div class="left">
+                                    Verified Candidate List
+                            </div>
+                            <div class="right">
+                            <i class="fas fa-user-check"></i>
+                            </div>
+                            </a>
+                        </li>
+
+                        
+                        <li >
+                            <a href="{{route('Notverified')}}">
+                            <div class="left">
+                                   Non Veriefied Candidate List
+                            </div>
+                            <div class="right">
+                            <i class="fas fa-plane-slash"></i>
+                            </div>
+                            </a>
+                        </li>
+                        @endif
                         @if(Auth::user()->is_admin == 0)
                         
                         <li >

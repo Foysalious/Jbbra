@@ -14,7 +14,7 @@
                             <i class="fas fa-bars"></i>
                         </li>
                         <li>
-                            About Us
+                            Verified Candidate
                         </li>
                     </ul>
                 </div>
@@ -27,24 +27,24 @@
 
           
             <!-- add row start -->
-            <div class="row add-row">
+            <!-- <div class="row add-row">
                 <div class="col-md-12 text-right">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        add new About
+                        add new verifies
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                             <div class="modal-header">
-                                <h3 class="modal-title" id="exampleModalLabel">About</h3>
+                                <h3 class="modal-title" id="exampleModalLabel">verifies</h3>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{ route('aboutStore') }}" method="post" enctype="multipart/form-data">
+                                <form action="" method="post" enctype="multipart/form-data">
                                 @csrf
                                     
                                     <div class="row">
@@ -78,7 +78,7 @@
                     </div>   
 
                 </div>
-            </div>
+            </div> --> 
             <!-- add row end -->
 
 
@@ -91,8 +91,8 @@
                         <thead>
                             <tr>
                                 <td>Id</td>
-                                <td>Description</td>
-                                <td>Title</td>
+                                <td>Name</td>
+                                <td>Email</td>
                                
                                 <td>action</td>
                             </tr>
@@ -101,49 +101,42 @@
                             @php
                                 $i = 1;
                             @endphp
-                            @foreach($abouts as $about)
+                            @foreach($verified as $verifies)
                             <tr>
                                 <th>{{ $i }}</th>
                                 <td>
-                                    {!!Str::limit($about->description,300)!!}
+                                    {{$verifies->name}}
                                 </td>
 
                                 <td>
-                                   {{Str::limit($about->title,20)}}
+                                {{$verifies->email}}
                                 </td>
                                 <td>
                                 
                                 <!-- edit start -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit{{ $about->id }}">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit{{ $verifies->id }}">
                                     edit
                                 </button>
-                                <div class="modal fade" id="edit{{ $about->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="edit{{ $verifies->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                         <div class="modal-header">
-                                            <h3 class="modal-title" id="exampleModalLabel">about</h3>
+                                            <h3 class="modal-title" id="exampleModalLabel">verifies</h3>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{{ route('aboutUpdate', $about->id) }}" method="post" enctype="multipart/form-data">
+                                            <form action="{{ route('verifiedUpdate', $verifies->id) }}" method="post" enctype="multipart/form-data">
                                             @csrf
                                                
                                                 <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>about description</label>
-                                                            
-                                                        <textarea name="description" class="ckeditor">{{$about->description}}</textarea>
-                               
-                                                        </div>                                      
-                                                    </div>  
+                                                    
                                                     
                                                     <div class="col-md-12">
                                                         <div class="form-group">
-                                                            <label>about Title</label>
-                                                        <input type="text" class="form-control-file" name="title" id="image" value="{{$about->title}}">                                 
+                                                            <label>verifies Title</label>
+                                                        <input type="text" class="form-control-file" name="title" id="image" value="">                                 
                                                         </div>                                      
                                                     </div>  
                                                                                   
@@ -163,20 +156,20 @@
                                 <!-- edit end -->
 
                                 <!-- delete start -->
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ $about->id }}">
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ $verifies->id }}">
                                     delete
                                 </button>
-                                <div class="modal fade" id="delete{{ $about->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="delete{{ $verifies->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                         <div class="modal-header">
-                                            <h3 class="modal-title" id="exampleModalLabel">about delete</h3>
+                                            <h3 class="modal-title" id="exampleModalLabel">verifies delete</h3>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-footer">
-                                            <form action="{{ route('aboutDelete', $about->id) }}" method="post">
+                                            <form action="{{ route('verifiedDelete', $verifies->id) }}" method="post">
                                                 @csrf
                                                 <button type="submit" class="btn btn-success">yes</button>
                                             </form>

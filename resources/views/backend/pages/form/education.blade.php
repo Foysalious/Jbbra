@@ -62,16 +62,16 @@
 							<label for="" class="col-sm-2 col-form-label ">Subject</label>
 							<div class="col-sm-4 ">
 								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="subject">
-									<option selected>Select</option>
+									<option selected>---Please Select a Option---</option>
 									<option value="Science">Science</option>
 									<option value="Commerce">Commerce</option>
-								  </select>
+								</select>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Grade/Division </label>
 							<div class="col-sm-10">
-								<input type="number" class="form-control" id="" name="grade" placeholder="Enter your Street Address/ Para" required>
+								<input type="text" class="form-control" id="" name="grade" placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
 						

@@ -75,6 +75,7 @@ Route::get('approved/{user:id}', 'Backend\verifiedController@approved')->name('I
 Route::get('disapproved/{user:id}', 'Backend\verifiedController@disApproved')->name('disverified');
 
 Route::get('UsersCreation', 'Backend\UsersController@index')->name('usersIndex');
+Route::get('UserCheck/{user:id}', 'Backend\UsersController@edit')->name('UserCheck');
 Route::post('Usersaddition', 'Backend\UsersController@store')->name('usersAddition');
 Route::post('Usersdelete/{user:id}', 'Backend\UsersController@destroy')->name('userDelete');
 

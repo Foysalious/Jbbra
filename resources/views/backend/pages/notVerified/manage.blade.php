@@ -94,7 +94,7 @@
                                 <td>Name</td>
                                 <td>Email</td>
                                 <td>Instant Approve</td>
-                                <td>Section Wise Approve</td>
+                                <td>Section Approve</td>
                                
                                 <td>action</td>
                             </tr>
@@ -113,48 +113,11 @@
                                 <td>
                                     {{$verifies->email}}
                                 </td>
-                                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit{{ $verifies->id }}">
-                                    edit
-                                </button>
-                                <div class="modal fade" id="edit{{ $verifies->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h3 class="modal-title" id="exampleModalLabel">verifies</h3>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form action="{{ route('verifiedUpdate', $verifies->id) }}" method="post" enctype="multipart/form-data">
-                                            @csrf
-                                               
-                                                <div class="row">
-                                                    
-                                                    
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <label>verifies Title</label>
-                                                        <input type="text" class="form-control-file" name="title" id="image" value="">                                 
-                                                        </div>                                      
-                                                    </div>  
-                                                                                  
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <button type="submit" class="btn btn-primary">Update</button>                                    
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div></td>
-                                <td>
                                 <td>
                                         <a href="{{ route('Insverified', $verifies->id) }}" class=" btn-primary">Instant Approve</a>
+                                </td>
+                                <td>
+                                        <a href="{{ route('UserCheck', $verifies->id) }}" class=" btn-primary">Section Approve</a>
                                 </td>
                                 <td>
                                 

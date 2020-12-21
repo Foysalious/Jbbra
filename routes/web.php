@@ -62,8 +62,8 @@ Route::post('addressEdit/{address:id}', 'Backend\CanAdressController@update')->n
 Route::post('addressDelete/{address:id}', 'Backend\CanAdressController@destroy')->name('addressDelete');
 
 
-});
-Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){
+// });
+// Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){
 
 Route::get('verified', 'Backend\verifiedController@index')->name('verified');
 Route::get('notVerified', 'Backend\verifiedController@notVerified')->name('Notverified');
@@ -73,6 +73,10 @@ Route::post('verifiedDelete/{user:id}', 'Backend\verifiedController@destroy')->n
 
 Route::get('approved/{user:id}', 'Backend\verifiedController@approved')->name('Insverified');
 Route::get('disapproved/{user:id}', 'Backend\verifiedController@disApproved')->name('disverified');
+
+Route::get('UsersCreation', 'Backend\UsersController@index')->name('usersIndex');
+Route::post('Usersaddition', 'Backend\UsersController@store')->name('usersAddition');
+Route::post('Usersdelete/{user:id}', 'Backend\UsersController@destroy')->name('userDelete');
 
 
 

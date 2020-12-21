@@ -525,6 +525,7 @@ class ComposerStaticInitb9c67c18362379e1698ab912f0f50d67
         'App\\Http\\Controllers\\Backend\\CanMailingController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/CanMailingController.php',
         'App\\Http\\Controllers\\Backend\\CanNomineeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/CanNomineeController.php',
         'App\\Http\\Controllers\\Backend\\CanPersonalController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/CanPersonalController.php',
+        'App\\Http\\Controllers\\Backend\\verifiedController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/verifiedController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',

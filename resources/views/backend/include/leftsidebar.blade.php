@@ -80,6 +80,17 @@
                             </div>
                             </a>
                         </li>
+
+                        <li >
+                            <a href="{{route('usersIndex')}}">
+                            <div class="left">
+                                    Register New User
+                            </div>
+                            <div class="right">
+                            <i class="fas fa-user-check"></i>
+                            </div>
+                            </a>
+                        </li>
                         @endif
                         @if(Auth::user()->is_admin == 0)
                         

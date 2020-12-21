@@ -24,6 +24,7 @@ return array(
     'App\\Http\\Controllers\\Backend\\CanMailingController' => $baseDir . '/app/Http/Controllers/Backend/CanMailingController.php',
     'App\\Http\\Controllers\\Backend\\CanNomineeController' => $baseDir . '/app/Http/Controllers/Backend/CanNomineeController.php',
     'App\\Http\\Controllers\\Backend\\CanPersonalController' => $baseDir . '/app/Http/Controllers/Backend/CanPersonalController.php',
+    'App\\Http\\Controllers\\Backend\\verifiedController' => $baseDir . '/app/Http/Controllers/Backend/verifiedController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',

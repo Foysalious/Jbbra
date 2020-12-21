@@ -115,10 +115,7 @@
                                 <td>
                                         <a href="{{ route('disverified', $verifies->id) }}" class=" btn-primary">Instant Disapprove</a>
                                 </td>
-                                <td>
-                                
-                                <!-- edit start -->
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit{{ $verifies->id }}">
+                                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit{{ $verifies->id }}">
                                     edit
                                 </button>
                                 <div class="modal fade" id="edit{{ $verifies->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -156,7 +153,11 @@
                                         </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div></td>
+                                <td>
+                                
+                                <!-- edit start -->
+                                
                                 <!-- edit end -->
 
                                 <!-- delete start -->

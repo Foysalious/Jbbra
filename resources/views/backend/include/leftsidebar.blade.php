@@ -87,7 +87,7 @@
                                     Register New User
                             </div>
                             <div class="right">
-                            <i class="fas fa-user-check"></i>
+                            <i class="fas fa-user-registered"></i>
                             </div>
                             </a>
                         </li>

@@ -20,14 +20,14 @@ class verifiedController extends Controller
      */
     public function index()
     {
-        $verified = User::orderBy('id','desc')->where('is_valid',1)->get();
+        $verified = User::orderBy('id','desc')->where('is_valid',1)->where('is_admin',0)->get();
         return view('backend.pages.verified.manage',compact('verified'));
 
     }
 
     public function notVerified()
     {
-        $verified = User::orderBy('id','desc')->where('is_valid',0)->get();
+        $verified = User::orderBy('id','desc')->where('is_valid',0)->where('is_admin',0)->get();
         return view('backend.pages.notVerified.manage',compact('verified'));
 
     }

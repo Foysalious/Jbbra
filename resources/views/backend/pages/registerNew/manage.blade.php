@@ -150,11 +150,14 @@
                                 <th>{{ $user->email }}</th>
                                 <th>{{ $user->role }}
                                     @if($user->is_admin==1)
-                                        Super Admin
+                                        
+                                        <a  class=" btn-primary">Super Admin</a>
                                         @elseif($user->is_admin==0)
-                                        Candidate
+                                        
+                                        <a  class=" btn-primary">Candidate</a>
                                         @else 
-                                        Employeer
+                                        
+                                        <a  class=" btn-primary">Employeer</a>
                                         @endif
                                 </th>
                                 

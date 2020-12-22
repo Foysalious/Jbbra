@@ -28,13 +28,17 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
-
+			@if($user->Address->is_valid == 1)
+			<h4 class="text-center alert-primary w-100 p-3 ">Approved</h4>
+			@else
+			<h4 class="text-center alert-danger w-100 p-3">Not-Approved</h4>
+			@endif
 			<br>
 			<br>
 			<br>
 				<div class="address-fild">
 					<h5 class="text-center">Address</h5>
-					<form method="post" action="{{ route('addressAdd') }}" enctype="multipart/form-data">
+					<form method="post" action="{{ route('addressUpdate',$user->address->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Street Address/ Para</label>
@@ -45,17 +49,11 @@
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Division</label>
 							<div class="col-sm-4 ">
-								<select type="text" class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="division">
-									<option >Select</option>
-									<option value="Test">Test</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="division" value='{{$user->address->division}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">District</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="disctrict">
-									<option >Test</option>
-									<option value="Test">Test</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="disctrict" value='{{$user->address->disctrict}}' readonly placeholder="Enter your Street Address/ Para" required>	
 							</div>
 						</div>
 						<div class="form-group row">
@@ -68,19 +66,13 @@
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Ward/ Union</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="ward">
-									<option selected>Select</option>
-									<option value="Test">Test</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="ward" value='{{$user->address->ward}}' readonly placeholder="Enter your Street Address/ Para" required>	
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Area/ Village</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="area">
-									<option selected>Select</option>
-									<option value="Test">Test</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="area" value='{{$user->address->area}}' readonly placeholder="Enter your Street Address/ Para" required>								
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Post Office</label>
 							<div class="col-sm-4">
@@ -121,22 +113,22 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
-
+			@if($user->education->is_valid == 1)
+			<h4 class="text-center alert-primary w-100 p-3">Approved</h4>
+			@else
+			<h4 class="text-center alert-danger w-100 p-3">Not-Approved</h4>
+			@endif
 			<br>
 			<br>
 			<br>
             <div class="educational-information">
 					<h5 class="text-center">Educational Information</h5>
-					<form method="post" action="{{ route('educationAdd') }}" enctype="multipart/form-data">
+					<form method="post" action="{{ route('educationUpdate',$user->education->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Degree Name</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="name">
-									<option selected>Select</option>
-									<option value="SSC">SSC</option>
-									<option value="HSC">HSC</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="area" value='{{$user->education->name}}' readonly placeholder="Enter your Street Address/ Para" required>	
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Passing Year</label>
 							<div class="col-sm-4 ">
@@ -146,19 +138,11 @@
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Board</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="board">
-									<option selected>Select</option>
-									<option value="Dhaka">Dhaka</option>
-									<option value="Chittagong">Chittagong</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="board" value='{{$user->education->board}}' readonly placeholder="Enter your Street Address/ Para" required>	
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Subject</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="subject">
-									<option selected>---Please Select a Option---</option>
-									<option value="Science">Science</option>
-									<option value="Commerce">Commerce</option>
-								</select>
+							<input type="text" class="form-control" id="" name="subject" value='{{$user->education->subject}}' readonly placeholder="Enter your Street Address/ Para" required>	
 							</div>
 						</div>
 						<div class="form-group row">
@@ -192,14 +176,18 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
-
+			@if($user->Experience->is_valid == 1)
+			<h4 class="text-center alert-primary w-100 p-3">Approved</h4>
+			@else
+			<h4 class="text-center alert-danger w-100 p-3">Not-Approved</h4>
+			@endif
 
 			<br>
 			<br>
 			<br>
             <div class="experience-information">
 					<h5 class="text-center">Experience Skill</h5>
-					<form method="post" action="{{ route('experienceAdd') }}" enctype="multipart/form-data">
+					<form method="post" action="{{ route('experienceUpdate',$user->experience->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Company Name</label>
@@ -283,6 +271,11 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
+			@if($user->Language->is_valid == 1)
+			<h4 class="text-center alert-primary w-100 p-3">Approved</h4>
+			@else
+			<h4 class="text-center alert-danger w-100 p-3">Not-Approved</h4>
+			@endif
 
 			<br>
 			<br>
@@ -290,31 +283,22 @@
 
 				<div class="language-information">
 					<h5 class="text-center">Language Skill</h5>
-					<form method="post" action="{{ route('languageAdd') }}" enctype="multipart/form-data">
+					<form method="post" action="{{ route('languageUpdate',$user->language->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Language</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="language">
-									<option selected>Select</option>
-									<option value="test">Test</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="language" value='{{$user->language->language}}' readonly placeholder="Enter your Street Address/ Para" required>	
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Oral Skill</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="oral">
-									<option selected>Select</option>
-									<option value="Test">Test</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="oral" value='{{$user->language->oral}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Writing Skill</label>
 							<div class="col-sm-10 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="writing">
-									<option selected>Select</option>
-									<option value="writing">writing</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="writing" value='{{$user->language->writing}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
                         <div class="form-group row ">
@@ -343,13 +327,20 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
+			@if($user->Mailing->is_valid == 1)
+			<h4 class="text-center alert-primary w-100 p-3">Approved</h4>
+			@else
+			<h4 class="text-center alert-danger w-100 p-3">Not-Approved</h4>
+			@endif
 
 
 			<br>
 			<br>
 			<br>
-            <h5 class="text-center">Mailing Information</h5>
-			<form method="post" action="{{ route('mailingAdd') }}" enctype="multipart/form-data">
+			<div class="mailing-information">
+			<h5 class="text-center">Mailing Information</h5>
+			
+			<form method="post" action="{{ route('mailingUpdate',$user->mailing->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Street Address/ Para</label>
@@ -360,42 +351,27 @@
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Division</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="division">
-									<option selected>Select</option>
-									<option value="test">test</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="division" value='{{$user->mailing->division}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">District</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="district">
-									<option selected>Select</option>
-									<option value="test">test</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="district" value='{{$user->mailing->district}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Thana/ Upazilla	</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="thana">
-									<option selected>Select</option>
-									<option value="test">test</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="thana" value='{{$user->mailing->thana}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Ward/ Union</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="ward">
-									<option selected>Select</option>
-									<option value="test">test</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="ward" value='{{$user->mailing->ward}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Area/ Village</label>
 							<div class="col-sm-4 ">
-								<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="area">
-									<option selected>Select</option>
-									<option value="test">test</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="area" value='{{$user->mailing->area}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Post Office</label>
 							<div class="col-sm-4">
@@ -437,6 +413,11 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
+			@if($user->Nominee->is_valid == 1)
+			<h4 class="text-center alert-primary w-100 p-3">Approved</h4>
+			@else
+			<h4 class="text-center alert-danger w-100 p-3">Not-Approved</h4>
+			@endif
 
 
 			<br>
@@ -444,7 +425,7 @@
 			<br>
             <div class="nominee-information">
 					<h5 class="text-center">Nominee Information</h5>
-					<form method="post" action="{{ route('nomineeAdd') }}" enctype="multipart/form-data">
+					<form method="post" action="{{ route('nomineeUpdate',$user->nominee->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Nominee Name</label>
@@ -494,10 +475,15 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
+			@if($user->Personal->is_valid == 1)
+			<h4 class="text-center alert-primary w-100 p-3">Approved</h4>
+			@else
+			<h4 class="text-center alert-danger w-100 p-3">Not-Approved</h4>
+			@endif
 			<div class="personal-information">
 				<h5 class="text-center">Personal Information</h5>
 				<div class="personal-fild">
-					<form method="post" action="{{ route('personalAdd') }}" enctype="multipart/form-data">
+					<form method="post" action="{{ route('personalupdate',$user->personal->id) }}" enctype="multipart/form-data">
 						@csrf
 						<div class="form-group row">
 							<label for="first-name" class="col-sm-2 col-form-label ">First name</label>
@@ -546,11 +532,7 @@
 						<div class="form-group row">
 							<label for="birth-country" class="col-sm-2 col-form-label ">Birth country</label>
 							<div class="col-sm-10 ">
-								<select id="inputState" class="form-control" name="country">
-									<option selected> Select </option>
-									<option value="bangladesh">Bangladesh</option>
-									<option value="india">India</option>
-								</select>
+							<input type="text" class="form-control" id="" name="country" value='{{$user->personal->country}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
 
@@ -576,35 +558,20 @@
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label">Gender</label>
 							<div class="col-sm-10 ">
-								<select id="" class="form-control" name="gender" required>
-									<option value="" selected>Select</option>
-									<option value="Male" >Male</option>
-									<option value="Female" >Female</option>
-								</select>
+							<input type="text" class="form-control" id="" name="gender" value='{{$user->personal->gender}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
 
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label">Marital Status</label>
 							<div class="col-sm-10 ">
-								<select id="" class="form-control" name="marital" required>
-									<option value="" selected>Select</option>
-									<option value="Married" >Married</option>
-									<option value="Unmarried" >Unmarried</option>
-								</select>
+							<input type="text" class="form-control" id="" name="marital" value='{{$user->personal->marital}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label">Religion</label>
 							<div class="col-sm-10 ">
-								<select id="" class="form-control" name="religion" required>
-									<option value="" selected>Select</option>
-									<option value="Islam" >Islam</option>
-									<option value="Hinduism" >Hinduism</option>
-									<option value="Christianity" >Christianity</option>
-									<option value="Buddhism" >Buddhism</option>
-									<option value="Others" >Others</option>
-								</select>
+							<input type="text" class="form-control" id="" name="religion" value='{{$user->personal->religion}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
 						<div class="form-group row">
@@ -647,25 +614,13 @@
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label">Desired Job (Please select three options)</label>
 							<div class="col-sm-3 ">
-								<select id="" class="form-control" name="d_job1" required>
-									<option value="select" selected>Desired Job 1</option>
-									<option value="0">Web Developer</option>
-									<option value="1">Software Engineer</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="d_job1" value='{{$user->personal->d_job1}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 							<div class="col-sm-3 ">
-								<select id="" class="form-control" name="d_job2" required>
-									<option value="select" selected>Desired Job 1</option>
-									<option value="0">Web Developer</option>
-									<option value="1">Software Engineer</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="d_job2" value='{{$user->personal->d_job2}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 							<div class="col-sm-3 ">
-								<select id="" class="form-control" name="d_job3" required>
-									<option value="select" selected>Desired Job 1</option>
-									<option value="0">Web Developer</option>
-									<option value="1">Software Engineer</option>
-								  </select>
+							<input type="text" class="form-control" id="" name="d_job3" value='{{$user->personal->d_job3}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
 

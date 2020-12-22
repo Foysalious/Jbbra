@@ -9,6 +9,8 @@
   Tags: app, Tech-Foring landing page, app landing page, app showcase template, application services, gradient color, landing, marketing, responsive template, seo, software, Software Services, startup, tech, web application landing page.
 ---------------------------------------->
 */
+
+
 /*
 >>> TABLE OF CONTENTS:
 <----------------------------------------------------------------
@@ -27,33 +29,100 @@
 /*--------------------------------------------------------------
 Typography
 --------------------------------------------------------------*/
+
 * {
-  padding: 0;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  outline: none;
-  border: none;
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
 }
 
 body {
-  position: relative;
+    position: relative;
 }
 
 body.dark .section {
-  background: #10163A;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+    background: #10163A;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .registration-logo .logo-image img {
-  height: 100px;
-  width: auto;
+    height: 100px;
+    width: auto;
+}
+
+.registration-logo h4 {
+    text-align: center;
+    margin: 0 auto;
+    width: 20% !important;
+    border-radius: 5px;
 }
 
 .registration-logo .personal-information h5 {
-  background-color: #b5e1f3;
-  height: 50px;
-  line-height: 50px;
+    background-color: #b5e1f3;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+    width: 30%;
+    margin: 20px auto;
 }
+
+.registration-logo .nominee-information h5 {
+    background-color: #b5e1f3;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+    width: 30%;
+    margin: 20px auto;
+}
+
+.registration-logo .mailing-information h5 {
+    background-color: #b5e1f3;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+    width: 30%;
+    margin: 20px auto;
+}
+
+.registration-logo .language-information h5 {
+    background-color: #b5e1f3;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+    width: 30%;
+    margin: 20px auto;
+}
+
+.registration-logo .experience-information h5 {
+    background-color: #b5e1f3;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+    width: 30%;
+    margin: 20px auto;
+}
+
+.registration-logo .educational-information h5 {
+    background-color: #b5e1f3;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+    width: 30%;
+    margin: 20px auto;
+}
+
+.registration-logo .address-fild h5 {
+    background-color: #b5e1f3;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 5px;
+    width: 30%;
+    margin: 20px auto;
+}
+
+
 /*# sourceMappingURL=style.css.map */

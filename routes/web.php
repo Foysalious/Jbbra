@@ -79,6 +79,11 @@ Route::get('UserCheck/{user:id}', 'Backend\UsersController@edit')->name('UserChe
 Route::post('Usersaddition', 'Backend\UsersController@store')->name('usersAddition');
 Route::post('Usersdelete/{user:id}', 'Backend\UsersController@destroy')->name('userDelete');
 
-
+Route::group(['prefix' => 'my-profile'], function(){
+    Route::get('/{user:id}','Backend\ProfileController@edit')->name('profile.edit');
+    Route::post('/update/{user:id}','Backend\ProfileController@update')->name('profile.update');
+    Route::post('/update-password/{user:id}','Backend\ProfileController@updatePassword')->name('password.update');
+    Route::post('/delete-profile/{user:id}','Backend\ProfileController@destroy')->name('profile.delete');
+});
 
 });

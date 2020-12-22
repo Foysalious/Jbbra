@@ -21,7 +21,8 @@ class CanExperienceController extends Controller
      */
     public function index()
     {
-        return view('backend.pages.form.experience');
+        $experiences = Experience::orderBy('id','desc')->get();
+        return view('backend.pages.form.experience',compact('experiences'));
     }
 
     /**

@@ -20,7 +20,8 @@ class CanPersonalController extends Controller
      */
     public function index()
     {
-        return view('backend.pages.form.personal');
+        $personals = Personal::orderBy('id','desc')->get();
+        return view('backend.pages.form.personal',compact('personals'));
     }
 
     /**

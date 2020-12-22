@@ -22,7 +22,8 @@ class CanEducationalController extends Controller
      */
     public function index()
     {
-        return view('backend.pages.form.education');
+        $educations = Education::orderBy('id','desc')->get();
+        return view('backend.pages.form.education',compact('educations'));
     }
 
     /**

@@ -20,7 +20,8 @@ class CanNomineeController extends Controller
      */
     public function index()
     {
-        return view('backend.pages.form.nominee');
+        $nominees = Nominee::orderBy('id','desc')->get();
+        return view('backend.pages.form.nominee',compact('nominees'));
     }
 
     /**

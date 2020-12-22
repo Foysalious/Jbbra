@@ -20,7 +20,8 @@ class CanMailingController extends Controller
      */
     public function index()
     {
-        return view('backend.pages.form.mailing');
+        $mailings = Mailing::orderBy('id','desc')->get();
+        return view('backend.pages.form.mailing',compact('mailings'));
     }
 
     /**

@@ -26,11 +26,11 @@
             </div>
         </section>
         <!-- page indicator end -->
-
+        </div>
+        </div>
         <!-- dashbaord statistics seciton start -->
         <section class="statistics">
 
-          
             <!-- add row start -->
             <div class="row add-row">
                 <div class="col-md-12 text-right">
@@ -38,7 +38,7 @@
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         add new persona
                     </button>
-    @endif
+                @endif
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -625,8 +625,8 @@
         </section>
         <!-- dashbaord statistics seciton end -->
 
-    </div>
-</div>
+    
+
 <!-- main content end -->
 
 @endsection

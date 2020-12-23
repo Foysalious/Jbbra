@@ -1,18 +1,12 @@
 @extends('backend.template.layout')
 @section('body-content')
 <!-- main content start -->
-<div class="main-content">
-    <div class="container-fluid">
-
-    
-
-
-
 
 
 <!-- main content start -->
 <div class="main-content">
     <div class="container-fluid">
+  
         
         <!-- page indicator start -->
         <section class="page-indicator">
@@ -29,7 +23,9 @@
                 </div>
             </div>
         </section>
+   
         <!-- page indicator end -->
+
 
         <!-- dashbaord statistics seciton start -->
         <section class="statistics">
@@ -350,6 +346,8 @@
         <!-- dashbaord statistics seciton end -->
 
     </div>
+
 </div>
-<!-- main content end -->
+
+        <!-- main content end -->
 @endsection

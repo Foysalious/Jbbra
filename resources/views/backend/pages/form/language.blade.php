@@ -1,8 +1,7 @@
 @extends('backend.template.layout')
 @section('body-content')
 <!-- main content start -->
-<div class="main-content">
-    <div class="container-fluid">
+
         
       
 <div class="main-content">

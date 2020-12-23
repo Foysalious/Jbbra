@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Personal;
-// use Brian2694\Toastr\Facades\Toastr;
+use Brian2694\Toastr\Facades\Toastr;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
 use Auth;
@@ -161,7 +161,7 @@ class CanPersonalController extends Controller
             File::delete('images/personal/'. $personal->image);
         }
         $personal->delete();
-        // Toastr::error('personal Information Deleted');
+        Toastr::error('personal Information Deleted');
         return redirect()->route('personal');
     }
 }

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Address;
-// use Brian2694\Toastr\Facades\Toastr;
+ use Brian2694\Toastr\Facades\Toastr;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
 use Auth;
@@ -117,7 +117,7 @@ class CanAdressController extends Controller
     public function destroy(Address $address)
     {
         $address->delete();
-        Toastr::error('address Deleted');
+       Toastr::error('address Deleted');
        return redirect()->route('address');
     }
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Nominee;
-// use Brian2694\Toastr\Facades\Toastr;
+ use Brian2694\Toastr\Facades\Toastr;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
 use Auth;
@@ -108,7 +108,7 @@ class CanNomineeController extends Controller
     public function destroy(Nominee $nominee)
     {
         $nominee->delete();
-        Toastr::error('nominee Deleted');
+      Toastr::error('nominee Deleted');  
        return redirect()->route('nominee');
     }
 }

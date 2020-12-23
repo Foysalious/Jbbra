@@ -34,10 +34,11 @@
             <!-- add row start -->
             <div class="row add-row">
                 <div class="col-md-12 text-right">
+                @if(App\Personal::count()<1  )
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         add new persona
                     </button>
-
+    @endif
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">

@@ -44,6 +44,7 @@
             <!-- add row start -->
             <div class="row add-row">
                 <div class="col-md-12 text-right">
+                @if(App\Nominee::count()<1  )
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         add new nominee
                     </button>
@@ -116,6 +117,7 @@
 
                 </div>
             </div>
+            @endif
             <!-- add row end -->
 
 

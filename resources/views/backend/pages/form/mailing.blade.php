@@ -42,6 +42,7 @@
             <!-- add row start -->
             <div class="row add-row">
                 <div class="col-md-12 text-right">
+                @if(App\Mailing::count()<1  )
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         add new Category
                     </button>
@@ -131,6 +132,7 @@
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                             </div>
+                            @endif
                         </div>
                     </div>   
 

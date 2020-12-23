@@ -32,6 +32,7 @@
             <!-- add row start -->
             <div class="row add-row">
                 <div class="col-md-12 text-right">
+                @if(App\Language::count()<3 )
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         add new language
                     </button>
@@ -102,6 +103,7 @@
                             </div>
                             </div>
                         </div>
+                        @endif
                     </div>   
 
                 </div>

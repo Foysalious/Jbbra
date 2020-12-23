@@ -38,10 +38,11 @@
             <!-- add row start -->
             <div class="row add-row">
                 <div class="col-md-12 text-right">
+                @if(App\Address::count()<2  )
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         add new address
                     </button>
-
+                
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -64,7 +65,8 @@
 									<br>
 									<br>
 									<br>
-										<div class="address-fild">
+										
+                                        <div class="address-fild">
 											<h5 class="text-center">Address</h5>
 											<form method="post" action="{{ route('addressAdd') }}" enctype="multipart/form-data">
 											@csrf
@@ -144,6 +146,7 @@
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                             </div>
+                            @endif
                         </div>
                     </div>   
 

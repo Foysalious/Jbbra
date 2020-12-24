@@ -25,20 +25,66 @@
         <!-- dashbaord statistics seciton start -->
         <section class="statistics">
             <div class="row">
-                
                 <!--- stat card start -->
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <a href="">
                         <div class="stat-card">
-                            <i class="fas fa-history"></i>
-                          
+                            <div><i class="fas fa-history"></i></div>
+                            <div class="tex-center"></div><p>Dummy</p>
+                            <div class="tex-center"></div><p>10</p>
+                        </div>
+                    </a>                
+                </div>
+                <div class="col-md-4">
+                    <a href="">
+                        <div class="stat-card">
+                            <div><i class="fas fa-history"></i></div>
+                            <div class="tex-center"></div><p>Dummy</p>
+                            <div class="tex-center"></div><p>10</p>
+                        </div>
+                    </a>                
+                </div>
+                <div class="col-md-4">
+                    <a href="">
+                        <div class="stat-card">
+                            <div><i class="fas fa-history"></i></div>
+                            <div class="tex-center"></div><p>Dummy</p>
+                            <div class="tex-center"></div><p>10</p>
                         </div>
                     </a>                
                 </div>
                 <!--- stat card end -->
-
+            </div>
+            <div class="row">
+                <!--- stat card start -->
+                <div class="col-md-4">
+                    <a href="">
+                        <div class="stat-card">
+                            <div><i class="fas fa-history"></i></div>
+                            <div class="tex-center"></div><p>Dummy</p>
+                            <div class="tex-center"></div><p>10</p>
+                        </div>
+                    </a>                
+                </div>
+                <div class="col-md-4">
+                    <a href="">
+                        <div class="stat-card">
+                            <div><i class="fas fa-history"></i></div>
+                            <div class="tex-center"></div><p>Dummy</p>
+                            <div class="tex-center"></div><p>10</p>
+                        </div>
+                    </a>                
+                </div>
+                <div class="col-md-4">
+                    <a href="">
+                        <div class="stat-card">
+                            <div><i class="fas fa-history"></i></div>
+                            <div class="tex-center"></div><p>Dummy</p>
+                            <div class="tex-center"></div><p>10</p>
+                        </div>
+                    </a>                
+                </div>
                 <!--- stat card end -->
-
             </div>
         </section>
         <!-- dashbaord statistics seciton end -->

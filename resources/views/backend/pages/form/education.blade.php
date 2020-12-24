@@ -80,9 +80,18 @@
 													<label for="" class="col-sm-2 col-form-label ">Board</label>
 													<div class="col-sm-4 ">
 														<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="board">
-															<option selected>Select</option>
-															<option value="Dhaka">Dhaka</option>
-															<option value="Chittagong">Chittagong</option>
+                                                        <option value="select" selected>Select</option>
+                                                        <option value="N/A">N/A</option>
+                                                        <option value="Rajshahi Board">Dhaka Board</option>
+                                                        <option value="Rajshahi Board">Rajshahi Board</option>
+                                                        <option value="Comilla Board">Comilla Board</option>
+                                                        <option value="Jessore Board">Jessore Board</option>
+                                                        <option value="Chittagong Board">Chittagong Board</option>
+                                                        <option value="Barisal Board">Barisal Board</option>
+                                                        <option value="Sylhet Board">Sylhet Board</option>
+                                                        <option value="Dinajpur Board">Dinajpur Board</option>
+                                                        <option value="Madrasha Board">Madrasha Board</option>
+                                                        <option value="Technical - SSC(Vocational)">Technical - SSC(Vocational)</option>
 														</select>
 													</div>
 													<label for="" class="col-sm-2 col-form-label ">Subject</label>

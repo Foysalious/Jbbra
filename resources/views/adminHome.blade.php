@@ -23,24 +23,44 @@
         <!-- page indicator end -->
 
         <!-- dashbaord statistics seciton start -->
-        <section class="statistics">
-            <div class="row">
-                
+    <section class="statistics">
+        
+        <div class="row"> 
                 <!--- stat card start -->
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <a href="">
                         <div class="stat-card">
-                            <i class="fas fa-history"></i>
-                          
+                            <div><i class="fas fa-history"></i></div>
+                            <div class="tex-center"></div><p>Total Candidate</p>
+                           
+                            
+                            <div class="tex-center"></div><p>{{$count}}</p>
+                        </div>
+                    </a>                
+                </div>
+                <div class="col-md-4">
+                    <a href="">
+                        <div class="stat-card">
+                            <div><i class="fas fa-history"></i></div>
+                            <div class="tex-center"></div><p>Verified Candidate</p>
+                            
+                            <div class="tex-center"></div><p>{{$count1}}</p>
+                        </div>
+                    </a>                
+                </div>
+                <div class="col-md-4">
+                    <a href="">
+                        <div class="stat-card">
+                            <div><i class="fas fa-history"></i></div>
+                            <div class="tex-center"></div><p>Non Verified Candidate</p>
+                            
+                            <div class="tex-center"></div><p> {{$count2}}</p>
                         </div>
                     </a>                
                 </div>
                 <!--- stat card end -->
-
-                <!--- stat card end -->
-
-            </div>
-        </section>
+        </div>
+    </section>
         <!-- dashbaord statistics seciton end -->
 
     </div>

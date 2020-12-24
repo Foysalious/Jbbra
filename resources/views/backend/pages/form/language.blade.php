@@ -66,16 +66,15 @@
 												<div class="form-group row">
 													<label for="" class="col-sm-2 col-form-label ">Language</label>
 													<div class="col-sm-4 ">
-														<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="language">
-															<option selected>Select</option>
-															<option value="test">Test</option>
-														</select>
+                                                        <input type="text" class="form-control" id="" name="grade" placeholder="Enter The Language" required>
 													</div>
 													<label for="" class="col-sm-2 col-form-label ">Oral Skill</label>
 													<div class="col-sm-4 ">
 														<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="oral">
-															<option selected>Select</option>
-															<option value="Test">Test</option>
+                                                        <option value="select" selected>Select</option>
+                                                        <option value="Excellent">Excellent</option>
+                                                        <option value="Good">Good</option>
+                                                        <option value="Workable">Workable</option>
 														</select>
 													</div>
 												</div>
@@ -83,8 +82,10 @@
 													<label for="" class="col-sm-2 col-form-label ">Writing Skill</label>
 													<div class="col-sm-10 ">
 														<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="writing">
-															<option selected>Select</option>
-															<option value="writing">writing</option>
+                                                        <option value="select" selected>Select</option>
+                                                        <option value="Excellent">Excellent</option>
+                                                        <option value="Good">Good</option>
+                                                        <option value="Workable">Workable</option>
 														</select>
 													</div>
 												</div>

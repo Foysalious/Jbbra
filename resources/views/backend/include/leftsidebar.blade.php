@@ -45,7 +45,13 @@
 
                         <!-- nav single view start -->
                         <li >
-                            <a href="">
+                        @if(Auth::user()->is_admin == 0)
+                            <a href="{{route('home')}}">
+                            @elseif(Auth::user()->is_admin ==1 )
+                            <a href="{{route('admin.home')}}">
+                            @else
+                            <a href="{{route('employeeHome')}}">
+                            @endif
                             <div class="left">
                                     dashboard
                             </div>
@@ -55,7 +61,7 @@
                             </a>
                         </li>
                         <!-- nav single view end -->
-
+                        
                         @if(Auth::user()->is_admin == 1)
                         
                         <li >

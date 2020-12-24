@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+Use App\User;
 
 class HomeController extends Controller
 {
@@ -33,7 +34,10 @@ class HomeController extends Controller
      */
     public function adminHome()
     {
-        return view('adminHome');
+        $count = User::orderBy('id','desc')->where('is_admin',0)->count();
+        $count1 = User::orderBy('id','desc')->where('is_valid',0)->where('is_admin',0)->count();
+        $count2 = User::orderBy('id','desc')->where('is_valid',1)->where('is_admin',0)->count();
+        return view('adminHome',compact('count','count1','count2'));   
     }
 
     public function employeeHome()

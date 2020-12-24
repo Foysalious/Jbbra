@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Redirect;
 use App\Education;
 use Brian2694\Toastr\Facades\Toastr;
 use Intervention\Image\Facades\Image;
@@ -94,7 +94,8 @@ class CanEducationalController extends Controller
         $education->board = $request->board;
         $education->subject = $request->subject;
         $education->grade = $request->grade;
-        $education->user_id = Auth::user()->id;
+        $education->is_valid = $request->is_valid;
+       
         $education->save();
         // Toastr::success('Personal Info');
         return redirect()->route('education');
@@ -111,5 +112,19 @@ class CanEducationalController extends Controller
         $education->delete();
          Toastr::error('personal Information Deleted');
         return redirect()->route('education');
+    }
+
+    public function updates(Request $request, Education $education)
+    {
+        $education->name = $request->name;
+        $education->p_year = $request->p_year;
+        $education->board = $request->board;
+        $education->subject = $request->subject;
+        $education->grade = $request->grade;
+        $education->is_valid = $request->is_valid;
+       
+        $education->save();
+        // Toastr::success('Personal Info');
+        return Redirect::back()->with('message','Operation Successful !');
     }
 }

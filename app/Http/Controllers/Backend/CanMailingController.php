@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Mailing;
+use Redirect;
 use Brian2694\Toastr\Facades\Toastr;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
@@ -101,7 +102,7 @@ class CanMailingController extends Controller
         $mailing->email = $request->email;
         $mailing->phone = $request->phone;
         
-        $mailing->user_id = Auth::user()->id;
+        $mailing->is_valid = $request->is_valid;
         $mailing->save();
         // Toastr::success('Personal Info');
         return redirect()->route('mailing');
@@ -118,5 +119,23 @@ class CanMailingController extends Controller
         $mailing->delete();
         Toastr::error('mailing Deleted');
        return redirect()->route('mailing');
+    }
+
+    public function updates(Request $request,Mailing $mailing)
+    {
+        $mailing->street = $request->street;
+        $mailing->district = $request->district;
+        $mailing->division = $request->division;
+        $mailing->thana = $request->thana;
+        $mailing->ward = $request->ward;
+        $mailing->area = $request->area;
+        $mailing->post = $request->post;
+        $mailing->email = $request->email;
+        $mailing->phone = $request->phone;
+        
+        $mailing->is_valid = $request->is_valid;
+        $mailing->save();
+        // Toastr::success('Personal Info');
+        return Redirect::back()->with('message','Operation Successful !');
     }
 }

@@ -54,6 +54,10 @@ body.dark .section {
     width: auto;
 }
 
+.btn {
+    border-radius: 3px !important;
+}
+
 .registration-logo h4 {
     text-align: center;
     margin: 0 auto;

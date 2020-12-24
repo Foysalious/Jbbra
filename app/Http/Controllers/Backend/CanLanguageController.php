@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Language;
+use Redirect;
  use Brian2694\Toastr\Facades\Toastr;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
@@ -89,7 +90,8 @@ class CanLanguageController extends Controller
         $language->oral = $request->oral;
         $language->writing = $request->writing;
         
-        $language->user_id = Auth::user()->id;
+        $language->is_valid = $request->is_valid;
+
         $language->save();
         // Toastr::success('Personal Info');
         return redirect()->route('language');
@@ -106,5 +108,18 @@ class CanLanguageController extends Controller
         $language->delete();
         Toastr::error('Experience Deleted');
        return redirect()->route('language');
+    }
+
+    public function updates(Request $request, Language $language)
+    {
+        $language->language = $request->language;
+        $language->oral = $request->oral;
+        $language->writing = $request->writing;
+        
+        $language->is_valid = $request->is_valid;
+
+        $language->save();
+        // Toastr::success('Personal Info');
+        return Redirect::back()->with('message','Operation Successful !');
     }
 }

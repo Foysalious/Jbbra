@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Nominee;
+use Redirect;
  use Brian2694\Toastr\Facades\Toastr;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
@@ -93,7 +94,8 @@ class CanNomineeController extends Controller
         $nominee->phone = $request->phone;
         $nominee->address = $request->address;
         
-        $nominee->user_id = Auth::user()->id;
+        $nominee->is_valid = $request->is_valid;
+
         $nominee->save();
         // Toastr::success('Personal Info');
         return redirect()->route('nominee');
@@ -110,5 +112,20 @@ class CanNomineeController extends Controller
         $nominee->delete();
       Toastr::error('nominee Deleted');  
        return redirect()->route('nominee');
+    }
+    public function updates(Request $request, Nominee $nominee)
+    {
+       
+
+        $nominee->name = $request->name;
+        $nominee->relation = $request->relation;
+        $nominee->phone = $request->phone;
+        $nominee->address = $request->address;
+        
+        $nominee->is_valid = $request->is_valid;
+
+        $nominee->save();
+        // Toastr::success('Personal Info');
+        return Redirect::back()->with('message','Operation Successful !');
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Redirect;
 use App\Address;
  use Brian2694\Toastr\Facades\Toastr;
 use Intervention\Image\Facades\Image;
@@ -73,7 +73,7 @@ class CanAdressController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified resource. 
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -101,8 +101,9 @@ class CanAdressController extends Controller
         $address->post = $request->post;
         $address->email = $request->email;
         $address->phone = $request->phone;
+        $address->is_valid = $request->is_valid;
         
-        $address->user_id = Auth::user()->id;
+        
         $address->save();
         // Toastr::success('Personal Info');
         return redirect()->route('address');
@@ -119,5 +120,24 @@ class CanAdressController extends Controller
         $address->delete();
        Toastr::error('address Deleted');
        return redirect()->route('address');
+    }
+
+    public function updates(Request $request, Address $address)
+    {
+        $address->street = $request->street;
+        $address->disctrict = $request->disctrict;
+        $address->division = $request->division;
+        $address->thana = $request->thana;
+        $address->ward = $request->ward;
+        $address->area = $request->area;
+        $address->post = $request->post;
+        $address->email = $request->email;
+        $address->phone = $request->phone;
+        $address->is_valid = $request->is_valid;
+        
+        
+        $address->save();
+        // Toastr::success('Personal Info');
+        return Redirect::back()->with('message','Operation Successful !');
     }
 }

@@ -39,7 +39,7 @@
 				<div class="address-fild">
 					<h5 class="text-center">Address</h5>
 					
-					<form method="post" action="{{ route('addressUpdate',$user->address->id) }}" enctype="multipart/form-data">
+					<form method="post" action="{{ route('addressUpdates',$user->address->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Street Address/ Para</label>
@@ -102,7 +102,7 @@
                                 </div>
 							</div>
 						<div class="form-group row">
-							<div class="col-sm-10">
+							<div class="col-sm-12 text-center">
 							  <button type="submit" class="btn btn-info">Submit</button>
 							</div>
 						  </div>
@@ -126,7 +126,7 @@
             <div class="educational-information">
 					<h5 class="text-center">Educational Information</h5>
 				
-					<form method="post" action="{{ route('educationUpdate',$user->education->id) }}" enctype="multipart/form-data">
+					<form method="post" action="{{ route('educationUpdates',$user->education->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Degree Name</label>
@@ -166,7 +166,7 @@
                                 </div>
 							</div>
 						<div class="form-group row">
-							<div class="col-sm-10">
+							<div class="col-sm-12 text-center">
 							  <button type="submit" class="btn btn-info">Submit</button>
 							</div>
 						  </div>
@@ -191,7 +191,7 @@
             <div class="experience-information">
 					<h5 class="text-center">Experience Skill</h5>
 					
-					<form method="post" action="{{ route('experienceUpdate',$user->experience->id) }}" enctype="multipart/form-data">
+					<form method="post" action="{{ route('experienceUpdates',$user->experience->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Company Name</label>
@@ -261,7 +261,7 @@
                                 </div>
 							</div>
 						<div class="form-group row">
-							<div class="col-sm-10">
+							<div class="col-sm-12 text-center">
 							  <button type="submit" class="btn btn-info">Submit</button>
 							</div>
 						  </div>
@@ -287,7 +287,7 @@
 
 				<div class="language-information">
 					<h5 class="text-center">Language Skill</h5>
-					<form method="post" action="{{ route('languageUpdate',$user->language->id) }}" enctype="multipart/form-data">
+					<form method="post" action="{{ route('languageUpdates',$user->language->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Language</label>
@@ -317,7 +317,7 @@
                                 </div>
 							</div>
 						<div class="form-group row">
-							<div class="col-sm-10">
+							<div class="col-sm-12 text-center">
 							  <button type="submit" class="btn btn-info">Submit</button>
 							</div>
 						  </div>
@@ -346,7 +346,7 @@
 			<div class="mailing-information">
 			<h5 class="text-center">Mailing Information</h5>
 						
-			<form method="post" action="{{ route('mailingUpdate',$user->mailing->id) }}" enctype="multipart/form-data">
+			<form method="post" action="{{ route('mailingUpdates',$user->mailing->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Street Address/ Para</label>
@@ -406,7 +406,7 @@
                                 </div>
 							</div>
 						<div class="form-group row">
-							<div class="col-sm-10">
+							<div class="col-sm-12 text-center">
 							  <button type="submit" class="btn btn-info">Submit</button>
 							</div>
 						  </div>
@@ -430,7 +430,7 @@
 			<br>
             <div class="nominee-information">
 					<h5 class="text-center">Nominee Information</h5>
-					<form method="post" action="{{ route('nomineeUpdate',$user->nominee->id) }}" enctype="multipart/form-data">
+					<form method="post" action="{{ route('nomineeUpdates',$user->nominee->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Nominee Name</label>
@@ -467,7 +467,7 @@
 							</div>
 
 						<div class="form-group row">
-							<div class="col-sm-10">
+							<div class="col-sm-12 text-center">
 							  <button type="submit" class="btn btn-info">Submit</button>
 							</div>
 						  </div>
@@ -490,7 +490,7 @@
 			<div class="personal-information">
 				<h5 class="text-center">Personal Information</h5>
 				<div class="personal-fild">
-					<form method="post" action="{{ route('personalupdate',$user->personal->id) }}" enctype="multipart/form-data">
+					<form method="post" action="{{ route('personalupdates',$user->personal->id) }}" enctype="multipart/form-data">
 						@csrf
 						<div class="form-group row">
 							<label for="first-name" class="col-sm-2 col-form-label ">First name</label>
@@ -651,11 +651,16 @@
 							</div>
 
 						<div class="form-group row">
-						  <div class="col-sm-10">
+						  <div class="col-sm-12 text-center">
 							<button type="submit" class="btn btn-info">Submit</button>
 						  </div>
 						</div>
 					  </form>
+					  
+						<div class="col-md-12 text-center my-5">
+							<a href="{{ route('Notverified')}}" class="btn btn-danger px-5">Back</a>
+						</div>
+					 
 				</div>
 
         </section>

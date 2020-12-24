@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Redirect;
 use App\Experience;
 use Brian2694\Toastr\Facades\Toastr;
 use Intervention\Image\Facades\Image;
@@ -102,7 +102,7 @@ class CanExperienceController extends Controller
         $experience->email = $request->email;
         $experience->responsibilty = $request->responsibilty;
         $experience->achivements = $request->achivements;
-        $experience->user_id = Auth::user()->id;
+        $experience->is_valid = $request->is_valid;
         $experience->save();
         // Toastr::success('Personal Info');
         return redirect()->route('experience');
@@ -119,5 +119,23 @@ class CanExperienceController extends Controller
         $experience->delete();
         Toastr::error('Experience Deleted');
        return redirect()->route('experience');
+    }
+
+    public function updates(Request $request, Experience $experience)
+    {
+        $experience->name = $request->name;
+        $experience->post = $request->post;
+        $experience->from = $request->from;
+        $experience->till = $request->till;
+        $experience->address = $request->address;
+        $experience->phone = $request->phone;
+        $experience->cPerson = $request->cPerson;
+        $experience->email = $request->email;
+        $experience->responsibilty = $request->responsibilty;
+        $experience->achivements = $request->achivements;
+        $experience->is_valid = $request->is_valid;
+        $experience->save();
+        // Toastr::success('Personal Info');
+        return Redirect::back()->with('message','Operation Successful !');
     }
 }

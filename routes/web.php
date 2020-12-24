@@ -35,35 +35,42 @@ Route::get('nominee', 'Backend\CanNomineeController@index')->name('nominee');
 
 Route::post('personalAdd', 'Backend\CanPersonalController@store')->name('personalAdd');
 Route::post('personalEdit/{personal:id}', 'Backend\CanPersonalController@update')->name('personalupdate');
+Route::post('personalEdited/{personal:id}', 'Backend\CanPersonalController@updates')->name('personalupdates');
 Route::post('personalDelete/{personal:id}', 'Backend\CanPersonalController@destroy')->name('personalDelete');
 
 Route::post('educationAdd', 'Backend\CanEducationalController@store')->name('educationAdd');
 Route::post('educationEdit/{education:id}', 'Backend\CanEducationalController@update')->name('educationUpdate');
+Route::post('educationEdited/{education:id}', 'Backend\CanEducationalController@updates')->name('educationUpdates');
 Route::post('educationDelete/{education:id}', 'Backend\CanEducationalController@destroy')->name('educationDelete');
 
 Route::post('experienceAdd', 'Backend\CanExperienceController@store')->name('experienceAdd');
 Route::post('experienceEdit/{experience:id}', 'Backend\CanExperienceController@update')->name('experienceUpdate');
+Route::post('experienceEdited/{experience:id}', 'Backend\CanExperienceController@updates')->name('experienceUpdates');
 Route::post('experienceDelete/{experience:id}', 'Backend\CanExperienceController@destroy')->name('experienceDelete');
 
 Route::post('languageAdd', 'Backend\CanLanguageController@store')->name('languageAdd');
 Route::post('languageEdit/{language:id}', 'Backend\CanLanguageController@update')->name('languageUpdate');
+Route::post('languageEdited/{language:id}', 'Backend\CanLanguageController@updates')->name('languageUpdates');
 Route::post('languageDelete/{language:id}', 'Backend\CanLanguageController@destroy')->name('languageDelete');
 
 Route::post('nomineeAdd', 'Backend\CanNomineeController@store')->name('nomineeAdd');
 Route::post('nomineeEdit/{nominee:id}', 'Backend\CanNomineeController@update')->name('nomineeUpdate');
+Route::post('nomineeEdited/{nominee:id}', 'Backend\CanNomineeController@updates')->name('nomineeUpdates');
 Route::post('nomineeDelete/{nominee:id}', 'Backend\CanNomineeController@destroy')->name('nomineeDelete');
 
 Route::post('mailingAdd', 'Backend\CanMailingController@store')->name('mailingAdd');
 Route::post('mailingEdit/{mailing:id}', 'Backend\CanMailingController@update')->name('mailingUpdate');
+Route::post('mailingEdited/{mailing:id}', 'Backend\CanMailingController@updates')->name('mailingUpdates');
 Route::post('mailingDelete/{mailing:id}', 'Backend\CanMailingController@destroy')->name('mailingDelete');
 
 Route::post('addressAdd', 'Backend\CanAdressController@store')->name('addressAdd');
 Route::post('addressEdit/{address:id}', 'Backend\CanAdressController@update')->name('addressUpdate');
+Route::post('addressEdited/{address:id}', 'Backend\CanAdressController@updates')->name('addressUpdates');
 Route::post('addressDelete/{address:id}', 'Backend\CanAdressController@destroy')->name('addressDelete');
 
 
 // });
-// Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){
+// Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){ 
 
 Route::get('verified', 'Backend\verifiedController@index')->name('verified');
 Route::get('notVerified', 'Backend\verifiedController@notVerified')->name('Notverified');

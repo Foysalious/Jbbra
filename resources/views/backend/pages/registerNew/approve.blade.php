@@ -38,6 +38,7 @@
 			<br>
 				<div class="address-fild">
 					<h5 class="text-center">Address</h5>
+					
 					<form method="post" action="{{ route('addressUpdate',$user->address->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
@@ -94,8 +95,8 @@
                                 <div class="col-sm-3">
                                         <select id="" class="form-control" name="is_valid" required>
                                             <option value="select" selected>Please Validate</option>
-                                            <option value="0"{{ $user->Address->is_valid == 0 ? 'selected' : '' }}>Approved</option>
-                                            <option value="1"{{ $user->Address->is_valid == 1 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="0"{{ $user->Address->is_valid == 0 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="1"{{ $user->Address->is_valid == 1 ? 'selected' : '' }}>Approved</option>
                                             
                                         </select>
                                 </div>
@@ -113,16 +114,18 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
-			@if($user->education->is_valid == 1)
-			<h4 class="text-center alert-primary w-100 p-3">Approved</h4>
+			@if($user->Education->is_valid == 1)
+			<h4 class="text-center alert-primary w-100 p-3 ">Approved</h4>
 			@else
 			<h4 class="text-center alert-danger w-100 p-3">Not-Approved</h4>
 			@endif
+			
 			<br>
 			<br>
 			<br>
             <div class="educational-information">
 					<h5 class="text-center">Educational Information</h5>
+				
 					<form method="post" action="{{ route('educationUpdate',$user->education->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
@@ -156,8 +159,8 @@
                                 <div class="col-sm-3">
                                         <select id="" class="form-control" name="is_valid" required>
                                             <option value="select" selected>Please Validate</option>
-                                            <option value="0"{{ $user->education->is_valid == 0 ? 'selected' : '' }}>Approved</option>
-                                            <option value="1"{{ $user->education->is_valid == 1 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="0"{{ $user->education->is_valid == 0 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="1"{{ $user->education->is_valid == 1 ? 'selected' : '' }}>Approved</option>
                                             
                                         </select>
                                 </div>
@@ -176,17 +179,18 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
+		
 			@if($user->Experience->is_valid == 1)
-			<h4 class="text-center alert-primary w-100 p-3">Approved</h4>
+			<h4 class="text-center alert-primary w-100 p-3 ">Approved</h4>
 			@else
 			<h4 class="text-center alert-danger w-100 p-3">Not-Approved</h4>
 			@endif
-
 			<br>
 			<br>
 			<br>
             <div class="experience-information">
 					<h5 class="text-center">Experience Skill</h5>
+					
 					<form method="post" action="{{ route('experienceUpdate',$user->experience->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
@@ -236,7 +240,7 @@
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Responsibility</label>
 							<div class="col-sm-10 ">
-								<input type="text" class="form-control" id="" name="responsibilty" value='{{$user->experience->responsibility}}' placeholder="Enter your Responsibility" required>
+								<input type="text" class="form-control" id="" name="responsibilty" value='{{$user->experience->responsibilty}}' placeholder="Enter your Responsibility" required>
 							</div>
 						</div>
 						<div class="form-group row">
@@ -250,8 +254,8 @@
                                 <div class="col-sm-3">
                                         <select id="" class="form-control" name="is_valid" required>
                                             <option value="select" selected>Please Validate</option>
-                                            <option value="0"{{ $user->experience->is_valid == 0 ? 'selected' : '' }}>Approved</option>
-                                            <option value="1"{{ $user->experience->is_valid == 1 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="0"{{ $user->experience->is_valid == 0 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="1"{{ $user->experience->is_valid == 1 ? 'selected' : '' }}>Approved</option>
                                             
                                         </select>
                                 </div>
@@ -272,7 +276,7 @@
                 </div>
 			</div>
 			@if($user->Language->is_valid == 1)
-			<h4 class="text-center alert-primary w-100 p-3">Approved</h4>
+			<h4 class="text-center alert-primary w-100 p-3 ">Approved</h4>
 			@else
 			<h4 class="text-center alert-danger w-100 p-3">Not-Approved</h4>
 			@endif
@@ -306,8 +310,8 @@
                                 <div class="col-sm-3">
                                         <select id="" class="form-control" name="is_valid" required>
                                             <option value="select" selected>Please Validate</option>
-                                            <option value="0"{{ $user->language->is_valid == 0 ? 'selected' : '' }}>Approved</option>
-                                            <option value="1"{{ $user->language->is_valid == 1 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="0"{{ $user->language->is_valid == 0 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="1"{{ $user->language->is_valid == 1 ? 'selected' : '' }}>Approved</option>
                                             
                                         </select>
                                 </div>
@@ -327,11 +331,13 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
+		
 			@if($user->Mailing->is_valid == 1)
-			<h4 class="text-center alert-primary w-100 p-3">Approved</h4>
+			<h4 class="text-center alert-primary w-100 p-3 ">Approved</h4>
 			@else
 			<h4 class="text-center alert-danger w-100 p-3">Not-Approved</h4>
 			@endif
+
 
 
 			<br>
@@ -339,7 +345,7 @@
 			<br>
 			<div class="mailing-information">
 			<h5 class="text-center">Mailing Information</h5>
-			
+						
 			<form method="post" action="{{ route('mailingUpdate',$user->mailing->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
@@ -393,8 +399,8 @@
                                 <div class="col-sm-3">
                                         <select id="" class="form-control" name="is_valid" required>
                                             <option value="select" selected>Please Validate</option>
-                                            <option value="0"{{ $user->mailing->is_valid == 0 ? 'selected' : '' }}>Approved</option>
-                                            <option value="1"{{ $user->mailing->is_valid == 1 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="0"{{ $user->mailing->is_valid == 0 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="1"{{ $user->mailing->is_valid == 1 ? 'selected' : '' }}>Approved</option>
                                             
                                         </select>
                                 </div>
@@ -414,11 +420,10 @@
                 </div>
 			</div>
 			@if($user->Nominee->is_valid == 1)
-			<h4 class="text-center alert-primary w-100 p-3">Approved</h4>
+			<h4 class="text-center alert-primary w-100 p-3 ">Approved</h4>
 			@else
 			<h4 class="text-center alert-danger w-100 p-3">Not-Approved</h4>
 			@endif
-
 
 			<br>
 			<br>
@@ -454,8 +459,8 @@
                                 <div class="col-sm-3">
                                         <select id="" class="form-control" name="is_valid" required>
                                             <option value="select" selected>Please Validate</option>
-                                            <option value="0"{{ $user->nominee->is_valid == 0 ? 'selected' : '' }}>Approved</option>
-                                            <option value="1"{{ $user->nominee->is_valid == 1 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="0"{{ $user->nominee->is_valid == 0 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="1"{{ $user->nominee->is_valid == 1 ? 'selected' : '' }}>Approved</option>
                                             
                                         </select>
                                 </div>
@@ -475,11 +480,13 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
+			
 			@if($user->Personal->is_valid == 1)
-			<h4 class="text-center alert-primary w-100 p-3">Approved</h4>
+			<h4 class="text-center alert-primary w-100 p-3 ">Approved</h4>
 			@else
 			<h4 class="text-center alert-danger w-100 p-3">Not-Approved</h4>
 			@endif
+
 			<div class="personal-information">
 				<h5 class="text-center">Personal Information</h5>
 				<div class="personal-fild">
@@ -636,8 +643,8 @@
                                 <div class="col-sm-3">
                                         <select id="" class="form-control" name="is_valid" required>
                                             <option value="select" selected>Please Validate</option>
-                                            <option value="0"{{ $user->nominee->personal == 0 ? 'selected' : '' }}>Approved</option>
-                                            <option value="1"{{ $user->nominee->personal == 1 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="0"{{ $user->nominee->personal == 0 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="1"{{ $user->nominee->personal == 1 ? 'selected' : '' }}>Approved</option>
                                             
                                         </select>
                                 </div>

@@ -46,8 +46,11 @@
                                     <!-- change the data-percent for increase and decrease the progress-circle bar -->
                                 </div>
                             
-                                
+                                @if (App\User::orderBy('id','desc')->where('is_valid',1)->where('id',Auth::user()->id)->get())
+                                <div class="text-center progress-text">Profile is live </div>
+                                @else
                                 <div class="text-center progress-text">Profile is not live yet.</div>
+                                @endif
                             </div>
                         </div>
                         </div>

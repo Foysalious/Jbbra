@@ -28,7 +28,8 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
-			@if($user->Address->is_valid == 1)
+			@foreach(App\Address::orderBy('id','asc')->where('user_id',$user->id)->get() as $Address) 
+			@if($Address->is_valid == 1)
 			<h4 class="text-center alert-primary w-100 p-3 ">Approved</h4>
 			@else
 			<h4 class="text-center alert-danger w-100 p-3">Not-Approved</h4>
@@ -39,22 +40,22 @@
 				<div class="address-fild">
 					<h5 class="text-center">Address</h5>
 					
-					<form method="post" action="{{ route('addressUpdates',$user->address->id) }}" enctype="multipart/form-data">
+					<form method="post" action="{{ route('addressUpdates',$Address->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Street Address/ Para</label>
 							<div class="col-sm-10 ">
-							  <input type="text" class="form-control" id="" name="street" value='{{$user->address->street}}' placeholder="Enter your Street Address/ Para" required>
+							  <input type="text" class="form-control" id="" name="street" value='{{$Address->street}}' placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Division</label>
 							<div class="col-sm-4 ">
-							<input type="text" class="form-control" id="" name="division" value='{{$user->address->division}}' readonly placeholder="Enter your Street Address/ Para" required>
+							<input type="text" class="form-control" id="" name="division" value='{{$Address->division}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">District</label>
 							<div class="col-sm-4 ">
-							<input type="text" class="form-control" id="" name="disctrict" value='{{$user->address->disctrict}}' readonly placeholder="Enter your Street Address/ Para" required>	
+							<input type="text" class="form-control" id="" name="disctrict" value='{{$Address->disctrict}}' readonly placeholder="Enter your Street Address/ Para" required>	
 							</div>
 						</div>
 						<div class="form-group row">
@@ -67,27 +68,27 @@
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Ward/ Union</label>
 							<div class="col-sm-4 ">
-							<input type="text" class="form-control" id="" name="ward" value='{{$user->address->ward}}' readonly placeholder="Enter your Street Address/ Para" required>	
+							<input type="text" class="form-control" id="" name="ward" value='{{$Address->ward}}' readonly placeholder="Enter your Street Address/ Para" required>	
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Area/ Village</label>
 							<div class="col-sm-4 ">
-							<input type="text" class="form-control" id="" name="area" value='{{$user->address->area}}' readonly placeholder="Enter your Street Address/ Para" required>								
+							<input type="text" class="form-control" id="" name="area" value='{{$Address->area}}' readonly placeholder="Enter your Street Address/ Para" required>								
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Post Office</label>
 							<div class="col-sm-4">
-								<input type="number" class="form-control" id="" value='{{$user->address->post}}' name="post" placeholder="Enter your Postal code" required>
+								<input type="number" class="form-control" id="" value='{{$Address->post}}' name="post" placeholder="Enter your Postal code" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Email</label>
 							<div class="col-sm-4 ">
-								<input type="email" class="form-control" id="" name="email" value='{{$user->address->email}}' placeholder="Enter your Email Address" required>
+								<input type="email" class="form-control" id="" name="email" value='{{$Address->email}}' placeholder="Enter your Email Address" required>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Phone/ Mobile</label>
 							<div class="col-sm-4 ">
-								<input type="text" class="form-control" id="" name="phone" value='{{$user->address->phone}}' placeholder="Enter your Phone/ Mobile no" required>
+								<input type="text" class="form-control" id="" name="phone" value='{{$Address->phone}}' placeholder="Enter your Phone/ Mobile no" required>
 							</div>
 						</div>
                         <div class="form-group row ">
@@ -95,8 +96,8 @@
                                 <div class="col-sm-3">
                                         <select id="" class="form-control" name="is_valid" required>
                                             <option value="select" selected>Please Validate</option>
-                                            <option value="0"{{ $user->Address->is_valid == 0 ? 'selected' : '' }}>Not Approved</option>
-                                            <option value="1"{{ $user->Address->is_valid == 1 ? 'selected' : '' }}>Approved</option>
+                                            <option value="0"{{ $Address->is_valid == 0 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="1"{{ $Address->is_valid == 1 ? 'selected' : '' }}>Approved</option>
                                             
                                         </select>
                                 </div>
@@ -107,6 +108,7 @@
 							</div>
 						  </div>
 						  </form>
+						  @endforeach
 
                           <section class="registration-logo container">
             <div class="text-center">
@@ -114,6 +116,7 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
+			@foreach(App\Education::orderBy('id','desc')->where('user_id',$user->id)->get() as $education) 
 			@if($user->Education->is_valid == 1)
 			<h4 class="text-center alert-primary w-100 p-3 ">Approved</h4>
 			@else
@@ -126,32 +129,32 @@
             <div class="educational-information">
 					<h5 class="text-center">Educational Information</h5>
 				
-					<form method="post" action="{{ route('educationUpdates',$user->education->id) }}" enctype="multipart/form-data">
+					<form method="post" action="{{ route('educationUpdates',$education->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Degree Name</label>
 							<div class="col-sm-4 ">
-							<input type="text" class="form-control" id="" name="area" value='{{$user->education->name}}' readonly placeholder="Enter your Street Address/ Para" required>	
+							<input type="text" class="form-control" id="" name="area" value='{{$education->name}}' readonly placeholder="Enter your Street Address/ Para" required>	
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Passing Year</label>
 							<div class="col-sm-4 ">
-							  <input type="number" class="form-control" id="" name="p_year" value='{{$user->education->p_year}}' placeholder="Enter your Passing Year" required>
+							  <input type="number" class="form-control" id="" name="p_year" value='{{$education->p_year}}' placeholder="Enter your Passing Year" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Board</label>
 							<div class="col-sm-4 ">
-							<input type="text" class="form-control" id="" name="board" value='{{$user->education->board}}' readonly placeholder="Enter your Street Address/ Para" required>	
+							<input type="text" class="form-control" id="" name="board" value='{{$education->board}}' readonly placeholder="Enter your Street Address/ Para" required>	
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Subject</label>
 							<div class="col-sm-4 ">
-							<input type="text" class="form-control" id="" name="subject" value='{{$user->education->subject}}' readonly placeholder="Enter your Street Address/ Para" required>	
+							<input type="text" class="form-control" id="" name="subject" value='{{$education->subject}}' readonly placeholder="Enter your Street Address/ Para" required>	
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Grade/Division </label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" id="" name="grade"  value='{{$user->education->grade}}' placeholder="Enter your Street Address/ Para" required>
+								<input type="text" class="form-control" id="" name="grade"  value='{{$education->grade}}' placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
 						<div class="form-group row ">
@@ -159,8 +162,8 @@
                                 <div class="col-sm-3">
                                         <select id="" class="form-control" name="is_valid" required>
                                             <option value="select" selected>Please Validate</option>
-                                            <option value="0"{{ $user->education->is_valid == 0 ? 'selected' : '' }}>Not Approved</option>
-                                            <option value="1"{{ $user->education->is_valid == 1 ? 'selected' : '' }}>Approved</option>
+                                            <option value="0"{{ $education->is_valid == 0 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="1"{{ $education->is_valid == 1 ? 'selected' : '' }}>Approved</option>
                                             
                                         </select>
                                 </div>
@@ -171,6 +174,7 @@
 							</div>
 						  </div>
 					</form>
+					@endforeach
 				</div>
 
                 <section class="registration-logo container">
@@ -179,7 +183,7 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
-		
+			@foreach(App\Experience::orderBy('id','desc')->where('user_id',$user->id)->get() as $experience) 
 			@if($user->Experience->is_valid == 1)
 			<h4 class="text-center alert-primary w-100 p-3 ">Approved</h4>
 			@else
@@ -190,63 +194,64 @@
 			<br>
             <div class="experience-information">
 					<h5 class="text-center">Experience Skill</h5>
+				
 					
-					<form method="post" action="{{ route('experienceUpdates',$user->experience->id) }}" enctype="multipart/form-data">
+					<form method="post" action="{{ route('experienceUpdates',$experience->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Company Name</label>
 							<div class="col-sm-4 ">
-								<input type="text" class="form-control" id="" name="name" value='{{$user->experience->name}}' placeholder="Enter the company name" required>
+								<input type="text" class="form-control" id="" name="name" value='{{$experience->name}}' placeholder="Enter the company name" required>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Post Held</label>
 							<div class="col-sm-4 ">
-								<input type="text" class="form-control" id="" name="post"value='{{$user->experience->post}}'  placeholder="Enter the Post Held" required>
+								<input type="text" class="form-control" id="" name="post"value='{{$experience->post}}'  placeholder="Enter the Post Held" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Serve From</label>
 							<div class="col-sm-4 ">
-								<input type="date" class="form-control" id="" name="from"value='{{$user->experience->from}}'   required>
+								<input type="date" class="form-control" id="" name="from"value='{{$experience->from}}'   required>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Serve Till</label>
 							<div class="col-sm-4 ">
-								<input type="date/text" class="form-control" id="" name="till" value='{{$user->experience->till}}' placeholder="Enter the Serve Till Date" required>
+								<input type="date/text" class="form-control" id="" name="till" value='{{$experience->till}}' placeholder="Enter the Serve Till Date" required>
 							</div>
 						</div>
 
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Address</label>
 							<div class="col-sm-10 ">
-								<input type="date/text" class="form-control" id="" name="address" value='{{$user->experience->address}}' placeholder="Enter the company Address" required>
+								<input type="date/text" class="form-control" id="" name="address" value='{{$experience->address}}' placeholder="Enter the company Address" required>
 							</div>
 						</div>
 
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Phone/Mobile*</label>
 							<div class="col-sm-4 ">
-								<input type="text" class="form-control" id="" name="phone" value='{{$user->experience->phone}}' required>
+								<input type="text" class="form-control" id="" name="phone" value='{{$experience->phone}}' required>
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Contact Person</label>
 							<div class="col-sm-4 ">
-								<input type="text" class="form-control" id="" name="cPerson" value='{{$user->experience->cPerson}}' placeholder="Enter the content person Information" required>
+								<input type="text" class="form-control" id="" name="cPerson" value='{{$experience->cPerson}}' placeholder="Enter the content person Information" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Email</label>
 							<div class="col-sm-10 ">
-								<input type="email" class="form-control" id="" name="email" value='{{$user->experience->email}}' placeholder="Enter the email address" required>
+								<input type="email" class="form-control" id="" name="email" value='{{$experience->email}}' placeholder="Enter the email address" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Responsibility</label>
 							<div class="col-sm-10 ">
-								<input type="text" class="form-control" id="" name="responsibilty" value='{{$user->experience->responsibilty}}' placeholder="Enter your Responsibility" required>
+								<input type="text" class="form-control" id="" name="responsibilty" value='{{$experience->responsibilty}}' placeholder="Enter your Responsibility" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Achievement</label>
 							<div class="col-sm-10 ">
-								<input type="text" class="form-control" id="" name="achivements" value='{{$user->experience->achivements}}'  placeholder="Enter your Achievements" required>
+								<input type="text" class="form-control" id="" name="achivements" value='{{$experience->achivements}}'  placeholder="Enter your Achievements" required>
 							</div>
 						</div>
 						<div class="form-group row ">
@@ -254,8 +259,8 @@
                                 <div class="col-sm-3">
                                         <select id="" class="form-control" name="is_valid" required>
                                             <option value="select" selected>Please Validate</option>
-                                            <option value="0"{{ $user->experience->is_valid == 0 ? 'selected' : '' }}>Not Approved</option>
-                                            <option value="1"{{ $user->experience->is_valid == 1 ? 'selected' : '' }}>Approved</option>
+                                            <option value="0"{{ $experience->is_valid == 0 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="1"{{ $experience->is_valid == 1 ? 'selected' : '' }}>Approved</option>
                                             
                                         </select>
                                 </div>
@@ -266,6 +271,7 @@
 							</div>
 						  </div>
 					</form>
+					@endforeach
 				</div>
                 </section>
 
@@ -275,6 +281,7 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
+			@foreach(App\Language::orderBy('id','desc')->where('user_id',$user->id)->get() as $language) 
 			@if($user->Language->is_valid == 1)
 			<h4 class="text-center alert-primary w-100 p-3 ">Approved</h4>
 			@else
@@ -287,22 +294,23 @@
 
 				<div class="language-information">
 					<h5 class="text-center">Language Skill</h5>
-					<form method="post" action="{{ route('languageUpdates',$user->language->id) }}" enctype="multipart/form-data">
+				
+					<form method="post" action="{{ route('languageUpdates',$language->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Language</label>
 							<div class="col-sm-4 ">
-							<input type="text" class="form-control" id="" name="language" value='{{$user->language->language}}' readonly placeholder="Enter your Street Address/ Para" required>	
+							<input type="text" class="form-control" id="" name="language" value='{{$language->language}}' readonly placeholder="Enter your Street Address/ Para" required>	
 							</div>
 							<label for="" class="col-sm-2 col-form-label ">Oral Skill</label>
 							<div class="col-sm-4 ">
-							<input type="text" class="form-control" id="" name="oral" value='{{$user->language->oral}}' readonly placeholder="Enter your Street Address/ Para" required>
+							<input type="text" class="form-control" id="" name="oral" value='{{$language->oral}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="" class="col-sm-2 col-form-label ">Writing Skill</label>
 							<div class="col-sm-10 ">
-							<input type="text" class="form-control" id="" name="writing" value='{{$user->language->writing}}' readonly placeholder="Enter your Street Address/ Para" required>
+							<input type="text" class="form-control" id="" name="writing" value='{{$language->writing}}' readonly placeholder="Enter your Street Address/ Para" required>
 							</div>
 						</div>
                         <div class="form-group row ">
@@ -310,8 +318,8 @@
                                 <div class="col-sm-3">
                                         <select id="" class="form-control" name="is_valid" required>
                                             <option value="select" selected>Please Validate</option>
-                                            <option value="0"{{ $user->language->is_valid == 0 ? 'selected' : '' }}>Not Approved</option>
-                                            <option value="1"{{ $user->language->is_valid == 1 ? 'selected' : '' }}>Approved</option>
+                                            <option value="0"{{ $language->is_valid == 0 ? 'selected' : '' }}>Not Approved</option>
+                                            <option value="1"{{ $language->is_valid == 1 ? 'selected' : '' }}>Approved</option>
                                             
                                         </select>
                                 </div>
@@ -322,6 +330,7 @@
 							</div>
 						  </div>
 					</form>
+					@endforeach
 				</div>
 
                 <!-- dashbaord statistics seciton start -->
@@ -411,6 +420,7 @@
 							</div>
 						  </div>
 					</form>
+					
 				</div>
 
                 <section class="registration-logo container">
@@ -419,6 +429,7 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
+			
 			@if($user->Nominee->is_valid == 1)
 			<h4 class="text-center alert-primary w-100 p-3 ">Approved</h4>
 			@else
@@ -430,6 +441,7 @@
 			<br>
             <div class="nominee-information">
 					<h5 class="text-center">Nominee Information</h5>
+					
 					<form method="post" action="{{ route('nomineeUpdates',$user->nominee->id) }}" enctype="multipart/form-data">
 					@csrf
 						<div class="form-group row">
@@ -472,6 +484,7 @@
 							</div>
 						  </div>
 					</form>
+				
 				</div>
 
                 <section class="registration-logo container">
@@ -480,7 +493,7 @@
                     <img src="{{asset('assets/image/01.png')}}" alt="n/a">
                 </div>
 			</div>
-			
+
 			@if($user->Personal->is_valid == 1)
 			<h4 class="text-center alert-primary w-100 p-3 ">Approved</h4>
 			@else

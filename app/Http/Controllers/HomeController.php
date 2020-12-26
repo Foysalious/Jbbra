@@ -4,6 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 Use App\User;
+Use App\Address;
+Use App\Education;
+Use App\Experience;
+Use App\language;
+Use App\Mailing;
+Use App\Nominee;
+Use App\Personal;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -24,7 +32,51 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        if (Address::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->get()) {
+            $addressBar=10;
+        }
+        else{
+            $addressBar=0;
+        }
+
+        if (Education::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->get()) {
+            $educationBar=10;
+        }
+        else{
+            $educationBar=0;
+        }
+        if (Experience::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->get()) {
+            $experience=15;
+        }
+        else{
+            $experience=0;
+        }
+        if (Language::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->get()) {
+            $languageBar=10;
+        }
+        else{
+            $languageBar=0;
+        }
+        if (Mailing::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->get()) {
+            $mailBar=20;
+        }
+        else{
+            $mailBar=0;
+        }
+        if (Nominee::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->get()) {
+            $NomineeBar=15;
+        }
+        else{
+            $NomineeBar=0;
+        }
+        if (Personal::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->get()) {
+            $PersonalBar=20;
+        }
+        else{
+            $PersonalBar=0;
+        }
+        return view('backend.dashboard',compact('addressBar','educationBar','languageBar','mailBar','NomineeBar','PersonalBar','experience'));
     }
 
     /**

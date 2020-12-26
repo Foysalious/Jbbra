@@ -23,7 +23,9 @@
 	<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 
 	
-     
+	<script src="{{asset('candidate/assets/js/all.js')}}"></script>
+	<script src="{{asset('candidate/assets/js/jQuery-plugin-progressbar.js')}}"></script>
+    <script src="{{asset('candidate/assets/js/function.js')}}"></script>
 
 	
 

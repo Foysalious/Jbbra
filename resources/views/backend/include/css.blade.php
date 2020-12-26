@@ -25,4 +25,5 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/toastr.css') }}"> 
 <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/rte_theme_default.css') }}"> 
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+<link rel="stylesheet" type="text/css" href="{{asset('candidate/assets/css/style.css')}}">
 

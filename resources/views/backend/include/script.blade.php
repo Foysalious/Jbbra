@@ -26,8 +26,11 @@
 	<script src="{{asset('candidate/assets/js/all.js')}}"></script>
 	<script src="{{asset('candidate/assets/js/jQuery-plugin-progressbar.js')}}"></script>
     <script src="{{asset('candidate/assets/js/function.js')}}"></script>
+	<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 
 	
+	<script type="text/javascript" src="/richtexteditor/rte.js"></script>
+<script type="text/javascript" src='/richtexteditor/plugins/all_plugins.js'></script>
 
 
     <script type="text/javascript">
@@ -41,6 +44,8 @@
 
 <script>
 		var editor1 = new RichTextEditor("#div_editor1");
+		var editor2 = new RichTextEditor("#div_editor2");
+
 </script>
 
 <script type="text/javascript">
@@ -51,9 +56,11 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $('.div_editor11').ckeditor();
+        $('.div_editor1').ckeditor();
     });
 </script>
+
+
 	
 	@yield('js')
 

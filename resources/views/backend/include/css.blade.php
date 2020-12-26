@@ -26,4 +26,5 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/rte_theme_default.css') }}"> 
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('candidate/assets/css/style.css')}}">
+<link rel="stylesheet" href="/richtexteditor/rte_theme_default.css" />
 

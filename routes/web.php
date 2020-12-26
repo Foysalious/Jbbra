@@ -68,6 +68,11 @@ Route::post('addressEdit/{address:id}', 'Backend\CanAdressController@update')->n
 Route::post('addressEdited/{address:id}', 'Backend\CanAdressController@updates')->name('addressUpdates');
 Route::post('addressDelete/{address:id}', 'Backend\CanAdressController@destroy')->name('addressDelete');
 
+Route::get('/notice','Backend\NoticeController@index')->name('noticeShow');
+Route::post('noticeAdd', 'Backend\NoticeController@store')->name('noticeAdd');
+Route::post('noticeAdd/{notice:id}', 'Backend\NoticeController@update')->name('noticeUpdate');
+Route::post('noticeDelete/{notice:id}', 'Backend\NoticeController@destroy')->name('noticeDelete');
+
 
 // });
 // Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){ 

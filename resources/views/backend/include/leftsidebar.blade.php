@@ -93,7 +93,19 @@
                                     Register New User
                             </div>
                             <div class="right">
-                            <i class="fas fa-user-registered"></i>
+                            <i class="far fa-registered"></i>
+                            </div>
+                            </a>
+                        </li>
+
+                        
+                        <li >
+                            <a href="{{route('noticeShow')}}">
+                            <div class="left">
+                                    Notice
+                            </div>
+                            <div class="right">
+                            <i class="far fa-registered"></i>
                             </div>
                             </a>
                         </li>

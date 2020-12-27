@@ -33,44 +33,44 @@ class HomeController extends Controller
     public function index()
     {
 
-        if (Address::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->get()) {
+        if (Address::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->first()) {
             $addressBar=10;
         }
         else{
             $addressBar=0;
         }
 
-        if (Education::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->get()) {
+        if (Education::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->first()) {
             $educationBar=10;
         }
         else{
             $educationBar=0;
         }
-        if (Experience::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->get()) {
+        if (Experience::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->first()) {
             $experience=15;
         }
         else{
             $experience=0;
         }
-        if (Language::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->get()) {
+        if (Language::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->first()) {
             $languageBar=10;
         }
         else{
             $languageBar=0;
         }
-        if (Mailing::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->get()) {
+        if (Mailing::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->first()) {
             $mailBar=20;
         }
         else{
             $mailBar=0;
         }
-        if (Nominee::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->get()) {
+        if (Nominee::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->first()) {
             $NomineeBar=15;
         }
         else{
             $NomineeBar=0;
         }
-        if (Personal::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->get()) {
+        if (Personal::orderBy('id','desc')->where('is_valid',1)->where('user_id',Auth::user()->id)->first()) {
             $PersonalBar=20;
         }
         else{

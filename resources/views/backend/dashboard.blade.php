@@ -63,40 +63,43 @@
     <section class="notification-area">
         <div class="container">
             <h4 class="text-center">Notice Board</h4>
+            @foreach(App\Notice::orderBy('id','desc')->get() as $notice) 
             <div class="notification-bar my-3">
                 <div class="row">
                     <div class="col-md-8 col-xs-8">
                         <div class="notifi-header mx-4">
                             <div class="notifi-text ">
-                                <h6 class="p-0 m-0">Title of Notification</h6>
-                                <p class="m-0 p-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.consectetur adipisicing elit.....</p>
+                                <h4 class="p-0 m-0 notice-header">{{$notice->title}}</h4>
+                                <p class="m-0 p-0">{!!Str::limit($notice->description,200)!!}</p>
                             </div>
                         </div>                        
                     </div>
                     <div class="col-md-2 col-xs-2">
                         <div class="notifi-date text-center">
-                            <h6>19/12/2020</h6>
+                            <h5>{{ $notice->created_at->toDayDateTimeString()}}</h5>
+                           
+
                         </div>
                     </div>
                     <div class="col-md-2 col-xs-2 text-center">
                         <div class="text-center"> 
-                        <button type="submit" class="btn btn-theme py-2 my-2 px-2" data-toggle="modal" data-target="#staticBackdrop">Details...</button> <!-- need different data-target name for open the different modal menu -->
+                        <button type="submit" class="btn btn-theme py-2 my-2 px-2" data-toggle="modal" data-target="#staticBackdrop{{ $notice->id }}">Details...</button> <!-- need different data-target name for open the different modal menu -->
                          <!-- Modal -->
-                            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"> <!-- id name and data-target name should be same for open the modal -->
+                            <div class="modal fade" id="staticBackdrop{{ $notice->id }}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"> <!-- id name and data-target name should be same for open the modal -->
                                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Title of Notification</h5>
+                                    <h5 class="modal-title" id="staticBackdropLabel">{{$notice->title}}</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                     </div>
                                     <div class="modal-body">
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis qui quo sed soluta necessitatibus aperiam doloribus suscipit architecto labore molestiae, optio asperiores quam, nulla provident? Molestias vero ab fugit totam!</p>
+                                    <p>{!!$notice->description!!}</p>
                                     </div>
                                     <div class="modal-footer">
                                     <button type="button" class="btn btn-theme" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Understood</button>
+                                 
                                     </div>
                                 </div>
                                 </div>
@@ -106,94 +109,9 @@
                     </div>
                 </div>
             </div>
-            <div class="notification-bar my-3">
-                <div class="row">
-                    <div class="col-md-8 col-xs-8">
-                        <div class="notifi-header mx-4">
-                            <div class="notifi-text ">
-                                <h6 class="p-0 m-0">Title of Notification</h6>
-                                <p class="m-0 p-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.consectetur adipisicing elit.....</p>
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="col-md-2 col-xs-2">
-                        <div class="notifi-date text-center">
-                            <h6>19/12/2020</h6>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-xs-2 text-center">
-                        <div class="text-center"> 
-                            <button type="submit" class="btn btn-theme py-2 my-2 px-2" data-toggle="modal" data-target="#staticBackdrop2">Details...</button> <!-- need different data-target name for open the different modal menu -->
-                            <!-- Modal -->
-                               <div class="modal fade" id="staticBackdrop2" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"> <!-- id name and data-target name should be same for open the modal -->
-                                   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                   <div class="modal-content">
-                                       <div class="modal-header">
-                                       <h5 class="modal-title" id="staticBackdropLabel">Title of Notification</h5>
-                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                           <span aria-hidden="true">&times;</span>
-                                       </button>
-                                       </div>
-                                       <div class="modal-body">
-                                       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis qui quo sed soluta necessitatibus aperiam doloribus suscipit architecto labore molestiae, optio asperiores quam, nulla provident? Molestias vero ab fugit totam!</p>
-                                       </div>
-                                       <div class="modal-footer">
-                                       <button type="button" class="btn btn-theme" data-dismiss="modal">Close</button>
-                                       <button type="button" class="btn btn-primary">Understood</button>
-                                       </div>
-                                   </div>
-                                   </div>
-                               </div>
-                           <!-- Optional JavaScript; choose one of the two! -->
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="notification-bar my-3">
-                <div class="row">
-                    <div class="col-md-8 col-xs-8">
-                        <div class="notifi-header mx-4">
-                            
-                            <div class="notifi-text ">
-                                <h6 class="p-0 m-0">Title of Notification</h6>
-                                <p class="m-0 p-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit.consectetur adipisicing elit.....</p>
-                            </div>
-                        </div>                        
-                    </div>
-                    <div class="col-md-2 col-xs-2">
-                        <div class="notifi-date text-center">
-                            <h6>19/12/2020</h6>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-xs-2 text-center">
-                        <div class="text-center"> 
-                            <button type="submit" class="btn btn-theme py-2 my-2 px-2" data-toggle="modal" data-target="#staticBackdrop3">Details...</button> <!-- need different data-target name for open the different modal menu -->
-                            <!-- Modal -->
-                               <div class="modal fade" id="staticBackdrop3" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"> <!-- id name and data-target name should be same for open the modal -->
-                                   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                   <div class="modal-content">
-                                       <div class="modal-header">
-                                       <h5 class="modal-title" id="staticBackdropLabel">Title of Notification</h5>
-                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                           <span aria-hidden="true">&times;</span>
-                                       </button>
-                                       </div>
-                                       <div class="modal-body">
-                                       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis qui quo sed soluta necessitatibus aperiam doloribus suscipit architecto labore molestiae, optio asperiores quam, nulla provident? Molestias vero ab fugit totam!</p>
-                                       </div>
-                                       <div class="modal-footer">
-                                       <button type="button" class="btn btn-theme" data-dismiss="modal">Close</button>
-                                       <button type="button" class="btn btn-primary">Understood</button>
-                                       </div>
-                                   </div>
-                                   </div>
-                               </div>
-                           <!-- Optional JavaScript; choose one of the two! -->
-                        </div>
-                    </div>
-                </div>
-            </div>  
+            @endforeach
+            
+            
         </div>
     </section>
     <!-- Notification area end -->

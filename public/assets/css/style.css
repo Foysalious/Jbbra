@@ -128,5 +128,32 @@ body.dark .section {
     margin: 20px auto;
 }
 
+.personal-outfield-area .personal-information .personal-fild {
+    background-color: #F5F5F5;
+    padding: 20px 0;
+}
+
+.personal-outfield-area .personal-information .personal-fild .header-content {
+    padding: 5px;
+    border-bottom: 0.5px solid rgb(109, 109, 109);
+}
+
+.personal-outfield-area .personal-information .personal-fild .header-data {
+    padding: 5px;
+    text-align: center;
+    border-bottom: 0.5px solid rgb(109, 109, 109);
+}
+
+.personal-outfield-area .personal-information .personal-fild .header-content:hover {
+    background-color: #d7d7d7;
+    transition: all 0.1s ease-in-out;
+}
+
+
+/* .personal-outfield-area .personal-information .personal-fild .header-data:hover {
+    background-color: #d7d7d7;
+    transition: all 0.1s ease-in-out;
+} */
+
 
 /*# sourceMappingURL=style.css.map */

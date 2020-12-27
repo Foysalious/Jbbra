@@ -256,7 +256,197 @@
                 </div>
             </div>
             <!-- add row end -->
+            <!-- personal outfield show start -->
+            <section class="personal-outfield-area">
+                <div class="personal-information">
+                    <div class="personal-fild">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <div class="header-content text-center">
+                                    <p>Id No</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>First_Name</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Last_Name</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Father_Name</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Mother_Name</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Mother_Name</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Spouse_Name</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Nid</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Country</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>B_Date</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Age</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Nationality</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Gender</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Marital</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Religion</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Weight</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Height</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Son</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Daughter</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Issue_Date</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>PassNo</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>D_Job1</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>D_Job2</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>D_Job3</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>Image</p>
+                                </div>
+                                <div class="header-content text-center">
+                                    <p>action</p>
+                                </div>
+                            </div>
+                            <div class="col-md-9 col-sm-6">
+                                    @php
+                                    $i = 1;
+                                @endphp
+                                @foreach($personals as $personal)
+                                
+                                <div class="">
+                                    <div class="header-data">
+                                        {{ $i }}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->first_name}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->last_name}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->middle_name}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->father_name}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->mother_name}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->spouse_name}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->nid}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->country}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->b_date}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->age}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->nationality}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->gender}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->marital}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->religion}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->weight}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->height}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->son}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->daughter}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->issue_date}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->passNo}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->d_job1}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->d_job2}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->d_job3}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->image}}
+                                    </div>
+                                    <div class="header-data">
+                                    {{$personal->image}}
+                                    </div>
 
+
+                                </div>
+
+                                @php
+                                $i++;
+                            @endphp
+                            @endforeach
+                            </div>
+                        </div>
+                        
+
+
+                            <div class="col-md-12 text-center my-5">
+                                <a href="" class="btn btn-danger px-5">Back</a>
+                            </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <!-- personal outfield show end -->
 
             <!-- manage row start -->
             <div class="row">

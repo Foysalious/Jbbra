@@ -1,338 +1,362 @@
 /* global css start*/
+
 @font-face {
     font-family: Now;
     src: url(../fonts/Now-Black.woff);
 }
-h1, h2, h3{
-    font-family: 'Ubuntu', sans-serif; 
+
+h1,
+h2,
+h3 {
+    font-family: 'Ubuntu', sans-serif;
     margin: 0;
     color: #000000;
 }
-h1{
+
+h1 {
     font-size: 32px;
     text-transform: capitalize;
 }
-h2{
+
+h2 {
     font-size: 24px;
     text-transform: capitalize;
 }
-h3{
+
+h3 {
     font-size: 15px;
     text-transform: capitalize;
 }
-p{
+
+p {
+    /* font-family: Now; */
+    text-transform: capitalize;
+    margin: 0;
+    font-weight: 600;
+}
+
+label {
+    text-transform: capitalize;
+    margin: 0;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+input {
+    border: 1px solid #d7d7d7;
+    padding: 5px 15px;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
     font-family: Now;
     text-transform: capitalize;
     margin: 0;
     color: #d8d8d8;
     font-size: 14px;
 }
-label{
-    font-family: Now;
-    text-transform: capitalize;
-    margin: 0;
-    font-size: 14px;
-}
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    font-family: Now;
-    text-transform: capitalize;
-    margin: 0;
-    color: #d8d8d8;
-    font-size: 14px;
-}
-a{
-    font-family: Now;
+
+a {
     text-transform: capitalize;
     margin: 0;
     color: #000000;
     font-size: 14px;
+    font-weight: 400;
 }
-li{
-    font-family: Now;
+
+li {
     text-transform: capitalize;
-    list-style: none;;
+    list-style: none;
+    ;
 }
-td{
-    font-family: Now;
-    text-transform: capitalize;
-}
-button{
-    font-family: Now;
+
+td {
     text-transform: capitalize;
 }
-label{
-    font-family: Now;
+
+button {
+    text-transform: capitalize;
+}
+
+label {
     text-transform: capitalize;
     font-weight: 700;
 }
-button:focus{
+
+button:focus {
     box-shadow: none!important;
     outline: none!important
 }
-a:hover{
+
+a:hover {
     text-decoration: none;
 }
-ul{
+
+ul {
     padding: 0;
     margin: 0;
 }
-.body-content{
+
+.body-content {
     width: 100%;
     display: flex;
 }
-.left-sidebar{
-    background: white;
+
+.left-sidebar {
+    background: whitesmoke;
     height: 100vh;
     width: 15%;
+    padding: 10px 0;
 }
-.main-content{
+
+.main-content {
     width: 85%;
     background: #fcfcfc;
     padding-bottom: 50px;
     overflow: hidden;
 }
-.form-control:focus{
+
+.form-control:focus {
     box-shadow: none!important;
 }
-.for-mob{
+
+.for-mob {
     display: none;
 }
-.hide-nav{
+
+.hide-nav {
     display: none;
 }
-button{
+
+button {
     border-radius: 1px!important;
 }
-tr{
+
+tr {
     text-align: center;
 }
-.btn-primary, .btn-secondary{
-    background: #987B4E;
-    border: 1px solid #987B4E;
+
+.btn-primary,
+.btn-secondary {
+    background: #00669B;
+    border: 1px solid #00669B;
 }
-.badge-primary{
-    background: #987B4E;
-    border: 1px solid #987B4E;
+
+.badge-primary {
+    background: #00669B;
+    border: 1px solid #00669B;
 }
-.btn-primary:hover, .btn-secondary:hover{
-    color: #987B4E;
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    color: #00669B;
     background: white;
     border: 1px solid white;
 }
 
-.btn-primary:not(:disabled):not(.disabled).active, 
-.btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle{
-    color: #987B4E;
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show>.btn-primary.dropdown-toggle {
+    color: #00669B;
     background: white;
     border: 1px solid white;
 }
-.btn-secondary:not(:disabled):not(.disabled).active, 
-.btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle{
-    color: #987B4E;
+
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-secondary.dropdown-toggle {
+    color: #00669B;
     background: white;
     border: 1px solid white;
 }
-.form-control:focus{
-    border: 1px solid #987B4E;
+
+.form-control:focus {
+    border: 1px solid #00669B;
 }
-table{
+
+table {
     width: 100%!important;
 }
-.modal-body table thead tr{
-        background: #987B4E!important;
+
+.modal-body table thead tr {
+    background: #00669B!important;
 }
-.rte-modern.rte-desktop.rte-toolbar-default{
+
+.rte-modern.rte-desktop.rte-toolbar-default {
     min-width: unset !important;
 }
+
+
 /* global css end*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* topbar pc start */
-.topbar-pc{
+
+.topbar-pc {
     padding: 15px;
+    background-color: whitesmoke;
 }
-.my-profile ul{
+
+.my-profile ul {
     text-align: right;
 }
-.my-profile ul li{
+
+.my-profile ul li {
     display: inline;
     margin: 0 10px;
 }
-.my-profile ul li a{
+
+.my-profile ul li a {
     color: #b0b2b8;
 }
-.user-admin{
+
+.user-admin {
     position: relative;
 }
-.profile-dropdown{
+
+.profile-dropdown {
     position: absolute;
     top: 100%;
-    right:0%;
+    right: 0%;
     background: white;
     z-index: 2;
     width: 200px;
     border: 1px solid #dad9d9;
     display: none;
 }
-.profile-dropdown ul{
+
+.profile-dropdown ul {
     text-align: left;
 }
-.profile-dropdown ul li{
+
+.profile-dropdown ul li {
     display: block;
     margin: 0;
 }
-.profile-dropdown ul li a{
+
+.profile-dropdown ul li a {
     display: inline-block;
-    padding: 15px; 
+    padding: 15px;
     width: 100%
 }
-.profile-dropdown ul li a:nth-child(odd){
+
+.profile-dropdown ul li a:nth-child(odd) {
     background: #fcfcfc;
-    
 }
-.profile-dropdown ul li a:hover{
-    background: #987B4E;
+
+.profile-dropdown ul li a:hover {
+    background: #00669B;
     color: white;
 }
-.user-admin:hover .profile-dropdown{
+
+.user-admin:hover .profile-dropdown {
     display: block;
 }
-.user-admin{
+
+.user-admin {
     cursor: pointer;
 }
-.user-admin p{
+
+.user-admin p {
     display: inline;
 }
-.logo img{
+
+.logo img {
     width: 30%;
 }
+
+
 /* topbar pc end */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* left sidebar pc start */
-.nav-item ul li a{
+
+.nav-item ul li a {
     width: 100%;
     display: flex;
-    font-weight: 700;
+    font-weight: 500;
 }
-.nav-item ul li a .left{
+
+.nav-item ul li a .left {
     width: 80%;
 }
-.nav-item ul li a .right{
+
+.nav-item ul li a .right {
     width: 20%;
     text-align: right;
 }
-.nav-item{
+
+.nav-item {
     padding: 15px 0;
 }
-.nav-item ul li{
+
+.nav-item ul li {
     margin: 15px 0;
 }
-.nav-item ul li a:hover{
-    color: #987B4E;
+
+.nav-item ul li a:hover {
+    color: #00669B;
 }
-.navbar-dropdown-top{
+
+.navbar-dropdown-top {
     cursor: pointer;
 }
-.navbar-dropdown-child{
+
+.navbar-dropdown-child {
     padding-left: 15px;
     display: none;
 }
 
+
 /* left sidebar pc end */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* dashboard css start */
-.page-indicator{
+
+.page-indicator {
     padding: 15px;
 }
-.page-indicator ul li{
+
+.page-indicator ul li {
     display: inline;
     margin: 0 10px;
     font-weight: 700;
 }
-.page-indicator ul li .fas{
-    background: #987B4E;
+
+.page-indicator ul li .fas {
+    background: #00669B;
     color: white;
     padding: 10px;
     border-radius: 5px;
 }
-section{
+
+section {
     width: 100%;
 }
-.add-row{
+
+.add-row {
     padding: 15px;
     margin: 15px 0
 }
-.add-table{
+
+.add-table {
     background: #ee3466;
     color: white;
 }
-.modal-content{
+
+.modal-content {
     border-radius: unset;
 }
-.add-table-form .form-control{
+
+.add-table-form .form-control {
     border: 1px solid #ee3466;
 }
-.add-table-form .form-control:focus{
+
+.add-table-form .form-control:focus {
     border: 1px solid #000000;
 }
-.table-item{
+
+.table-item {
     background-image: url(images/table-blue.png);
     background-repeat: no-repeat;
     background-position: left;
@@ -342,100 +366,102 @@ section{
     margin: 15px 0;
 }
 
-.table-content{
+.table-content {
     position: absolute;
     top: 50%;
     left: 30px;
     transform: translateY(-50%);
     width: max-content;
 }
-.text-available{
-    color: #987B4E;
+
+.text-available {
+    color: #00669B;
 }
-.text-occupied{
+
+.text-occupied {
     color: #488fe0;
 }
-table{
+
+table {
     box-shadow: #dad9d9 0px 7px 16px -3px;
 }
-table thead tr{
-    background: #987B4E;
+
+table thead tr {
+    background: #00669B;
     color: white;
 }
-.stat-card{
-    background: #987B4E;
+
+.stat-card {
+    background: #00669B;
     padding: 15px;
     text-align: center;
     transition: 0.4s ease-in-out;
     margin-bottom: 15px;
 }
-.stat-card h3{
+
+.stat-card h3 {
     margin: 15px 0;
-    color: white;;
+    color: white;
+    ;
 }
-.stat-card p{
-    color: white;;
+
+.stat-card p {
+    color: white;
+    ;
 }
-.stat-card .fas{
+
+.stat-card .fas {
     color: white;
 }
-.stat-card:hover{
+
+.stat-card:hover {
     transform: scale(1.1);
     transition: 0.4s ease-in-out;
 }
+
+
 /* dashboard css end */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* login page css start */
-.auth{
+
+.auth {
     position: relative;
-    background: #987B4E;
+    background: #00669B;
 }
-.auth .container{
+
+.auth .container {
     height: 100vh;
     position: relative;
 }
-.auth-row{
+
+.auth-row {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 100%;
 }
-.auth-box{
+
+.auth-box {
     display: block;
     margin: 0 auto;
     width: max-content;
 }
+
 .auth-form {
     background: white;
     padding: 15px;
 }
-.auth-logo img{
+
+.auth-logo img {
     margin-bottom: 15px;
     display: block;
     margin: 0 auto 15px auto;
 }
-.submit-btn{
-    background: #987B4E; 
+
+.submit-btn {
+    background: #00669B;
     color: white;
     border: none;
     border-radius: 0px;
@@ -443,35 +469,42 @@ table thead tr{
     margin: 0 auto;
     padding: 10px 20px;
 }
-.submit-btn:hover{
-    color: #987B4E;
+
+.submit-btn:hover {
+    color: #00669B;
     background: white;
 }
-.auth-form .form-control:focus{
-    border: 1px solid #987B4E;
+
+.auth-form .form-control:focus {
+    border: 1px solid #00669B;
 }
-.auth-card a{
+
+.auth-card a {
     display: block;
     text-align: center;
 }
-.auth-card a:hover{
-    color: #987B4E;
+
+.auth-card a:hover {
+    color: #00669B;
 }
-.input-group-text{
-    background-color: #987B4E;
-    border: 1px solid #987B4E;
+
+.input-group-text {
+    background-color: #00669B;
+    border: 1px solid #00669B;
     color: white;
 }
+
+
 /* login page css end */
 
-
-
-.form-group{
+.form-group {
     text-align: left
 }
-.form-control{
+
+.form-control {
     border-radius: 0;
 }
-.default-thhumbnail{
+
+.default-thhumbnail {
     margin: 15px 0
 }

@@ -22,7 +22,7 @@
                     @endif
                     @if(Auth::user()->is_valid == 0 )
                     <p>Not Verified</p>
-                    @elseif(Auth::user()->is_admin == 1)
+                    @elseif(Auth::user()->is_valid == 1)
                     <p>Verified</p>
                     @endif
                     
@@ -105,7 +105,7 @@
                                     Notice
                             </div>
                             <div class="right">
-                            <i class="far fa-registered"></i>
+                            <i class="far fa-flag"></i>
                             </div>
                             </a>
                         </li>

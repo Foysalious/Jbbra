@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="col-md-8 col-sm-12">
-                        <div class="progress-box">
+                        <div class="progress-box"> 
                         <!--progress area -->
                         <div class="frame">
                             <div>
@@ -46,7 +46,7 @@
                                     <!-- change the data-percent for increase and decrease the progress-circle bar -->
                                 </div>
                             
-                                @if (App\User::orderBy('id','desc')->where('is_valid',1)->where('id',Auth::user()->id)->get())
+                                @if (App\User::orderBy('id','desc')->where('is_valid',1)->where('id',Auth::user()->id)->first())
                                 <div class="text-center progress-text">Profile is live </div>
                                 @else
                                 <div class="text-center progress-text">Profile is not live yet.</div>

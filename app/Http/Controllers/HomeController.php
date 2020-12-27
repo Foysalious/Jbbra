@@ -13,6 +13,9 @@ Use App\Nominee;
 Use App\Personal;
 use Auth;
 
+use Barryvdh\DomPDF\ServiceProvider;
+use PDF;
+
 class HomeController extends Controller
 {
     /**
@@ -96,5 +99,13 @@ class HomeController extends Controller
     {
         return view('employeeHome');
     }
+    public function CandidatePDF()
+    {
+        $users = User::orderBy('id','desc')->where('is_admin',0)->where('is_valid',1)->get();
 
+        $prds = compact('users');
+
+        $pdf= PDF::loadView('verifiedUsers', $prds);
+        return $pdf->stream('VerifiedCandidate.pdf');
+    }
 }

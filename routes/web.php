@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use arryvdh\DomPDF\Facade;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::get('experience', 'Backend\CanExperienceController@index')->name('experie
 Route::get('language', 'Backend\CanLanguageController@index')->name('language');
 Route::get('mailing', 'Backend\CanMailingController@index')->name('mailing');
 Route::get('nominee', 'Backend\CanNomineeController@index')->name('nominee');
+
+Route::get('UserReport', 'HomeController@CandidatePDF')->name('getReport');
 
 Route::post('personalAdd', 'Backend\CanPersonalController@store')->name('personalAdd');
 Route::post('personalEdit/{personal:id}', 'Backend\CanPersonalController@update')->name('personalupdate');

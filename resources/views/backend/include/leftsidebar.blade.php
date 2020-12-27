@@ -86,7 +86,17 @@
                             </div>
                             </a>
                         </li>
-
+                        <li >
+                            <a href="{{route('getReport')}}">
+                            <div class="left">
+                                   Download Verified List
+                            </div>
+                            <div class="right">
+                            <i class="fas fa-plane-slash"></i>
+                            </div>
+                            </a>
+                        </li>
+                        
                         <li >
                             <a href="{{route('usersIndex')}}">
                             <div class="left">

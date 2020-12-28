@@ -14,9 +14,20 @@ use arryvdh\DomPDF\Facade;
 |
 */
 
-Route::get('/', function () {
+Route::get('/test', function () {
     return view('welcome');
 }); 
+Route::get('/', 'frontendController@home')->name('index');
+Route::get('/about', 'frontendController@about')->name('about');
+Route::get('/contact', 'frontendController@contact')->name('contact');
+Route::get('/empDashboard', 'frontendController@emp_home')->name('emp_home');
+Route::get('/empHome', 'frontendController@emp_home')->name('emp_home');
+Route::get('/empDashboard', 'frontendController@emp_dash')->name('emp_dash');
+Route::get('/faq', 'frontendController@faq')->name('faq');
+Route::get('/guide', 'frontendController@guide')->name('guide');
+Route::get('/login1', 'frontendController@login1')->name('login1');
+Route::get('/register1', 'frontendController@register1')->name('register1');
+
 
 Auth::routes();
 

@@ -1,0 +1,168 @@
+//*===== banner area css start ======*//
+.banner-area {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    background: linear-gradient(to bottom, #fefefe, #fefefe);
+    @include breakpoint (lg) {
+        height: 550px;
+    }
+    @include breakpoint (lg) {
+        height: 650px;
+        margin-top: 0;
+    }
+    @include breakpoint (xl) {
+        height: 750px;
+    }
+    .banner-position {
+        @extend %absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        @include breakpoint (lg) {
+            top: 48%;
+        }
+        .section-wrapper {
+            width: 100%;
+            @extend %flex;
+            align-items: center;
+            @include breakpoint (max-lg) {
+                display: block;
+            }
+            .banner-text {
+                a {
+                    &.btn {
+                        margin-top: 35px;
+                        height: 45px;
+                        border-radius: 25px;
+                    }
+                }
+            }
+            .banner-thumb {
+                position: relative;
+                width: 50%;
+                @include breakpoint (max-lg) {
+                    display: none;
+                    
+                }
+                img {
+                  max-width: none;
+                  float: left;
+                }
+            }
+        }
+    }
+}
+
+//! gobal banner text
+.banner-text {
+    width: 50%;
+    @include breakpoint (max-lg) {
+        width: 100%;
+    }
+    h2 {
+        margin: 0;
+        font-weight: 600;
+        line-height: 1.2;
+        font-size: 28px;
+        span {
+            font-size: 30px;
+            color: $theme-color;
+            @include breakpoint (sm) {
+                font-size: 60px;
+            }
+        }
+        @include breakpoint (sm) {
+            font-size: 40px;
+        }
+        @include breakpoint (xl) {
+            font-size: 60px;
+            line-height: 85px;
+        }
+    }
+    p {
+        margin: 0;
+        padding-top: 20px;
+        font-size: 18px;
+        @include breakpoint (sm) {
+            font-size: 22px;
+        }
+    }
+}
+//*===== banner area css ends ======*//
+
+//*===== page header area start ======*//
+.page-header {
+    position: relative;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../../assets/images/banner/page-header.jpg);
+    @include breakpoint (sm) {
+        min-height: 400px;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+        .banner-position {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            .banner-content {
+                text-align: center;
+                h2 {
+                    margin: 0;
+                    color: $white-color;
+                    @include breakpoint (max-sm) {
+                        font-size: 25px;
+                    }
+                }
+                ul.banner-link {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    @extend %flex;
+                    justify-content: center;
+                    align-items: center;
+                    li {
+                        margin: 0 5px;
+                        color: $white-color;
+                        &:hover {
+                            a {
+                                &::after {
+                                    left: 0;
+                                    right: auto;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        a {
+                            color: $white-color;
+                            text-decoration: none;
+                            position: relative;
+                            &::after {
+                                @extend %absolute;
+                                bottom: 0;
+                                right: 0;
+                                left: auto;
+                                height: 2px;
+                                width: 0;
+                                transition: all 0.3s ease-in-out;
+                                background: $theme-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//*===== page header area ends  ======*//

@@ -1,0 +1,124 @@
+html body .content-wrapper {
+    padding: 0!important;
+    margin-top: 0!important;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../../assets/images/login/auth-bg-dark.jpg);
+}
+.flexbox-container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100vh;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+body .bg-authentication {
+    position: relative;
+    background-color: #1a233a;
+    box-shadow: -8px 12px 20px 0 rgba(11,26,51,.63)!important;
+}
+
+@media only screen and (min-width: 992px) {
+    .bg-authentication .disable-rounded-right {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  }
+  
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    /* IE Specific CSS */
+    .bg-authentication {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  body .card .card-item{
+      background-color: #272e48;
+  }
+
+  body .card .card-header {
+    color: #8A99B5;
+    border-bottom: 0;
+}
+.divider {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+.divider .divider-text {
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0 1rem;
+}
+
+.divider-text:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    border-top: 1px solid #dfe3e754;
+}
+.divider .divider-text:before {
+    right: 100%;
+}
+
+.divider .divider-text:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    border-top: 1px solid #dfe3e754;
+}
+
+.divider .divider-text:after {
+    left: 100%;
+}
+
+hr {
+    border-color: rgb(226, 215, 215, 35%);
+}
+
+.card-link:hover {
+    color: #fff;
+}
+
+
+.back-link a {
+    height: 40px;
+    width: 40px;
+    line-height: 45px;
+    border-radius: 100%;
+    text-align: center;
+    background: #1a233a;
+    box-shadow: -1px 1px 10px rgb(115, 161, 236, 63%);
+    transition: all 0.3s ease-in-out;
+}
+.bg-authentication:hover .back-link a {
+    transform: rotate(90deg);
+    box-shadow: 3px 6px 10px 0 rgb(151, 160, 175, 63%);
+}
+
+
+.back-link a i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.back-link {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    z-index: 9;
+}

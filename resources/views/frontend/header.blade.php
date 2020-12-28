@@ -59,8 +59,8 @@
 								</li>
 								<div class="auth-sin d-block d-lg-none ml-sm-3">
 									<ul class="list-unstyled mb-0">
-										<li><a href="{{route('login1')}}" class="btn bg-white mr-2 mr-xl-4"><span class="text-dark">Login</span></a></li>
-										<li><a href="{{route('register1')}}" class="btn border-white text-white mt-3"><span class="text-white">Signup</span></a></li>
+										<li><a href="{{route('login')}}" class="btn bg-white mr-2 mr-xl-4"><span class="text-dark">Login</span></a></li>
+										<li><a href="{{route('register')}}" class="btn border-white text-white mt-3"><span class="text-white">Signup</span></a></li>
 									</ul>
 								</div>
                             </ul>
@@ -73,8 +73,8 @@
                     </div>
                     <div class="auth-sin d-none d-lg-block">
                         <ul class="list-unstyled d-flex mb-0">
-                            <li><a href="{{route('login1')}}" class="btn mr-2 mr-xl-4"><span>Login</span></a></li>
-                            <li><a href="{{route('register1')}}" class="btn"><span>Signup</span></a></li>
+                            <li><a href="{{route('login')}}" class="btn mr-2 mr-xl-4"><span>Login</span></a></li>
+                            <li><a href="{{route('register')}}" class="btn"><span>Signup</span></a></li>
                         </ul>
                     </div>
                 </div>

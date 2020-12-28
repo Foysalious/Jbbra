@@ -54,14 +54,11 @@
 									<div class="card-content">
 										<div class="card-body">
 										<form method="POST" action="{{ route('register') }}">
+										@csrf
 												<div class="form-group mb-2">
 													<label for="inputfirstname4">Name</label>
 													<input type="text" class="form-control" id="inputName4" name="name" placeholder="Name">
-													@error('name')
-														<span class="invalid-feedback" role="alert">
-															<strong>{{ $message }}</strong>
-														</span>
-													@enderror
+													
 												</div>
 												<div class="form-row">
 													<div class="col-md-6">
@@ -77,31 +74,20 @@
 														<div class="form-group mb-2">
 															<label for="self-number">Number</label>
 															<input type="text=" class="form-control" name="phone" id="inputNumber" placeholder="Number">
-															@error('number')
-																<span class="invalid-feedback" role="alert">
-																	<strong>{{ $message }}</strong>
-																</span>
-															@enderror
+															
+															
 														</div>
 													</div>
 												</div>
 												<div class="form-group mb-50">
 													<label class="text-bold-600" for="exampleInputEmail1">Email address</label>
 													<input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Email address">
-													@error('email')
-														<span class="invalid-feedback" role="alert">
-															<strong>{{ $message }}</strong>
-														</span>
-													@enderror
+													
 												</div>
 												<div class="form-group mb-4">
 													<label class="text-bold-600" for="exampleInputPassword1">Password</label>
 													<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
-													@error('password')
-														<span class="invalid-feedback" role="alert">
-															<strong>{{ $message }}</strong>
-														</span>
-													@enderror
+													
 												</div>
 												<div class="form-group mb-50">
 													<label class="text-bold-600" for="exampleconfirmPassword">Confirm Password</label>

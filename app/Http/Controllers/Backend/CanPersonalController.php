@@ -192,8 +192,9 @@ class CanPersonalController extends Controller
         $personal->d_job1 = $request->d_job1;
         $personal->d_job2 = $request->d_job2;
         $personal->d_job3 = $request->d_job3;
+        if(Auth::user()->is_admin == 1){
         $personal->is_valid = $request->is_valid;
-
+        }
         if( $request->image ){
             if( File::exists('images/personal/'. $personal->image) ){
                 File::delete('images/personal/'. $personal->image);

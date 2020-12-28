@@ -102,8 +102,10 @@ class CanExperienceController extends Controller
         $experience->email = $request->email;
         $experience->responsibilty = $request->responsibilty;
         $experience->achivements = $request->achivements;
+        if(Auth::user()->is_admin == 1){
         $experience->is_valid = $request->is_valid;
         $experience->save();
+        }
         // Toastr::success('Personal Info');
         return redirect()->route('experience');
     }

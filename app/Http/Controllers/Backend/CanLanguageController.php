@@ -89,9 +89,9 @@ class CanLanguageController extends Controller
         $language->language = $request->language;
         $language->oral = $request->oral;
         $language->writing = $request->writing;
-        
+        if(Auth::user()->is_admin == 1){
         $language->is_valid = $request->is_valid;
-
+        }
         $language->save();
         // Toastr::success('Personal Info');
         return redirect()->route('language');

@@ -94,8 +94,9 @@ class CanEducationalController extends Controller
         $education->board = $request->board;
         $education->subject = $request->subject;
         $education->grade = $request->grade;
+        if(Auth::user()->is_admin == 1){
         $education->is_valid = $request->is_valid;
-       
+        }
         $education->save();
         // Toastr::success('Personal Info');
         return redirect()->route('education');

@@ -101,8 +101,9 @@ class CanMailingController extends Controller
         $mailing->post = $request->post;
         $mailing->email = $request->email;
         $mailing->phone = $request->phone;
-        
+        if(Auth::user()->is_admin == 1){
         $mailing->is_valid = $request->is_valid;
+        }
         $mailing->save();
         // Toastr::success('Personal Info');
         return redirect()->route('mailing');

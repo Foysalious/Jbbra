@@ -101,8 +101,10 @@ class CanAdressController extends Controller
         $address->post = $request->post;
         $address->email = $request->email;
         $address->phone = $request->phone;
+
+        if(Auth::user()->is_admin == 1){
         $address->is_valid = $request->is_valid;
-        
+    }
         
         $address->save();
         // Toastr::success('Personal Info');

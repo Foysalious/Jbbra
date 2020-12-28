@@ -63,40 +63,35 @@
                                                                         <div class="col-sm-4 ">
                                                                             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="division">
                                                                                 <option selected>Select</option>
-                                                                                <option value="test">test</option>
+                                                                                @foreach(App\Division::orderBy('id','desc')->get() as $division) 
+																	                <option value="{{$division->name}}">{{$division->name}}</option>
+																	            @endforeach
                                                                             </select>
                                                                         </div>
                                                                         <label for="" class="col-sm-2 col-form-label ">District</label>
                                                                         <div class="col-sm-4 ">
                                                                             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="district">
                                                                                 <option selected>Select</option>
-                                                                                <option value="test">test</option>
+                                                                                @foreach(App\District::orderBy('id','desc')->get() as $district) 
+																	                <option value="{{$district->name}}">{{$district->name}}</option>
+																	            @endforeach
                                                                             </select>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row">
                                                                         <label for="" class="col-sm-2 col-form-label ">Thana/ Upazilla	</label>
                                                                         <div class="col-sm-4 ">
-                                                                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="thana">
-                                                                                <option selected>Select</option>
-                                                                                <option value="test">test</option>
-                                                                            </select>
+                                                                            <input type="number" class="form-control" id="" name="thana" placeholder="Enter your ward code" required>
                                                                         </div>
                                                                         <label for="" class="col-sm-2 col-form-label ">Ward/ Union</label>
                                                                         <div class="col-sm-4 ">
-                                                                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="ward">
-                                                                                <option selected>Select</option>
-                                                                                <option value="test">test</option>
-                                                                            </select>
+                                                                                <input type="number" class="form-control" id="" name="ward" placeholder="Enter your ward code" required>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row">
                                                                         <label for="" class="col-sm-2 col-form-label ">Area/ Village</label>
                                                                         <div class="col-sm-4 ">
-                                                                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="area">
-                                                                                <option selected>Select</option>
-                                                                                <option value="test">test</option>
-                                                                            </select>
+                                                                            <input type="number" class="form-control" id="" name="area" placeholder="Enter your area code" required>
                                                                         </div>
                                                                         <label for="" class="col-sm-2 col-form-label ">Post Office</label>
                                                                         <div class="col-sm-4">
@@ -181,7 +176,7 @@
                                         {{$mailing->ward}}
                                         </td>
                                         <td>
-                                        {{$mailing->areas}}
+                                        {{$mailing->area}}
                                         </td>
                                         <td>
                                         {{$mailing->post}}
@@ -234,44 +229,39 @@
                                                                         <div class="col-sm-4 ">
                                                                             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="division">
                                                                                 <option selected>Select</option>
-                                                                                <option value="test">test</option>
+                                                                                @foreach(App\Division::orderBy('id','desc')->get() as $division) 
+																		            <option value="{{$division->name}}" {{ ( $division->name == $mailing->division) ? 'selected' : ''}}>{{$division->name}}</option>
+																	            @endforeach
                                                                             </select>
                                                                         </div>
                                                                         <label for="" class="col-sm-2 col-form-label ">District</label>
                                                                         <div class="col-sm-4 ">
                                                                             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="district">
                                                                                 <option selected>Select</option>
-                                                                                <option value="test">test</option>
+                                                                                @foreach(App\District::orderBy('id','desc')->get() as $district) 
+																	                <option value="{{$district->name}}"{{ ( $district->name == $mailing->district) ? 'selected' : ''}}>{{$district->name}}</option>
+																                @endforeach
                                                                             </select>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row">
                                                                         <label for="" class="col-sm-2 col-form-label ">Thana/ Upazilla	</label>
                                                                         <div class="col-sm-4 ">
-                                                                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="thana">
-                                                                                <option selected>Select</option>
-                                                                                <option value="test">test</option>
-                                                                            </select>
+                                                                        <input type="text" class="form-control" id="" name="thana" placeholder="Enter your ward"  value='{{$mailing->thana}}' required>
                                                                         </div>
                                                                         <label for="" class="col-sm-2 col-form-label ">Ward/ Union</label>
                                                                         <div class="col-sm-4 ">
-                                                                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="ward">
-                                                                                <option selected>Select</option>
-                                                                                <option value="test">test</option>
-                                                                            </select>
+                                                                        <input type="text" class="form-control" id="" name="ward" placeholder="Enter your ward"  value='{{$mailing->ward}}' required>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row">
                                                                         <label for="" class="col-sm-2 col-form-label ">Area/ Village</label>
                                                                         <div class="col-sm-4 ">
-                                                                            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="area">
-                                                                                <option selected>Select</option>
-                                                                                <option value="test">test</option>
-                                                                            </select>
+                                                                            <input type="text" class="form-control" id="" name="area" placeholder="Enter your Village"  value='{{$mailing->area}}' required>
                                                                         </div>
                                                                         <label for="" class="col-sm-2 col-form-label ">Post Office</label>
                                                                         <div class="col-sm-4">
-                                                                            <input type="number" class="form-control" id="" name="post" placeholder="Enter your Postal code" value='{{$mailing->post}}' required>
+                                                                            <input type="text" class="form-control" id="" name="post" placeholder="Enter your Postal Address"  value='{{$mailing->post}}' required>
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row">

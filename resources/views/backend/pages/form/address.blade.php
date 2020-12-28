@@ -78,12 +78,9 @@
 															<div class="col-sm-4 ">
 																<select type="text" class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="division">
 																	<option value="Select Division" selected> Select Division </option>
-																	<option value="Dhaka">Dhaka</option>
-																	<option value="Chittagong">Chittagong</option>
-																	<option value="Khulna">Khulna</option>
-																	<option value="Rajshahi">Rajshahi</option>
-																	<option value="Barishal">Barishal</option>
-																	<option value="Sylhet">Sylhet</option>
+																	@foreach(App\Division::orderBy('id','desc')->get() as $division) 
+																	<option value="{{$division->name}}">{{$division->name}}</option>
+																	@endforeach
 																</select>
 															</div>
 															<label for="" class="col-sm-2 col-form-label ">District</label>
@@ -91,134 +88,10 @@
 																<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="disctrict">
 																
 																	<option value="N/A" selected>N/A</option>
+																	@foreach(App\District::orderBy('id','desc')->get() as $district) 
+																	<option value="{{$district->name}}">{{$district->name}}</option>
+																	@endforeach
 																	
-																	<option value="BAGERHAT">BAGERHAT</option>
-																	
-																	<option value="BANDARBAN">BANDARBAN</option>
-																	
-																	<option value="BARGUNA">BARGUNA</option>
-																	
-																	<option value="BARISHAL">BARISHAL</option>
-																	
-																	<option value="BHOLA">BHOLA</option>
-																	
-																	<option value="BOGURA">BOGURA</option>
-																	
-																	<option value="BRAHMANBARIA">BRAHMANBARIA</option>
-																	
-																	<option value="CHANDPUR">CHANDPUR</option>
-																	
-																	<option value="CHATTOGRAM">CHATTOGRAM</option>
-																	
-																	<option value="CHUADANGA">CHUADANGA</option>
-																	
-																	<option value="CUMILLA">CUMILLA</option>
-																	
-																	<option value="COX'S BAZAR">COX'S BAZAR</option>
-																	
-																	<option value="DHAKA">DHAKA</option>
-																	
-																	<option value="DINAJPUR">DINAJPUR</option>
-																	
-																	<option value="FARIDPUR">FARIDPUR</option>
-																	
-																	<option value="FENI">FENI</option>
-																	
-																	<option value="GAIBANDHA">GAIBANDHA</option>
-																	
-																	<option value="GAZIPUR">GAZIPUR</option>
-																	
-																	<option value="GOPALGANJ">GOPALGANJ</option>
-																	
-																	<option value="HABIGANJ">HABIGANJ</option>
-																	
-																	<option value="JOYPURHAT">JOYPURHAT</option>
-																	
-																	<option value="JAMALPUR">JAMALPUR</option>
-																	
-																	<option value="JASHORE">JASHORE</option>
-																	
-																	<option value="JHALAKATI">JHALAKATI</option>
-																	
-																	<option value="JHENAIDAH">JHENAIDAH</option>
-																	
-																	<option value="KHAGRACHHARI">KHAGRACHHARI</option>
-																	
-																	<option value="KHULNA">KHULNA</option>
-																	
-																	<option value="KISHOREGANJ">KISHOREGANJ</option>
-																	
-																	<option value="KURIGRAM">KURIGRAM</option>
-																	
-																	<option value="KUSHTIA">KUSHTIA</option>
-																	
-																	<option value="LAKSHMIPUR">LAKSHMIPUR</option>
-																	
-																	<option value="LALMONIRHAT">LALMONIRHAT</option>
-																	
-																	<option value="MADARIPUR">MADARIPUR</option>
-																	
-																	<option value="MAGURA">MAGURA</option>
-																	
-																	<option value="MANIKGANJ">MANIKGANJ</option>
-																	
-																	<option value="MEHERPUR">MEHERPUR</option>
-																	
-																	<option value="MOULVIBAZAR">MOULVIBAZAR</option>
-																	
-																	<option value="MUNSHIGANJ">MUNSHIGANJ</option>
-																	
-																	<option value="MYMENSINGH">MYMENSINGH</option>
-																	
-																	<option value="NAOGAON">NAOGAON</option>
-																	
-																	<option value="NARAIL">NARAIL</option>
-																	
-																	<option value="NARAYANGANJ">NARAYANGANJ</option>
-																	
-																	<option value="NARSINGDI">NARSINGDI</option>
-																	
-																	<option value="NATORE">NATORE</option>
-																	
-																	<option value="CHAPAINAWABGANJ">CHAPAINAWABGANJ</option>
-																	
-																	<option value="NETROKONA">NETROKONA</option>
-																	
-																	<option value="NILPHAMARI">NILPHAMARI</option>
-																	
-																	<option value="NOAKHALI">NOAKHALI</option>
-																	
-																	<option value="PABNA">PABNA</option>
-																	
-																	<option value="PANCHAGARH">PANCHAGARH</option>
-																	
-																	<option value="PATUAKHALI">PATUAKHALI</option>
-																	
-																	<option value="PIROJPUR">PIROJPUR</option>
-																	
-																	<option value="RAJBARI">RAJBARI</option>
-																	
-																	<option value="RAJSHAHI">RAJSHAHI</option>
-																	
-																	<option value="RANGPUR">RANGPUR</option>
-																	
-																	<option value="SATKHIRA">SATKHIRA</option>
-																	
-																	<option value="SHARIATPUR9">SHARIATPUR</option>
-																	
-																	<option value="SHERPUR">SHERPUR</option>
-																	
-																	<option value="SIRAJGANJ">SIRAJGANJ</option>
-																	
-																	<option value="SUNAMGANJ">SUNAMGANJ</option>
-																	
-																	<option value="SYLHET">SYLHET</option>
-																	
-																	<option value="TANGAIL">TANGAIL</option>
-																	
-																	<option value="THAKURGAON">THAKURGAON</option>
-																	
-																	<option value="RANGAMATI">RANGAMATI</option>
 																	
 																</select>
 															</div>
@@ -316,7 +189,7 @@
 										{{$address->division}}
 										</td>
 										<td>
-										{{$address->district}}
+										{{$address->disctrict}}
 										</td>
 										<td>
 										{{$address->thana}}
@@ -326,7 +199,7 @@
 										</td>
 										<td>
 										{{$address->area}}
-										</td>
+										</td> 
 										<td>
 										{{$address->post}}
 										</td>
@@ -365,12 +238,10 @@
 															<div class="col-sm-4 ">
 																<select type="text" class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="division">
 																	<option value="Select Division" selected> Select Division </option>
-																	<option value="Dhaka">Dhaka</option>
-																	<option value="Chittagong">Chittagong</option>
-																	<option value="Khulna">Khulna</option>
-																	<option value="Rajshahi">Rajshahi</option>
-																	<option value="Barishal">Barishal</option>
-																	<option value="Sylhet">Sylhet</option>
+																	@foreach(App\Division::orderBy('id','desc')->get() as $division) 
+																		<option value="{{$division->name}}" {{ ( $division->name == $address->division) ? 'selected' : ''}}>{{$division->name}}</option>
+																	@endforeach
+																	
 																</select>
 															</div>
 															<label for="" class="col-sm-2 col-form-label ">District</label>
@@ -378,155 +249,30 @@
 																<select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="disctrict">
 																	
 																<option value="N/A" selected>N/A</option>
-																	
-																	<option value="BAGERHAT">BAGERHAT</option>
-																	
-																	<option value="BANDARBAN">BANDARBAN</option>
-																	
-																	<option value="BARGUNA">BARGUNA</option>
-																	
-																	<option value="BARISHAL">BARISHAL</option>
-																	
-																	<option value="BHOLA">BHOLA</option>
-																	
-																	<option value="BOGURA">BOGURA</option>
-																	
-																	<option value="BRAHMANBARIA">BRAHMANBARIA</option>
-																	
-																	<option value="CHANDPUR">CHANDPUR</option>
-																	
-																	<option value="CHATTOGRAM">CHATTOGRAM</option>
-																	
-																	<option value="CHUADANGA">CHUADANGA</option>
-																	
-																	<option value="CUMILLA">CUMILLA</option>
-																	
-																	<option value="COX'S BAZAR">COX'S BAZAR</option>
-																	
-																	<option value="DHAKA">DHAKA</option>
-																	
-																	<option value="DINAJPUR">DINAJPUR</option>
-																	
-																	<option value="FARIDPUR">FARIDPUR</option>
-																	
-																	<option value="FENI">FENI</option>
-																	
-																	<option value="GAIBANDHA">GAIBANDHA</option>
-																	
-																	<option value="GAZIPUR">GAZIPUR</option>
-																	
-																	<option value="GOPALGANJ">GOPALGANJ</option>
-																	
-																	<option value="HABIGANJ">HABIGANJ</option>
-																	
-																	<option value="JOYPURHAT">JOYPURHAT</option>
-																	
-																	<option value="JAMALPUR">JAMALPUR</option>
-																	
-																	<option value="JASHORE">JASHORE</option>
-																	
-																	<option value="JHALAKATI">JHALAKATI</option>
-																	
-																	<option value="JHENAIDAH">JHENAIDAH</option>
-																	
-																	<option value="KHAGRACHHARI">KHAGRACHHARI</option>
-																	
-																	<option value="KHULNA">KHULNA</option>
-																	
-																	<option value="KISHOREGANJ">KISHOREGANJ</option>
-																	
-																	<option value="KURIGRAM">KURIGRAM</option>
-																	
-																	<option value="KUSHTIA">KUSHTIA</option>
-																	
-																	<option value="LAKSHMIPUR">LAKSHMIPUR</option>
-																	
-																	<option value="LALMONIRHAT">LALMONIRHAT</option>
-																	
-																	<option value="MADARIPUR">MADARIPUR</option>
-																	
-																	<option value="MAGURA">MAGURA</option>
-																	
-																	<option value="MANIKGANJ">MANIKGANJ</option>
-																	
-																	<option value="MEHERPUR">MEHERPUR</option>
-																	
-																	<option value="MOULVIBAZAR">MOULVIBAZAR</option>
-																	
-																	<option value="MUNSHIGANJ">MUNSHIGANJ</option>
-																	
-																	<option value="MYMENSINGH">MYMENSINGH</option>
-																	
-																	<option value="NAOGAON">NAOGAON</option>
-																	
-																	<option value="NARAIL">NARAIL</option>
-																	
-																	<option value="NARAYANGANJ">NARAYANGANJ</option>
-																	
-																	<option value="NARSINGDI">NARSINGDI</option>
-																	
-																	<option value="NATORE">NATORE</option>
-																	
-																	<option value="CHAPAINAWABGANJ">CHAPAINAWABGANJ</option>
-																	
-																	<option value="NETROKONA">NETROKONA</option>
-																	
-																	<option value="NILPHAMARI">NILPHAMARI</option>
-																	
-																	<option value="NOAKHALI">NOAKHALI</option>
-																	
-																	<option value="PABNA">PABNA</option>
-																	
-																	<option value="PANCHAGARH">PANCHAGARH</option>
-																	
-																	<option value="PATUAKHALI">PATUAKHALI</option>
-																	
-																	<option value="PIROJPUR">PIROJPUR</option>
-																	
-																	<option value="RAJBARI">RAJBARI</option>
-																	
-																	<option value="RAJSHAHI">RAJSHAHI</option>
-																	
-																	<option value="RANGPUR">RANGPUR</option>
-																	
-																	<option value="SATKHIRA">SATKHIRA</option>
-																	
-																	<option value="SHARIATPUR9">SHARIATPUR</option>
-																	
-																	<option value="SHERPUR">SHERPUR</option>
-																	
-																	<option value="SIRAJGANJ">SIRAJGANJ</option>
-																	
-																	<option value="SUNAMGANJ">SUNAMGANJ</option>
-																	
-																	<option value="SYLHET">SYLHET</option>
-																	
-																	<option value="TANGAIL">TANGAIL</option>
-																	
-																	<option value="THAKURGAON">THAKURGAON</option>
-																	
-																	<option value="RANGAMATI">RANGAMATI</option>
+																@foreach(App\District::orderBy('id','desc')->get() as $district) 
+																	<option value="{{$district->name}}"{{ ( $district->name == $address->disctrict) ? 'selected' : ''}}>{{$district->name}}</option>
+																@endforeach
 																</select>
 															</div>
 														</div>
 														<div class="form-group row">
 															<label for="" class="col-sm-2 col-form-label ">Thana/ Upazilla	</label>
 															<div class="col-sm-4 ">
-																<input type="text" class="form-control" id="" name="thana" placeholder="Enter The Thana" required>
+																<input type="text" class="form-control" id="" name="thana" value='{{$address->thana}}' placeholder="Enter The Thana" required>
 															</div>
 															<label for="" class="col-sm-2 col-form-label ">Ward/ Union</label>
 															<div class="col-sm-4 ">
-																<input type="text" class="form-control" id="" name="thana" placeholder="Enter The Ward/ Union" required>
+																<input type="text" class="form-control" id="" name="ward" value='{{$address->area}}' placeholder="Enter The Ward/ Union" required>
 															</div>
 														</div>
 														<div class="form-group row">
 															<label for="" class="col-sm-2 col-form-label ">Area/ Village</label>
 															<div class="col-sm-4 ">
-																<input type="text" class="form-control" id="" name="thana" placeholder="Enter The Area/ Village" required>
+																<input type="text" class="form-control" id="" name="area" value='{{$address->area}}' placeholder="Enter The Area/ Village" required>
 															</div>
 															<label for="" class="col-sm-2 col-form-label ">Post Office</label>
 															<div class="col-sm-4">
-																<input type="number" class="form-control" id="" name="post" placeholder="Enter your Postal code" value='{{$address->post}}' required>
+																<input type="number" class="form-control" id="" name="post" value='{{$address->post}}' placeholder="Enter your Postal code" value='{{$address->post}}' required>
 															</div>
 														</div>
 														<div class="form-group row">

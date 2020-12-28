@@ -54,30 +54,14 @@
 
 
 
+            
              <tr>
                 <th scope="row">{{$user->id}}</th>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->phone}}</td>
             </tr>
-             <tr>
-                <th scope="row">{{$user->id}}</th>
-                    <td>{{$user->name}}</td>
-                    <td>{{$user->email}}</td>
-                    <td>{{$user->phone}}</td>
-            </tr>
-             <tr>
-                <th scope="row">{{$user->id}}</th>
-                    <td>{{$user->name}}</td>
-                    <td>{{$user->email}}</td>
-                    <td>{{$user->phone}}</td>
-            </tr>
-             <tr>
-                <th scope="row">{{$user->id}}</th>
-                    <td>{{$user->name}}</td>
-                    <td>{{$user->email}}</td>
-                    <td>{{$user->phone}}</td>
-            </tr>
+            
 
            @endforeach
 

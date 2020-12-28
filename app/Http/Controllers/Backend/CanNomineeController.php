@@ -93,9 +93,9 @@ class CanNomineeController extends Controller
         $nominee->relation = $request->relation;
         $nominee->phone = $request->phone;
         $nominee->address = $request->address;
-        
+        if(Auth::user()->is_admin == 1){
         $nominee->is_valid = $request->is_valid;
-
+        }
         $nominee->save();
         // Toastr::success('Personal Info');
         return redirect()->route('nominee');

@@ -20,7 +20,7 @@ Route::get('/test', function () {
 Route::get('/', 'frontendController@home')->name('index');
 Route::get('/about', 'frontendController@about')->name('about');
 Route::get('/contact', 'frontendController@contact')->name('contact');
-Route::get('/empDashboard', 'frontendController@emp_home')->name('emp_home');
+
 Route::get('/empHome', 'frontendController@emp_home')->name('emp_home');
 Route::get('/empDashboard', 'frontendController@emp_dash')->name('emp_dash');
 Route::get('/faq', 'frontendController@faq')->name('faq');

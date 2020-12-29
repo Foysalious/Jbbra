@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('message', 'frontendController@index')->name('message');
+Route::post('newsletter', 'frontendController@news')->name('newsletter');

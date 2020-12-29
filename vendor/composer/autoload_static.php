@@ -575,6 +575,7 @@ class ComposerStaticInitb9c67c18362379e1698ab912f0f50d67
         'App\\Language' => __DIR__ . '/../..' . '/app/Language.php',
         'App\\Mailing' => __DIR__ . '/../..' . '/app/Mailing.php',
         'App\\Message' => __DIR__ . '/../..' . '/app/Message.php',
+        'App\\Newsletter' => __DIR__ . '/../..' . '/app/Newsletter.php',
         'App\\Nominee' => __DIR__ . '/../..' . '/app/Nominee.php',
         'App\\Notice' => __DIR__ . '/../..' . '/app/Notice.php',
         'App\\Personal' => __DIR__ . '/../..' . '/app/Personal.php',

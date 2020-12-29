@@ -226,8 +226,31 @@ $(document).ready(function() {
                 $("#createMessage textarea").val('');
 
             }
+        })
+
+    })
+
+    $("#newsletter").submit(function(e) {
+        e.preventDefault();
+
+
+        var formData = new FormData(this);
+
+
+        $.ajax({
+            type: 'POST',
+            url: 'api/newsletter',
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                swal("", "Newsletter Subscribed", "success");
+                $("#createMessage input[type=email]").val('');
+
+            }
         });
 
-    });
 
+    })
 });

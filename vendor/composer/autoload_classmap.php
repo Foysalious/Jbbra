@@ -47,6 +47,7 @@ return array(
     'App\\Language' => $baseDir . '/app/Language.php',
     'App\\Mailing' => $baseDir . '/app/Mailing.php',
     'App\\Message' => $baseDir . '/app/Message.php',
+    'App\\Newsletter' => $baseDir . '/app/Newsletter.php',
     'App\\Nominee' => $baseDir . '/app/Nominee.php',
     'App\\Notice' => $baseDir . '/app/Notice.php',
     'App\\Personal' => $baseDir . '/app/Personal.php',

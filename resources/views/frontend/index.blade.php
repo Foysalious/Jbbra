@@ -286,9 +286,9 @@
 				<h2>Went to Get Started</h2>
 			</div>
 			<div class="newsletter-content">
-				<form action="0">
-					<input type="text" class="news-input" placeholder="Enter Your Email">
-					<button type="button" class="btn"><span>Subscribe</span></button>
+				<form id='newsletter'>
+					<input type="text" class="news-input" name="email" placeholder="Enter Your Email">
+					<button type="submit" class="btn"><span>Subscribe</span></button>
 				</form>
 			</div>
 		</div>

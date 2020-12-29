@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Message;
+use App\Newsletter;
 
 class frontendController extends Controller
 {
@@ -63,6 +64,16 @@ class frontendController extends Controller
         $message->save();
 
         return response()->json($message, 200);
+    }
+    public function news(Request $request)
+    {
+        $newsletter = new Newsletter();
+        $newsletter->email          = $request->email;
+       
+        
+        $newsletter->save();
+
+        return response()->json($newsletter, 200);
     }
     public function message(Request $request)
     {

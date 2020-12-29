@@ -36,6 +36,7 @@
                                 <td>email</td>
           
                                 <td>message</td>
+                                <td>Date</td>
                                
                                
                             </tr>
@@ -49,8 +50,9 @@
                                 <th>{{ $i }}</th>
                                 <td> {{$message->name}} </td>
                                 <td> {{$message->email}} </td>
-                             
                                 <td> {{$message->message}} </td>
+                             
+                                <td> {{$message->created_at->toDayDateTimeString()}} </td>
                                 
                             </tr>
                             @php

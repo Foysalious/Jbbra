@@ -35,9 +35,12 @@ class RegisterController extends Controller
         if (auth()->user()->is_admin == 2) {
             return '/employeer/home';
         }
-        else{
+        elseif(auth()->user()->is_admin == 0){
         return '/home';
-    }
+        }
+        else{
+            return '/empDashboard';
+        }
     }
 
     /**

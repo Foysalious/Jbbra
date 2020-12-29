@@ -290,6 +290,7 @@
 					<input type="text" class="news-input" name="email" placeholder="Enter Your Email">
 					<button type="submit" class="btn"><span>Subscribe</span></button>
 				</form>
+				
 			</div>
 		</div>
 	</div>

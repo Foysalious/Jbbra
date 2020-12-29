@@ -1,4 +1,4 @@
-<!-- footer area start -->
+
 <footer>
 		<div class="footer-position">
 			<div class="animate-bubble style-1 style-2">
@@ -87,8 +87,8 @@
 					<div class="col-xl-3 col-lg-3 col-md-6  col-12">
 						<div class="footer-news">
 							<h4>newsletter</h4>
-							<form action="#0">
-								<input type="text" class="email" placeholder="Enter Email Address">
+							<form id= "newsletter">
+								<input type="text" class="email"  name ="email" placeholder="Enter Email Address">
 								<button type="submit" class="btn w-100 rounded-pill">
 									<span>Subscribe</span>
 								</button>

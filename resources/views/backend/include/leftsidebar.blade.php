@@ -12,6 +12,7 @@
                 <!-- middle part start -->
                 <div class="col-md-9 col-9">
                     <h3></h3>
+                    
                    
                     @if(Auth::user()->is_admin == 1)
                     <p>Super Admin</p>

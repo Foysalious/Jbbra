@@ -67,6 +67,7 @@ class frontendController extends Controller
     }
     public function news(Request $request)
     {
+      
         $newsletter = new Newsletter();
         $newsletter->email          = $request->email;
        

@@ -22,7 +22,7 @@ Route::get('/about', 'frontendController@about')->name('about');
 Route::get('/contact', 'frontendController@contact')->name('contact');
 
 Route::get('/empHome', 'frontendController@emp_home')->name('emp_home');
-Route::get('/empDashboard', 'frontendController@emp_dash')->name('emp_dash');
+
 Route::get('/faq', 'frontendController@faq')->name('faq');
 Route::get('/guide', 'frontendController@guide')->name('guide');
 Route::get('/login1', 'frontendController@login1')->name('login1');
@@ -34,9 +34,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
-Route::get('employeer/home', 'HomeController@employeeHome')->name('employeeHome')->middleware('is_admin');
+Route::get('employeer/home', 'frontendController@emp_dash')->name('employeeHome')->middleware('is_admin');
 
 Route::group(['prefix'=>'Candidate', 'middleware'=>['auth']], function(){
+    
 Route::get('personal', 'Backend\CanPersonalController@index')->name('personal');
 Route::get('address', 'Backend\CanAdressController@index')->name('address');
 Route::get('education', 'Backend\CanEducationalController@index')->name('education');

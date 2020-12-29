@@ -74,7 +74,17 @@
                             </div>
                             </a>
                         </li>
-
+                        <li >
+                            <a href="{{route('message')}}">
+                            <div class="left">
+                                    Message
+                            </div>
+                            <div class="right">
+                            <i class="fas fa-sms"></i>
+                            </div>
+                            </a>
+                        </li>
+                      
                         
                         <li >
                             <a href="{{route('Notverified')}}">
@@ -92,7 +102,7 @@
                                    Download Verified List
                             </div>
                             <div class="right">
-                            <i class="fas fa-plane-slash"></i>
+                            <i class="fas fa-download"></i>
                             </div>
                             </a>
                         </li>

@@ -64,4 +64,9 @@ class frontendController extends Controller
 
         return response()->json($message, 200);
     }
+    public function message(Request $request)
+    {
+    $messages = Message::orderBy('id','desc')->get();
+        return view('backend.message.manage',compact('messages'));
+    }
 }

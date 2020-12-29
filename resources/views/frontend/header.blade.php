@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     
 	<!---google fonts hear-->
 	<link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -19,6 +20,7 @@
 	<link rel="stylesheet" href="{{asset('frontend/assets/css/lightcase.css')}}">
 	<!-- Custom css -->
     <link rel="stylesheet" href="{{asset('frontend/assets/css/style.css')}}">
+   
 
 	<title>JBBRA!</title>
   </head>

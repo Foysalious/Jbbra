@@ -73,7 +73,7 @@
 					</div>
 					<!-- <div class="col-1"></div> -->
 					<div class="col-lg-5 col-12">
-						<form class="contact-form mt-4 mt-lg-0" method="post" action="/">
+						<form id="createMessage">
 							<div class="row">
 								<div class="col-sm-12">
 									<h4 class="title_block">Contact Form</h4>

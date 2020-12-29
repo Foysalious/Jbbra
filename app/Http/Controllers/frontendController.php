@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Message;
 
 class frontendController extends Controller
 {
@@ -51,5 +52,16 @@ class frontendController extends Controller
     {
        return view('frontend.register');
       
+    }
+    public function index(Request $request)
+    {
+        $message = new message();
+        $message->name          = $request->name;
+        $message->email          = $request->email;
+        $message->message          = $request->message;
+        
+        $message->save();
+
+        return response()->json($reservation, 200);
     }
 }

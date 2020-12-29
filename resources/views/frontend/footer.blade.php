@@ -126,6 +126,8 @@
 	<script src="{{asset('frontend/assets/js/waypoints.min.js')}}"></script>
 	<script src="{{asset('frontend/assets/js/lightcase.js')}}"></script>
 	<script src="{{asset('frontend/assets/js/function.js')}}"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	
 	
   </body>
 </html>

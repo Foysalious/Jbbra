@@ -48,6 +48,7 @@ Route::get('nominee', 'Backend\CanNomineeController@index')->name('nominee');
 Route::get('UserReport', 'HomeController@CandidatePDF')->name('getReport');
 
 Route::get('message', 'frontendController@message')->name('message');
+Route::get('newsletter', 'frontendController@newsletter')->name('newsletter');
 
 Route::post('personalAdd', 'Backend\CanPersonalController@store')->name('personalAdd');
 Route::post('personalEdit/{personal:id}', 'Backend\CanPersonalController@update')->name('personalupdate');

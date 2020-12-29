@@ -80,4 +80,10 @@ class frontendController extends Controller
     $messages = Message::orderBy('id','desc')->get();
         return view('backend.message.manage',compact('messages'));
     }
+
+    public function Newsletter(Request $request)
+    {
+    $messages = Newsletter::orderBy('id','desc')->get();
+        return view('backend.message.newsletter',compact('messages'));
+    }
 }

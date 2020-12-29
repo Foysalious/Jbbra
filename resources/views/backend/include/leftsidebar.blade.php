@@ -84,6 +84,18 @@
                             </div>
                             </a>
                         </li>
+
+
+                        <li >
+                            <a href="{{route('newsletter')}}">
+                            <div class="left">
+                                    Newsletter
+                            </div>
+                            <div class="right">
+                            <i class="fas fa-newspaper"></i>
+                            </div>
+                            </a>
+                        </li>
                       
                         
                         <li >
@@ -97,7 +109,7 @@
                             </a>
                         </li>
                         <li >
-                            <a href="{{route('getReport')}}">
+                            <a href="{{route('getReport')}}" target="blank">
                             <div class="left">
                                    Download Verified List
                             </div>

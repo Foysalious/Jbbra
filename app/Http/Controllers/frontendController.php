@@ -62,6 +62,6 @@ class frontendController extends Controller
         
         $message->save();
 
-        return response()->json($reservation, 200);
+        return response()->json($message, 200);
     }
 }

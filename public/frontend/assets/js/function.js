@@ -220,7 +220,9 @@ $(document).ready(function() {
 
 
                 swal('', 'Message successfully send', 'success');
+
                 $("#createMessage input[type=text]").val('');
+                $("#createMessage input[type=email]").val('');
                 $("#createMessage textarea").val('');
 
             }

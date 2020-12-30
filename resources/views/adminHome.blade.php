@@ -44,7 +44,7 @@
                             <div><i class="fas fa-history"></i></div>
                             <div class="tex-center"></div><p>Verified Candidate</p>
                             
-                            <div class="tex-center"></div><p>{{$count1}}</p>
+                            <div class="tex-center"></div><p>{{$count2}}</p>
                         </div>
                     </a>                
                 </div>
@@ -54,7 +54,7 @@
                             <div><i class="fas fa-history"></i></div>
                             <div class="tex-center"></div><p>Non Verified Candidate</p>
                             
-                            <div class="tex-center"></div><p> {{$count2}}</p>
+                            <div class="tex-center"></div><p> {{$count1}}</p>
                         </div>
                     </a>                
                 </div>

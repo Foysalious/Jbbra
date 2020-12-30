@@ -188,8 +188,8 @@
 	<div class="portfolio-slide-area">
 		<div class="container">
 			<div class="section-header text-center">
-				<span>Portfolio</span>
-				<h3>Our case studies</h3>
+				<span>Why Choose Us? </span>
+				<h3>What we offer! </h3>
 				<p>
 					Conveniently customize proactive web services 
 					for leveraged interfaces without Globally 

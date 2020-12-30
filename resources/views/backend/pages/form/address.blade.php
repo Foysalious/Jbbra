@@ -5,8 +5,6 @@
     <div class="container-fluid">
 
 		<!-- main content start -->
-		<div class="main-content">
-			<div class="container-fluid">
 		
 				
 				<!-- page indicator start -->
@@ -27,6 +25,16 @@
 		
 				<!-- page indicator end -->
 
+				<!-- present address start -->
+				
+
+				<!-- present address end -->
+
+
+				<!-- permanent address start -->
+
+
+				<!-- permanent address end -->
 
 				<!-- dashbaord statistics seciton start -->
 				<section class="statistics">
@@ -341,9 +349,6 @@
 				</section>
 				<!-- dashbaord statistics seciton end -->
 
-			</div>
-
-		</div>
 
         <!-- main content end -->
 	</div>

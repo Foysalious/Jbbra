@@ -186,7 +186,7 @@
 				</div>
 			</div>
 			<div class="emp-btn d-flex justify-content-center mt-5">
-				<a href="employers-home.php" class="btn"><span>View All Employers</span></a>
+				<a href="{{route('emp_home')}}" class="btn"><span>View All Employers</span></a>
 			</div>
 		</div>
 	</div>

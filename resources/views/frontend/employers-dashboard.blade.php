@@ -1,6 +1,8 @@
 	<!-- header are start -->
 
-	@include('frontend.header')
+	@extends('backend.template.layout')
+
+@section('body-content')
 	<!-- header are end -->
 
 	<!-- Employers area start  -->
@@ -244,5 +246,6 @@
 	
 
 	<!-- footer area star -->
-	@include('frontend.footer')
+	@endsection
+
 	<!-- footer area end -->

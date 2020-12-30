@@ -28,7 +28,7 @@
 					<div class="banner-text">
 						<h2><span>Connecting</span> to Your Next Job in japan</h2>
 						<p>Quisque viverra erat at tortor sagittis posuere. In sem massa, laoreet ultricies aliquam hendrerit, mollis a felis.</p>
-						<a href="auth-registe.php" class="btn mt-4"><span>Apply Now</span></a>
+						<a href="{{route('register')}}" class="btn mt-4"><span>Apply Now</span></a>
 					</div>
 					<div class="banner-thumb">
 						<img src="{{asset('frontend/assets/images/banner/Main Poster2.png')}}" alt="banner-image">

@@ -85,7 +85,7 @@
 					</div>
 
 					<div class="col-xl-3 col-lg-3 col-md-6  col-12">
-						<div class="footer-news">
+						<!-- <div class="footer-news">
 							<h4>newsletter</h4>
 							<form id= "newsletter" >
 							
@@ -94,7 +94,7 @@
 									<span>Subscribe</span>
 								</button>
 							</form>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>
@@ -103,7 +103,7 @@
 	<div class="footer-bottom">
 		<div class="container">
 			<div class="copy-right text-center">
-				<p>&copy; 2021 <a href="index.html">JBBRA.</a> Rights Reserved By <a href="pikt.jp" target="_blank">Pikt network</a></p>
+				<p>&copy; 2021 <a href="{{route('index')}}">JBBRA.</a> Rights Reserved By <a href="pikt.jp" target="_blank">Pikt network</a></p>
 			</div>
 		</div>
 	</div>

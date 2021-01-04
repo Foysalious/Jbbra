@@ -1,11 +1,10 @@
-	<!-- header are start -->
+<!-- header are start -->
 
-	@extends('backend.template.layout')
+@extends('backend.template.layout')
 
 @section('body-content')
-	<!-- header are end -->
-
-	<!-- Employers area start  -->
+	
+	<!-- Employers area start  --> 
 	<div class="employer-area">
 		<div class="container">
 			<div class="section-wrapper">
@@ -25,7 +24,7 @@
 								<li><span><i class="fa fa-check"></i></span><span>Web Designer</span></li>
 								<li><span><i class="fa fa-check"></i></span><span>Front-end Developer</span></li>
 								<li><span><i class="fa fa-check"></i></span><span>Back-end Developer</span></li>
-								<li><span><i class="fa fa-check"></i></span><span>Full-Stac Developer </span></li>
+								<li><span><i class="fa fa-check"></i></span><span>Full-Stack Developer </span></li>
 								<li><span><i class="fa fa-check"></i></span><span>Project manager</span></li>
 								<li><span><i class="fa fa-check"></i></span><span>Project manager</span></li>
 								<li><span><i class="fa fa-check"></i></span><span>Project manager</span></li>
@@ -56,14 +55,15 @@
 							</div>
 
 							<div class="card-item">
+								@foreach(App\User::orderBy('id','desc')->where('is_admin',0)->where('is_valid',1)->get() as $user) 
 								<div class="card-content">
 									<div class="card-thumb">
 										<img src="{{asset('frontend/assets/images/employer/01.jpg')}}" height="100" width="100" class="rounded-circle" alt="">
 									</div>
 									<div class="card-text">
 										<div class="cd-des">
-											<h4 class="mb-0">Farhana Ahmed</h4>
-											<span>HR Officer</span>
+											<h4 class="mb-0">{{$user->name}}</h4>
+											<span></span>
 										</div>
 										<div class="input-btn d-flex align-items-center mt-3">
 											<button type="button" class="btn mr-3"><span>Hire</span></button>
@@ -71,97 +71,8 @@
 										</div>
 									</div>
 								</div>
-								<div class="card-content">
-									<div class="card-thumb">
-										<img src="{{asset('frontend/assets/images/employer/02.jpg')}}" height="100" width="100" class="rounded-circle" alt="">
-									</div>
-									<div class="card-text">
-										<div class="cd-des">
-											<h4 class="mb-0">Foysal</h4>
-											<span>Ninja develper</span>
-										</div>
-										<div class="input-btn d-flex align-items-center mt-3">
-											<button type="button" class="btn mr-3"><span>Hire</span></button>
-											<button type="button" class="btn"><span>Details</span></button>
-										</div>
-									</div>
-								</div>
-								<div class="card-content">
-									<div class="card-thumb">
-										<img src="{{asset('frontend/assets/images/employer/03.jpg')}}" height="100" width="100" class="rounded-circle" alt="">
-									</div>
-									<div class="card-text">
-										<div class="cd-des">
-											<h4 class="mb-0">MD Fahad</h4>
-											<span>All in one</span>
-										</div>
-										<div class="input-btn d-flex align-items-center mt-3">
-											<button type="button" class="btn mr-3"><span>Hire</span></button>
-											<button type="button" class="btn"><span>Details</span></button>
-										</div>
-									</div>
-								</div>
-								<div class="card-content">
-									<div class="card-thumb">
-										<img src="{{asset('frontend/assets/images/employer/04.jpg')}}" height="100" width="100" class="rounded-circle" alt="">
-									</div>
-									<div class="card-text">
-										<div class="cd-des">
-											<h4 class="mb-0">Shohag Bro</h4>
-											<span>Product Develper</span>
-										</div>
-										<div class="input-btn d-flex align-items-center mt-3">
-											<button type="button" class="btn mr-3"><span>Hire</span></button>
-											<button type="button" class="btn"><span>Details</span></button>
-										</div>
-									</div>
-								</div>
-								<div class="card-content">
-									<div class="card-thumb">
-										<img src="{{asset('frontend/assets/images/employer/05.jpg')}}" height="100" width="100" class="rounded-circle" alt="">
-									</div>
-									<div class="card-text">
-										<div class="cd-des">
-											<h4 class="mb-0">Yeasin (L)</h4>
-											<span>Front-end develper</span>
-											<p>I don't want to go to japan</p>
-										</div>
-										<div class="input-btn d-flex align-items-center mt-3">
-											<button type="button" class="btn mr-3"><span>Hire</span></button>
-											<button type="button" class="btn"><span>Details</span></button>
-										</div>
-									</div>
-								</div>
-								<div class="card-content">
-									<div class="card-thumb">
-										<img src="{{asset('frontend/assets/images/employer/06.jpg')}}" height="100" width="100" class="rounded-circle" alt="">
-									</div>
-									<div class="card-text">
-										<div class="cd-des">
-											<h4 class="mb-0">Habib PW</h4>
-											<span>Ninja</span>
-										</div>
-										<div class="input-btn d-flex align-items-center mt-3">
-											<button type="button" class="btn mr-3"><span>Hire</span></button>
-											<button type="button" class="btn"><span>Details</span></button>
-										</div>
-									</div>
-								</div>
-								<div class="card-content">
-									<div class="card-thumb">
-										<img src="{{asset('frontend/assets/images/employer/07.jpg')}}" height="100" width="100" class="rounded-circle" alt="">
-									</div>
-									<div class="card-text">
-										<div class="cd-des">
-											<h4 class="mb-0">Ashim C Reberio</h4>
-											<span>Ninja Ux</span>
-										</div>
-										<div class="input-btn d-flex align-items-center mt-3">
-											<button type="button" class="btn mr-3"><span>Hire</span></button>
-											<button type="button" class="btn"><span>Details</span></button>
-										</div>
-									</div>
-								</div>
+								@endforeach
+								
 							</div>
 						</div>
 					</div>

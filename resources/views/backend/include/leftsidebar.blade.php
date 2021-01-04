@@ -17,7 +17,7 @@
                     @if(Auth::user()->is_admin == 1)
                     <p>Super Admin</p>
                     @elseif(Auth::user()->is_admin == 2)
-                    <p>Employee</p>
+                    <p>Employer</p>
                     @else
                     <p>Candidate</p>
                     @endif

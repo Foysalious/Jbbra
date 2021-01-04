@@ -26,5 +26,19 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/rte_theme_default.css') }}"> 
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('candidate/assets/css/style.css')}}">
-<link rel="stylesheet" href="/richtexteditor/rte_theme_default.css" />
+<link rel="stylesheet" href="/richtexteditor/rte_theme_default.css" />    
 
+<!---google fonts hear-->
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/bootstrap.min.css')}}">
+    <!--font awesome css-->
+	<link rel="stylesheet" href="{{asset('frontend/assets/css/font-awesome.min.css')}}">
+	<!--animate css hear-->
+	<link rel="stylesheet" href="{{asset('frontend/assets/css/animate.css')}}">
+	<!--swiper css-->
+	<link rel="stylesheet" href="{{asset('frontend/assets/css/swiper-bundle.min.css')}}">
+	<!-- light-case css -->
+	<link rel="stylesheet" href="{{asset('frontend/assets/css/lightcase.css')}}">
+	<!-- Custom css -->
+    <link rel="stylesheet" href="{{asset('frontend/assets/css/style.css')}}">

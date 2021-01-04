@@ -2,8 +2,12 @@
 
 @extends('backend.template.layout')
 
-@section('body-content')
-	
+@section('body-content') 
+	<!-- main content start -->
+<div class="main-content">
+
+    <div class="container-fluid">
+	@if(Auth::user()->is_valid == 1)
 	<!-- Employers area start  --> 
 	<div class="employer-area">
 		<div class="container">
@@ -17,7 +21,7 @@
 							<ul class="all-list">
 								<li><span>Favourite</span><span class="float-right" data-toggle="modal" data-target="#hire_list"><i class="fa fa-edit"></i></span></li>
 							</ul>
-							<ul class="hi-list">
+							<!-- <ul class="hi-list">
 								<li><span><i class="fa fa-check"></i></span><span>Ux Designer</span></li>
 								<li><span><i class="fa fa-check"></i></span><span>Ui Designer</span></li>
 								<li><span><i class="fa fa-check"></i></span><span>Product Designer</span></li>
@@ -29,7 +33,7 @@
 								<li><span><i class="fa fa-check"></i></span><span>Project manager</span></li>
 								<li><span><i class="fa fa-check"></i></span><span>Project manager</span></li>
 								<li><span><i class="fa fa-check"></i></span><span>Project manager</span></li>
-							</ul>
+							</ul> -->
 						</div>
 					</div>
 					<div class="col-lg-8 col-12">
@@ -37,7 +41,7 @@
 							<div class="search-filter">
 								<div class="search-bar">
 									<label for="search-icon"><i class="fa fa-search"></i></label>
-									<input type="text" name="search" class="search-control" placeholder="Ux designer, Web develper , Product designer........" />
+									<input type="text" name="search" class="search-control" placeholder="  Ux designer, Web develper , Product designer........" />
 								</div>
 								<!-- Example split danger button -->
 								<div class="btn-group">
@@ -63,7 +67,7 @@
 									<div class="card-text">
 										<div class="cd-des">
 											<h4 class="mb-0">{{$user->name}}</h4>
-											<span></span>
+											<span>Occupaction</span>
 										</div>
 										<div class="input-btn d-flex align-items-center mt-3">
 											<button type="button" class="btn mr-3"><span>Hire</span></button>
@@ -153,10 +157,14 @@
 		  </div>
 		</div>
 	</div>
+	@elseif(Auth::user()->is_valid == 0)
+	Wait for Approvement from the admin 
+	@endif
 	<!-- hire modal -->
 	
-
+</div>
+</div>
 	<!-- footer area star -->
 	@endsection
 
-	<!-- footer area end -->
+	<!-- footer area end --> 

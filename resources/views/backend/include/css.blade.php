@@ -28,7 +28,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('candidate/assets/css/style.css')}}">
 <link rel="stylesheet" href="/richtexteditor/rte_theme_default.css" />    
 
-<!---google fonts hear-->
+
     <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('frontend/assets/css/bootstrap.min.css')}}">

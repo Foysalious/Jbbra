@@ -21,7 +21,7 @@ class CanAdressController extends Controller
      */
     public function index()
     {
-        $addresses = Address::orderBy('id','desc')->get();
+        $addresses = Address::orderBy('id','desc')->where('user_id',Auth::user()->id)->get();
         return view('backend.pages.form.address',compact('addresses'));
     }
 

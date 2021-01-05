@@ -21,7 +21,7 @@ class CanNomineeController extends Controller
      */
     public function index()
     {
-        $nominees = Nominee::orderBy('id','desc')->get();
+        $nominees = Nominee::orderBy('id','desc')->where('user_id',Auth::user()->id)->get();
         return view('backend.pages.form.nominee',compact('nominees'));
     }
 

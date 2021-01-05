@@ -18,7 +18,7 @@ class NoticeController extends Controller
      */
     public function index()
     {
-        $notices = Notice::orderBy('id','desc')->get();
+        $notices = Notice::orderBy('id','desc')->where('user_id',Auth::user()->id)->get();
         return view('backend.notice.manage',compact('notices'));
     }
 

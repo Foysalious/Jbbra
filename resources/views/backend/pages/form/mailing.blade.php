@@ -34,7 +34,7 @@
                     <!-- add row start -->
                     <div class="row add-row">
                         <div class="col-md-12 text-right">
-                        @if(App\Mailing::count()<1  )
+                        @if(App\Mailing::where('user_id',Auth::user()->id)->count()<2  )
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                                 add new Category
                             </button>

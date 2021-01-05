@@ -21,7 +21,7 @@ class CanLanguageController extends Controller
      */
     public function index()
     {
-        $languages = Language::orderBy('id','desc')->get();
+        $languages = Language::orderBy('id','desc')->where('user_id',Auth::user()->id)->get();
         return view('backend.pages.form.language',compact('languages'));
     }
 

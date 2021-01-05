@@ -13,7 +13,7 @@ use Auth;
 use Illuminate\Support\Str;
 
 class CanExperienceController extends Controller
-{
+{ 
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +21,7 @@ class CanExperienceController extends Controller
      */
     public function index()
     {
-        $experiences = Experience::orderBy('id','desc')->get();
+        $experiences = Experience::orderBy('id','desc')->where('user_id',Auth::user()->id)->get();
         return view('backend.pages.form.experience',compact('experiences'));
     }
 

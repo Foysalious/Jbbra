@@ -21,7 +21,7 @@ class CanMailingController extends Controller
      */
     public function index()
     {
-        $mailings = Mailing::orderBy('id','desc')->get();
+        $mailings = Mailing::orderBy('id','desc')->where('user_id',Auth::user()->id)->get();
         return view('backend.pages.form.mailing',compact('mailings'));
     }
 

@@ -21,7 +21,7 @@ class CanPersonalController extends Controller
      */
     public function index()
     {
-        $personals = Personal::orderBy('id','desc')->get();
+        $personals = Personal::orderBy('id','desc')->where('user_id',Auth::user()->id)->get();
         return view('backend.pages.form.personal',compact('personals'));
     }
 

@@ -62,16 +62,51 @@
 								@foreach(App\User::orderBy('id','desc')->where('is_admin',0)->where('is_valid',1)->get() as $user) 
 								<div class="card-content">
 									<div class="card-thumb">
-										<img src="{{asset('frontend/assets/images/employer/01.jpg')}}" height="100" width="100" class="rounded-circle" alt="">
+										<img src="{{asset('images/personal/'. $user->personal->image)}}" height="100" width="100" class="rounded-circle" alt="">
 									</div>
 									<div class="card-text">
 										<div class="cd-des">
 											<h4 class="mb-0">{{$user->name}}</h4>
-											<span>Occupaction</span>
+											<span>{{$user->experience->role}}</span>
 										</div>
 										<div class="input-btn d-flex align-items-center mt-3">
 											<button type="button" class="btn mr-3"><span>Hire</span></button>
-											<button type="button" class="btn"><span>Details</span></button>
+											<button type="button" class="btn" data-toggle="modal" data-target="#exampleModal"><span>Details</span></button>
+											<!-- Detail-modal area -->	
+											<!-- Button trigger modal -->
+											<!-- Modal -->
+											<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+												<div class="modal-dialog modal-xl modal-dialog-centered">
+													<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														<form>
+															<div class="form-group row">
+																<label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+																<div class="col-sm-10">
+																<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" readonly>
+																</div>
+															</div>
+															<div class="form-group row">
+																<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+																<div class="col-sm-10">
+																<input type="password" class="form-control" id="inputPassword">
+																</div>
+															</div>
+														</form>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+														<button type="button" class="btn btn-primary">Save changes</button>
+													</div>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>

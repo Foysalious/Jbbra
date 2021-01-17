@@ -86,6 +86,17 @@
                             </a>
                         </li>
 
+                        <li >
+                            <a href="{{route('profession')}}">
+                            <div class="left">
+                                    Jobs
+                            </div>
+                            <div class="right">
+                            <i class="fas fa-user-md"></i>
+                            </div>
+                            </a>
+                        </li>
+                   
 
                         <li >
                             <a href="{{route('newsletter')}}">

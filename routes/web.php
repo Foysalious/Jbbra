@@ -91,6 +91,11 @@ Route::post('noticeAdd', 'Backend\NoticeController@store')->name('noticeAdd');
 Route::post('noticeAdd/{notice:id}', 'Backend\NoticeController@update')->name('noticeUpdate');
 Route::post('noticeDelete/{notice:id}', 'Backend\NoticeController@destroy')->name('noticeDelete');
 
+Route::get('/profession','Backend\Jobcontroller@index')->name('profession');
+Route::post('professionAdd', 'Backend\Jobcontroller@store')->name('professionAdd');
+Route::post('professionEdit/{job:id}', 'Backend\Jobcontroller@update')->name('professionUpdate');
+Route::post('professionDelete/{job:id}', 'Backend\Jobcontroller@destroy')->name('professionDelete');
+
 
 // });
 // Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){ 

@@ -41,7 +41,7 @@
 							<div class="search-filter">
 								<div class="search-bar">
 									<label for="search-icon"><i class="fa fa-search"></i></label>
-									<input type="text" name="search" class="search-control" placeholder="  Ux designer, Web develper , Product designer........" />
+									<input type="text" name="search" class="search-control px-5" placeholder="Please enter job keyword" />
 								</div>
 								<!-- Example split danger button -->
 								<div class="btn-group">
@@ -66,8 +66,8 @@
 									</div>
 									<div class="card-text">
 										<div class="cd-des">
-											<h4 class="mb-0">{{$user->name}}</h4>
-											<span>{{$user->experience->role}}</span>
+											<h4 class="">{{$user->name}}</h4>
+											<span>{{$user->experience->post}}</span>
 										</div>
 										<div class="input-btn d-flex align-items-center mt-3">
 											<button type="button" class="btn mr-3"><span>Hire</span></button>
@@ -147,42 +147,14 @@
 			<div class="modal-body">
 			  <div class="fav-main">
 				<ol class="fav-list d-flex flex-wrap justify-content-around">
+				@foreach(App\job::orderBy('id','desc')->get() as $job) 
 					<li class="m-2 pr-2">
 						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="customCheck1">
-							<label class="custom-control-label" for="customCheck1">Product Designer</label>
+							<input type="checkbox" class="custom-control-input" id="{{$job->id}}">
+							<label class="custom-control-label" for="{{$job->id}}">{{$job->name}}</label>
 						</div>
 					</li>
-					<li class="m-2 pr-2">
-						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="customCheck2">
-							<label class="custom-control-label" for="customCheck2">Product Designer</label>
-						</div>
-					</li>
-					<li class="m-2 pr-2">
-						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="customCheck3">
-							<label class="custom-control-label" for="customCheck3">Product Designer</label>
-						</div>
-					</li>
-					<li class="m-2 pr-2">
-						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="customCheck4">
-							<label class="custom-control-label" for="customCheck4">Product Designer</label>
-						</div>
-					</li>
-					<li class="m-2 pr-2">
-						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="customCheck5">
-							<label class="custom-control-label" for="customCheck5">Product Designer</label>
-						</div>
-					</li>
-					<li class="m-2 pr-2">
-						<div class="custom-control custom-checkbox">
-							<input type="checkbox" class="custom-control-input" id="customCheck6">
-							<label class="custom-control-label" for="customCheck6">Front Designer</label>
-						</div>
-					</li>
+				@endforeach
 				</ol>
 			  </div>
 			</div>
